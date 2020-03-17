@@ -1,26 +1,11 @@
 import React from 'react';
-import { SearchIcon } from '@components';
+import { SearchIcon, HeaderSearchDropdown } from '@components';
 import styled from 'styled-components';
 import { useTranslation } from 'react-i18next';
 import { desktop } from '@utils/media';
 
 export const searchMediaQueryBig = '@media (min-width: 972px)';
 export const searchMediaQueryLow = '@media (min-width: 767px) and (max-width: 971px)';
-
-
-const DropdownInput = styled.input`
-  display: none; 
-  ${ searchMediaQueryLow }{
-    display: flex;  
-    border: none;
-    outline: none;
-    padding-left: .5rem;
-    width: 90%; 
-    font-size: 3rem;
-    align-self: center;
-    color: ${ ( { theme } ) => theme.header.searchColor };
-    }
-`;
 
 
 const HeaderInput = styled.input`
@@ -40,18 +25,19 @@ const HeaderSearchWrapper = styled.div`
     ${ searchMediaQueryBig }{
       display: flex;
       align-items: center;
-      border: 1px solid black;
+      border: 1px solid ${ ( { theme } ) => theme.header.searchWrapperBorder };
       height: 3.5rem;
     };
-  border: 1px solid white;
+  border: 1px solid ${ ( { theme } ) => theme.white };
 `;
 
 const HeaderSearchContainer = styled.div`
     display: none;
    ${ searchMediaQueryLow }{
-  border-bottom: 1px solid ${ ( { theme } ) => theme.white };
-    &:hover {
-    border-bottom: 1px solid ${ ( { theme } ) => theme.header.color };
+      
+      border-bottom: 1px solid ${ ( { theme } ) => theme.white };
+      &:hover {
+      border-bottom: 1px solid ${ ( { theme } ) => theme.header.color };
     };
   }
   ${ desktop }{
@@ -66,31 +52,6 @@ const SearchIconWrapper = styled.figure`
 `;
 
 
-const DropdownSearch = styled.div`
-  display: none;
-  ${ searchMediaQueryLow }{
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height:7rem;
-  background:blue;
-  position: absolute;
-  right: 0;
-  transform: translateY(100%);
-  
-}
-`;
-
-const DropdownSearchWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-bottom: 1px solid gray;
-  height: 90%;
-  width: 50%;
-`;
-
-
 const Search = () => {
   const { t } = useTranslation ();
   return (
@@ -101,12 +62,7 @@ const Search = () => {
           <SearchIcon />
         </SearchIconWrapper>
       </HeaderSearchWrapper>
-      <DropdownSearch>
-        <DropdownSearchWrapper>
-          <DropdownInput type="text" placeholder={ `${ t ( 'header.headerSearchPlaceholder' ) }...` } />
-          <SearchIcon width='36' height='36' />
-        </DropdownSearchWrapper>
-      </DropdownSearch>
+      <HeaderSearchDropdown />
     </HeaderSearchContainer>
   );
 };
