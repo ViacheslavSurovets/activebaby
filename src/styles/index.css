@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+}
+
+#burger-menu-checkbox:checked ~ figure div:nth-child(1),
+#burger-menu-checkbox:checked ~ figure div:nth-child(4){
+    display: none;
+}
+
+#burger-menu-checkbox:checked ~ figure div:nth-child(2){
+    transform: rotate(-45deg);
+}
+
+#burger-menu-checkbox:checked ~ figure div:nth-child(3){
+    transform: rotate(45deg);
+}
+
+#burger-menu-checkbox:checked ~ nav {
+    opacity: 1;
+    visibility: visible;
+    transition: .4s all .15s;
+}
+

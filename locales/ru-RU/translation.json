@@ -1,0 +1,64 @@
+{
+  "header": {
+    "headerCategory": {
+      "columnOne": {
+        "strollers": "Прогулки",
+        "quatro": "Quatro",
+        "lorelli": "Lorelli",
+        "carello": "Carello"
+      },
+      "columnTwo": {
+       "modules" : "Модульные",
+        "adamex": "Adamex",
+        "used" : "Б/У"
+      },
+      "columnThree" : {
+        "carSeats": "Автолюльки",
+        "carlo": "Carlo",
+        "adamex" : "Adamex",
+        "used" : "Б/У"
+      },
+      "columnFour" : {
+        "accessories" : "Аксусуары",
+        "adapters" : "Адаптеры",
+        "tires" : "Покрышки",
+        "cameras": "Камеры"
+      },
+      "columnFive" : {
+        "linens": "Постельное белье",
+        "individualTailoring" : "Индивидуальный пошив"
+      }
+    },
+    "headerArticle": {
+      "articleOne": {
+        "title" : "Как выбрать коляску"
+      },
+      "articleTwo": {
+        "title": "Подбор белья"
+      },
+      "articleThree": {
+        "title": "Интерессно"
+      }
+    },
+    "headerSearchPlaceholder": "Поиск",
+    "headerLoginLink" : "Логин",
+    "headerCart" : {
+      "cartIsEmpty" : "Ваша корзина пуста"
+    },
+    "links": {
+      "main": "Главная",
+      "categories" : "Категории",
+      "aboutUs" : "О нас",
+      "payments" : "Оплата",
+      "articles" : "Статьи",
+      "map" : "Карта",
+      "login" : "Логин"
+    },
+    "burgerMenuLabel": {
+      "menu" : "Меню"
+    }
+  },
+  "googleMaps" : {
+    "tooltipInfo" : "Магазин товаров для новорожденных"
+  }
+}
