@@ -36,12 +36,8 @@ export const DropdownSearchWrapper = styled.div`
   width: 50%;
 `;
 
-export const DropdownInput = styled.input`
-  display: none; 
-  ${ tablet },
-  ${ mobile },
-  ${ searchMediaQueryLow }{
-    display: flex;  
+const stylesDropdownInput = css`
+display: flex;  
     border: none;
     outline: none;
     padding-left: .5rem;
@@ -49,5 +45,17 @@ export const DropdownInput = styled.input`
     font-size: 3rem;
     align-self: center;
     color: ${ ( { theme } ) => theme.header.searchColor };
-    }
+`;
+
+export const DropdownInput = styled.input`
+  display: none; 
+  ${ tablet }{
+    ${stylesDropdownInput};
+  };
+  ${ mobile }{
+    ${stylesDropdownInput};
+  };
+  ${ searchMediaQueryLow }{
+    ${stylesDropdownInput};
+   }
 `;
