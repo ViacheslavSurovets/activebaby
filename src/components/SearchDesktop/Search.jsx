@@ -52,7 +52,7 @@ const SearchIconWrapper = styled.figure`
 `;
 
 
-const Search = () => {
+const SearchDesktop = () => {
   const { t } = useTranslation ();
   return (
     <HeaderSearchContainer>
@@ -67,4 +67,4 @@ const Search = () => {
   );
 };
 
-export default Search;
+export default SearchDesktop;

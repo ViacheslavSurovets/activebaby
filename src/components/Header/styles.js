@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import { desktop, mobile, tablet } from '@utils/media';
 import { NavLink } from 'react-router-dom';
-import { searchMediaQueryLow } from '../../components/Search/Search';
+import { searchMediaQueryLow } from '../SearchDesktop/Search';
 
 export const styleLink = css`
   display: flex;
@@ -167,9 +167,10 @@ export const ListItem = styled.li`
   }
 `;
 
-
-export const SearchItem = styled.div`
-  
+export const SearchItemDesktop = styled.div`
+  display: flex;
+  flex-basis: 10rem;
+  justify-content: center;
   
   &:hover {
   ${ searchMediaQueryLow }{

@@ -30,7 +30,10 @@ export default {
     cartBackground :colors.white,
     cartColor: colors.darkGray,
     burgerMenuLineBackground : colors.white,
-    burgerMenuNavBackground: colors.white
+    burgerMenuNavBackground: colors.white,
+    searchDropdownBorderBottom: colors.darkGray,
+    dropdownSearchBackground : colors.white,
+    searchWrapperBorder : colors.darkGray
   },
   menu: {
     background: colors.white,

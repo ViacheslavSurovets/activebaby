@@ -16,7 +16,7 @@ import {
   ShopCartWrapper,
   HeaderNavContainer,
   ListItem,
-  SearchItem,
+  SearchItemDesktop,
   LogoDesktopWrapper,
   LogoTabletWrapper,
   List
@@ -24,7 +24,8 @@ import {
 import {
   LogoDesktop,
   LogoTablet,
-  Search,
+  SearchDesktop,
+  SearchMobile,
   ShopCart,
   LoginHeaderLink,
   LocationMarkerLink,
@@ -60,6 +61,8 @@ const Header = ( props ) => {
         <HeaderItemsWrapperRight>
           { /*desktop*/ }
           <LoginHeaderLink />
+          { /* tablet / mobile*/ }
+          <SearchMobile />
           { /*desktop / laptop / mobile*/ }
           <ShopCartWrapper>
             <ShopCart />
@@ -107,9 +110,12 @@ const Header = ( props ) => {
                 </DropdownGroupWrapper>
               </Dropdown>
             </ListItem>
-            <SearchItem>
-              <Search />
-            </SearchItem>
+
+            { /* desktop/searchMediaQueryLow*/ }
+            <SearchItemDesktop>
+              <SearchDesktop />
+            </SearchItemDesktop>
+
           </List>
         </HeaderNav>
       </HeaderNavContainer>
