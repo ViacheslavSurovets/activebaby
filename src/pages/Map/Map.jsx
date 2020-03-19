@@ -8,7 +8,6 @@ const WrapperMap = styled.div`
  align-items: center;
  height: 100%;
  width: 100%;
- margin-top: 2rem;
 `;
 
 const Map = () => (

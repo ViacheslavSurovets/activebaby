@@ -102,7 +102,8 @@ module.exports = {
       '@pages': path.resolve ( __dirname, 'src/pages' ),
       '@assets': path.resolve ( __dirname, 'src/assets' ),
       '@media': path.resolve(__dirname, 'src/utils/media'),
-      '@utils': path.resolve ( __dirname, 'src/utils' )
+      '@utils': path.resolve ( __dirname, 'src/utils' ),
+      '@stylesCommon' : path.resolve(__dirname, 'src/styles/commonStyles')
     }
   },
   optimization: optimization (),
@@ -116,7 +117,7 @@ module.exports = {
       },
 
       {
-        test: /\.(png|jpg|gif)$/i,
+        test: /\.(png|jpe?g|gif)$/i,
         use: [
           {
             loader: 'url-loader',

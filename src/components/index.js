@@ -9,3 +9,4 @@ export { BurgerMenu } from './BurgerMenu';
 export { GoogleMaps } from './GoogleMaps';
 export { HeaderSearchDropdown } from './HeaderSearchDropdown';
 export { SearchMobile } from './SearchMobile';
+export { SliderMain } from './SliderMain';

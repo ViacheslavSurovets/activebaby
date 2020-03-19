@@ -10,11 +10,12 @@ const stylesDropdownSearch = css`
   background: ${ ( { theme } ) => theme.header.dropdownBackground };
   position: absolute;
   right: 0;
-  z-index: 1;
+  z-index: 2;
 `;
 
 export const DropdownSearch = styled.div`
   display: none;
+  
   ${ tablet },
   ${ mobile }{
     ${stylesDropdownSearch};

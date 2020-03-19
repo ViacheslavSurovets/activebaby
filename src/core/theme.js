@@ -43,5 +43,9 @@ export default {
       color: colors.blue,
       borderLeft: colors.pink
     },
+  },
+  main : {
+    popUpBackground : colors.black,
+    popUpColor : colors.white
   }
 };

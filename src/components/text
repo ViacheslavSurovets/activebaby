@@ -1,0 +1,159 @@
+import React, { useState } from 'react';
+import Swiper from 'react-id-swiper';
+import { Link } from 'react-router-dom';
+import styled, { keyframes, css } from 'styled-components';
+
+import adamex from '@assets/sliderMain/Adamex.jpg';
+import cristiano from '@assets/sliderMain/Cristiano.jpeg';
+import chantal from '@assets/sliderMain/Chantal.jpeg';
+
+
+const slideData = [
+  {
+    title: 'Adamex',
+    url: adamex,
+    popUp: {
+      info: 'info',
+      title: 'Title',
+      text: 'text',
+      button: 'button'
+    }
+  },
+  {
+    title: 'Cristiano',
+    url: cristiano,
+    popUp: {
+      info: 'ttt',
+      title: 'ageag',
+      text: 'text',
+      button: 'button'
+    }
+  },
+  {
+    title: 'Chantal',
+    url: chantal,
+    popUp: {
+      info: 'ttt',
+      title: 'ageag',
+      text: 'text',
+      button: 'button'
+    }
+  }
+];
+
+const Slide = styled ( Link )`
+  width: 100vw;
+  height: 50vw;
+  position: relative;
+  background-image: url(${ props => props.background }) ;
+  background-size:  100% 100%;
+  background-repeat: no-repeat;
+`;
+
+const keyframePopUp = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    transform: translateY(3rem);
+    opacity: 1;
+  }
+  15% {
+    opacity: 1;
+  }
+  25% {
+    transform: translateY(3rem);
+  }
+`;
+
+const PopUp = styled.div`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  min-width: 20rem;
+  min-height: 25rem;
+  background: ${ ( { theme } ) => theme.main.popUpBackground };
+  color: ${ ( { theme } ) => theme.main.popUpColor };
+  position: absolute;
+  right: 5%;
+  top:10%;
+  ${ getKeyframes };
+`;
+
+const animation = css`
+  animation: ${ keyframePopUp } 5s 1;
+`;
+
+const getKeyframes = props => {
+  if ( props.animate ) {
+    return animation;
+  }
+
+  return null;
+};
+
+const PopUpText = styled.span`
+  font-size: 3rem;
+`;
+
+const PopUpTitle = styled.span`
+  font-size: 5rem;
+`;
+
+const PopUpButton = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background:white;
+  color: black;
+  height: 4rem;
+  width: 50%;
+  font-size: 3rem;
+`;
+
+const SliderMain = () => {
+  const [ animation, setAnimation ] = useState ( false );
+
+  const swiperParams = {
+    ContainerEl: 'figure',
+    slidesPerView: 1,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev'
+    },
+    on: {
+
+      slideChange: () => {
+        setTimeout (
+          () => {
+            return setAnimation ( false );
+          }, 2000 );
+
+        setAnimation (true);
+        console.log(animation);
+      },
+
+},
+  autoplay: {
+    delay: 5000
+  }
+};
+
+  return (
+    <Swiper { ...swiperParams } >
+      { slideData.map ( ( item, idx ) =>
+        <Slide to={ '#' } key={ idx } background={ item.url }>
+          <PopUp animate={ animation ? 1 : 0 }>
+            <PopUpText>{ item.popUp.info }</PopUpText>
+            <PopUpTitle>{ item.popUp.title }</PopUpTitle>
+            <PopUpText>{ item.popUp.text } </PopUpText>
+            <PopUpButton>button</PopUpButton>
+          </PopUp>
+        </Slide>
+      ) }
+    </Swiper>
+  );
+};
+
+export default SliderMain;

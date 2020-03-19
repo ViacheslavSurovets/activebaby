@@ -1,11 +1,9 @@
 import React from 'react';
+import { SliderMain } from '@components';
 
 
 const Prams = () => (
-  <div>
-    <h1>Page</h1>
-  </div>
-
+  <SliderMain />
 );
 
 export default Prams;

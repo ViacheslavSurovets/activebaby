@@ -9,8 +9,12 @@ const Layout = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
+`;
+
+const MainContentWrapper = styled.main`
   height: 100%;
-  width: 100%;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
 `;
 
 const lazy = memoizeWith ( identity, ( path ) =>
@@ -138,13 +142,15 @@ const Root = () => {
       <Suspense fallback='loading'>
       </Suspense>
       <React.Suspense fallback="Root content suspense">
-        <Switch>
-          <Route exact path="/">
-            <Redirect to="/prams" />
-          </Route>
-          <Route path="/prams" component={ lazy ( 'Prams' ) } />
-          <Route path="/map" component={ lazy ( 'Map' ) } />
-        </Switch>
+        <MainContentWrapper>
+          <Switch>
+            <Route exact path="/">
+              <Redirect to="/prams" />
+            </Route>
+            <Route path="/prams" component={ lazy ( 'Prams' ) } />
+            <Route path="/map" component={ lazy ( 'Map' ) } />
+          </Switch>
+        </MainContentWrapper>
       </React.Suspense>
     </Layout>
   );

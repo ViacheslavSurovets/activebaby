@@ -20,7 +20,9 @@
     "react": "latest",
     "react-dom": "latest",
     "react-google-maps": "^9.4.5",
-    "react-router-dom": "^5.1.2"
+    "react-id-swiper": "^3.0.0",
+    "react-router-dom": "^5.1.2",
+    "swiper": "^5.3.6"
   },
   "browserslist": "> 0.25%, not dead",
   "author": "Surovets Viacheslav",

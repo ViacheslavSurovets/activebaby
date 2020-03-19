@@ -90,7 +90,7 @@ const BurgerMenuNav = styled.nav`
     opacity: 0;
     visibility: hidden;
     transition: .4s all .15s;
-    z-index: 1;
+    z-index: 2;
 `;
 
 const BurgerMenuLink = styled ( NavLink )`

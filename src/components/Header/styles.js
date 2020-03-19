@@ -158,8 +158,8 @@ export const DropdownGroupArticle = styled.div`
 
 
 export const ListItem = styled.li`
-
-  &:hover{
+  z-index: 2;
+      &:hover{
     ul{
       opacity: 1; 
       visibility: visible;
@@ -173,12 +173,11 @@ export const SearchItemDesktop = styled.div`
   justify-content: center;
   
   &:hover {
-  ${ searchMediaQueryLow }{
-  div div:nth-child(2){
-     display: flex;
+    ${ searchMediaQueryLow }{
+      div div:nth-child(2){
+      display: flex;
+      }
     }
-  }
-   
   }
 `;
 
