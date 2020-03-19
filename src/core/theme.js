@@ -17,23 +17,23 @@ export default {
   pink: colors.pink,
   white: colors.white,
   unit: baseUnit,
-  header:{
+  header: {
     shopCartBackground: colors.orangeSoft,
     searchColor: colors.blue,
     infoContainerBackground: colors.black,
     dropdownBackground: colors.white,
     borderBottomDropdownHover: colors.blue,
-    borderBottomDropdown:colors.darkGray,
+    borderBottomDropdown: colors.darkGray,
     color: colors.blue,
     linkColor: colors.darkGray,
-    bordersDropdown : colors.darkGray,
-    cartBackground :colors.white,
+    bordersDropdown: colors.darkGray,
+    cartBackground: colors.white,
     cartColor: colors.darkGray,
-    burgerMenuLineBackground : colors.white,
+    burgerMenuLineBackground: colors.white,
     burgerMenuNavBackground: colors.white,
     searchDropdownBorderBottom: colors.darkGray,
-    dropdownSearchBackground : colors.white,
-    searchWrapperBorder : colors.darkGray
+    dropdownSearchBackground: colors.white,
+    searchWrapperBorder: colors.darkGray
   },
   menu: {
     background: colors.white,
@@ -44,8 +44,16 @@ export default {
       borderLeft: colors.pink
     },
   },
-  main : {
-    popUpBackground : colors.black,
-    popUpColor : colors.white
+  main: {
+    sliderPopUp: {
+      popUpBackgroundMediaHuge: colors.black,
+      popUpColorMediaHuge: colors.white,
+      popUpBackgroundMediaLow: colors.white,
+      popUpColorMediaLow: colors.darkGray,
+      popUpButtonBackgroundMediaHuge: colors.white,
+      popUpButtonBackgroundMediaLow: colors.darkGray,
+      popUpButtonColorMediaHuge: colors.black,
+      popUpButtonColorMediaLow: colors.white
+    }
   }
 };
