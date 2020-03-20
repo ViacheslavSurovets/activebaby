@@ -48,7 +48,7 @@ const SliderMain = () => {
       prevEl: '.swiper-button-prev'
     },
     autoplay: {
-      delay: 1115000
+      delay: 5000
     }
   };
 
