@@ -1,9 +1,12 @@
 import React from 'react';
-import { SliderMain } from '@components';
+import { SliderMain, CardContainer } from '@components';
 
 
 const Prams = () => (
-  <SliderMain />
+  <>
+    <SliderMain />
+    <CardContainer />
+  </>
 );
 
 export default Prams;

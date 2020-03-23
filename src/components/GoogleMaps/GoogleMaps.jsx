@@ -4,6 +4,7 @@ import styled, { css } from 'styled-components';
 import { mobile } from '@utils/media';
 import { useTranslation } from 'react-i18next';
 
+
 const stylesInfoWindow = css`
   font-size: 2rem;
 `;
@@ -55,6 +56,7 @@ const ContainerElement = styled.div`
 
 const WrappedMap = withScriptjs ( withGoogleMap ( Map ) );
 const key = 'AIzaSyCg8Z60pVSnEIA2-Du5koKHPPtJsNTIKYg';
+
 const GoogleMaps = () => (
   <WrappedMap
     googleMapURL={ `https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${ key }` }

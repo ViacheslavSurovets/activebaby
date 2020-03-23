@@ -12,11 +12,11 @@ import Root from '@src/Root';
 
 render (
   <Router>
-    <ThemeProvider theme={ theme }>
-      <I18nextProvider i18n={ i18n }>
-        <Root />
-      </I18nextProvider>
-    </ThemeProvider>
+      <ThemeProvider theme={ theme }>
+        <I18nextProvider i18n={ i18n }>
+          <Root />
+        </I18nextProvider>
+      </ThemeProvider>
   </Router>
   ,
   document.getElementById ( 'root' )

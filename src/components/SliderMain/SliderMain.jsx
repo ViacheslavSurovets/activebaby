@@ -4,6 +4,7 @@ import { adamex, chantal, cristiano } from '@assets/sliderMain';
 import { PopUpButton, Slide, PopUpTitle, PopUpText, PopUp, Img } from './styles';
 
 
+
 const slideData = [
   {
     title: 'Adamex',
@@ -40,7 +41,7 @@ const slideData = [
 const SliderMain = () => {
 
   const swiperParams = {
-    ContainerEl: 'figure',
+    ContainerEl: 'section',
     slideActiveClass: 'js-slider-main',
     slidesPerView: 1,
     navigation: {
@@ -53,10 +54,10 @@ const SliderMain = () => {
   };
 
 
-  return (
-    <Swiper { ...swiperParams } >
-      { slideData.map ( ( item, idx ) =>
 
+  return (
+    <Swiper { ...swiperParams }  >
+      { slideData.map ( ( item, idx ) =>
         <Slide to={ '#' } key={ idx } background={ item.url }>
           <Img src={item.url} alt='image'/>
           <PopUp>

@@ -86,7 +86,8 @@ export const HeaderItem = styled.div`
 
 //-------------------------------- Header Nav Container White
 
-export const HeaderNavContainer = styled.div`
+export const HeaderNavWrapper = styled.div`
+
 `;
 
 export const HeaderNavLink = styled ( NavLink )`
@@ -104,7 +105,9 @@ export const DropdownLink = styled ( NavLink )`
 `;
 
 export const HeaderNav = styled.nav`
-display: none;
+  display: none;
+  width: 100%;
+  background-color: ${ ( { theme } ) => theme.header.headerNavBackground };
   ${ desktop }{
     display: flex;
     flex-wrap: wrap;

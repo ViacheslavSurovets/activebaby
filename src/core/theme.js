@@ -33,7 +33,8 @@ export default {
     burgerMenuNavBackground: colors.white,
     searchDropdownBorderBottom: colors.darkGray,
     dropdownSearchBackground: colors.white,
-    searchWrapperBorder: colors.darkGray
+    searchWrapperBorder: colors.darkGray,
+    headerNavBackground: colors.white
   },
   menu: {
     background: colors.white,
@@ -54,6 +55,11 @@ export default {
       popUpButtonBackgroundMediaLow: colors.darkGray,
       popUpButtonColorMediaHuge: colors.black,
       popUpButtonColorMediaLow: colors.white
+    },
+    linkCardHover:{
+      linkCardButtonBackground: colors.orangeSoft,
+      linkCardButtonColor: colors.white,
+      linkCardColor: colors.white
     }
   }
 };

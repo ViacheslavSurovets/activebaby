@@ -10,3 +10,7 @@ export { GoogleMaps } from './GoogleMaps';
 export { HeaderSearchDropdown } from './HeaderSearchDropdown';
 export { SearchMobile } from './SearchMobile';
 export { SliderMain } from './SliderMain';
+export { CardContainer } from './CardContainer';
+export { LinkCardHover } from './LinkCardHover';
+export { HeaderNavContainer } from './HeaderNavContainer';
+export { OnScrollHeader } from './OnScrollHeader';

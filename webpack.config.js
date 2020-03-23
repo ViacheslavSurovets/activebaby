@@ -103,7 +103,7 @@ module.exports = {
       '@assets': path.resolve ( __dirname, 'src/assets' ),
       '@media': path.resolve(__dirname, 'src/utils/media'),
       '@utils': path.resolve ( __dirname, 'src/utils' ),
-      '@stylesCommon' : path.resolve(__dirname, 'src/styles/commonStyles')
+      '@commonStyles' : path.resolve(__dirname, 'src/styles/commonStyles')
     }
   },
   optimization: optimization (),

@@ -1,18 +1,20 @@
-import React, { Suspense, useMemo } from 'react';
-import { useTranslation } from 'react-i18next';
+import React, { useRef, useState } from 'react';
 import { memoizeWith, identity } from 'ramda';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import styled from 'styled-components';
-import { Header } from '@components';
+import { Header, OnScrollHeader } from '@components';
+
+
 
 const Layout = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
+  height: 100%;
+  overflow: auto;
 `;
 
 const MainContentWrapper = styled.main`
-  height: 100%;
   margin-top: 3rem;
   margin-bottom: 3rem;
 `;
@@ -23,126 +25,29 @@ const lazy = memoizeWith ( identity, ( path ) =>
 
 
 const Root = () => {
-  const { t, i18n } = useTranslation ();
 
-  const headerCategory = useMemo ( () => ([
-    {
-      id: 'Прогулки',
-      listItems: [
-        {
-          text: t ( 'header.headerCategory.columnOne.strollers' ),
-          path: '#'
-        },
-        {
-          text: t ( 'header.headerCategory.columnOne.quatro' ),
-          path: '#'
-        },
-        {
-          text: t ( 'header.headerCategory.columnOne.lorelli' ),
-          path: '#'
-        },
-        {
-          text: t ( 'header.headerCategory.columnOne.carello' ),
-          path: '#'
-        },
-      ]
-    },
-    {
-      id: 'Модульные',
-      listItems: [
-        {
-          text: t ( 'header.headerCategory.columnTwo.modules' ),
-          path: '#'
-        },
-        {
-          text: t ( 'header.headerCategory.columnTwo.adamex' ),
-          path: '#'
-        },
-        {
-          text: t ( 'header.headerCategory.columnTwo.used' ),
-          path: '#'
-        }
-      ]
-    },
-    {
-      id: 'Автолюльки',
-      listItems: [
-        {
-          text: t ( 'header.headerCategory.columnThree.carSeats' ),
-          path: '#'
-        },
-        {
-          text: t ( 'header.headerCategory.columnThree.carlo' ),
-          path: '#'
-        },
-        {
-          text: t ( 'header.headerCategory.columnThree.adamex' ),
-          path: '#'
-        },
-        {
-          text: t ( 'header.headerCategory.columnThree.used' ),
-          path: '#'
-        },
-      ]
-    },
-    {
-      id: 'Аксесуары',
-      listItems: [
-        {
-          text: t ( 'header.headerCategory.columnFour.accessories' ),
-          path: '#'
-        },
-        {
-          text: t ( 'header.headerCategory.columnFour.adapters' ),
-          path: '#'
-        },
-        {
-          text: t ( 'header.headerCategory.columnFour.tires' ),
-          path: '#'
-        },
-        {
-          text: t ( 'header.headerCategory.columnFour.cameras' ),
-          path: '#'
-        }
-      ],
-    },
-    {
-      id: 'Постельное белье',
-      listItems: [
-        {
-          text: t ( 'header.headerCategory.columnFive.linens' ),
-          path: '#'
-        },
-        {
-          text: t ( 'header.headerCategory.columnFive.individualTailoring' ),
-          path: '#'
-        }
-      ]
-    }
-  ]), [ i18n.language ] );
-  const headerArticles = useMemo ( () => ([
-    {
-      text: t ( 'header.headerArticle.articleOne.title' ),
-      path: '#'
-    },
-    {
-      text: t ( 'header.headerArticle.articleTwo.title' ),
-      path: '#'
-    },
-    {
-      text: t ( 'header.headerArticle.articleThree.title' ),
-      path: '#'
-    }
+  const [ menuTopVisibility, setMenuTopVisibility ] = useState ( false );
 
-  ]), [ i18n.language ] );
+  const layout = useRef ( '' );
+  const handleScroll = async () => {
+    if ( layout.current.scrollTop >= 250 ) {
+      await setMenuTopVisibility ( true );
+      return console.log ( menuTopVisibility );
+    } else {
+      await setMenuTopVisibility ( false );
+      return console.log ( menuTopVisibility );
+    }
+  };
 
   return (
-    <Layout>
-      <Header headerCategory={ headerCategory } headerArticles={ headerArticles } />
-      <Suspense fallback='loading'>
-      </Suspense>
+    <Layout id='js-layout' ref={ layout } onScroll={ handleScroll }>
+      <Header />
+
       <React.Suspense fallback="Root content suspense">
         <MainContentWrapper>
+
+          <OnScrollHeader visible={ !!menuTopVisibility } />
+
           <Switch>
             <Route exact path="/">
               <Redirect to="/prams" />
