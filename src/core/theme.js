@@ -60,6 +60,9 @@ export default {
       linkCardButtonBackground: colors.orangeSoft,
       linkCardButtonColor: colors.white,
       linkCardColor: colors.white
+    },
+    sliderSmallCard:{
+      sliderSmallCardText: colors.darkGray
     }
   }
 };

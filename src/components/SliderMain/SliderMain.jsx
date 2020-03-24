@@ -3,8 +3,6 @@ import Swiper from 'react-id-swiper';
 import { adamex, chantal, cristiano } from '@assets/sliderMain';
 import { PopUpButton, Slide, PopUpTitle, PopUpText, PopUp, Img } from './styles';
 
-
-
 const slideData = [
   {
     title: 'Adamex',
@@ -52,8 +50,6 @@ const SliderMain = () => {
       delay: 5000
     }
   };
-
-
 
   return (
     <Swiper { ...swiperParams }  >

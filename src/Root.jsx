@@ -12,6 +12,7 @@ const Layout = styled.div`
   flex-direction: column;
   height: 100%;
   overflow: auto;
+  overflow-x: hidden;
 `;
 
 const MainContentWrapper = styled.main`
@@ -32,10 +33,9 @@ const Root = () => {
   const handleScroll = async () => {
     if ( layout.current.scrollTop >= 250 ) {
       await setMenuTopVisibility ( true );
-      return console.log ( menuTopVisibility );
+
     } else {
       await setMenuTopVisibility ( false );
-      return console.log ( menuTopVisibility );
     }
   };
 

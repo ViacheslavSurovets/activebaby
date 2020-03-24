@@ -14,9 +14,6 @@ export const LinkCard = styled ( Link )`
    ${ tablet }{
     width: 90vw;
     height: 80vw;
-    &:nth-child(2){
-      margin-top: 1rem;
-    }
   }
   ${ mobile }{
     width: 90vw;

@@ -6,7 +6,7 @@ import {
   HeaderNav,
   HeaderNavLink,
   List,
-  ListItem, LogoDesktopWrapper, SearchItemDesktop, HeaderNavWrapper
+  ListItem, LogoDesktopWrapper, SearchItemDesktop
 } from '@components/Header/styles';
 import { LogoDesktop } from '@components/Logo';
 import { SearchDesktop } from '@components/SearchDesktop';

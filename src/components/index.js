@@ -14,3 +14,5 @@ export { CardContainer } from './CardContainer';
 export { LinkCardHover } from './LinkCardHover';
 export { HeaderNavContainer } from './HeaderNavContainer';
 export { OnScrollHeader } from './OnScrollHeader';
+export { SliderSmall } from './SliderSmall';
+export { SliderSmallCard } from './SliderSmallCard';

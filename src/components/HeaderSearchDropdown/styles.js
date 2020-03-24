@@ -5,7 +5,7 @@ import { tablet, mobile } from '@media';
 const stylesDropdownSearch = css`
   justify-content: center;
   align-items: center;
-  width: 100vw;
+  width: 100%;
   height:7rem;
   background: ${ ( { theme } ) => theme.header.dropdownBackground };
   position: absolute;

@@ -4,7 +4,7 @@ import { Img, LinkCard, LinkCardButton, LinkCardContentWrapper, LinkCardTitle } 
 import ScrollAnimation from 'react-animate-on-scroll';
 
 const LinkCardHover = ( { background, title, url } ) => (
-  <ScrollAnimation animateIn='fadeIn' scrollableParentSelector='#js-layout'>
+  <ScrollAnimation className='js-linkCardHover'  animateIn='fadeIn' animateOnce={true} scrollableParentSelector='#js-layout'>
     <LinkCard to={ url } background={ background }>
       <Img src={ background } alt={ title } />
       <LinkCardContentWrapper>

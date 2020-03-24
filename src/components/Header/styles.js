@@ -108,6 +108,7 @@ export const HeaderNav = styled.nav`
   display: none;
   width: 100%;
   background-color: ${ ( { theme } ) => theme.header.headerNavBackground };
+  position: relative;
   ${ desktop }{
     display: flex;
     flex-wrap: wrap;

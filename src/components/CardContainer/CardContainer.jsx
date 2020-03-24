@@ -28,9 +28,15 @@ const CardWrapper = styled.section`
   position:relative;
   ${ tablet }{
     flex-direction: column;
+    .js-linkCardHover:nth-child(2){
+      margin-top: 1rem;
+    }
   }
   ${ mobile }{
     flex-direction: column;
+    .js-linkCardHover:nth-child(2){
+      margin-top: 1rem;
+    }
   }
 `;
 
