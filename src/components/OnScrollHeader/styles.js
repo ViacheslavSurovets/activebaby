@@ -8,11 +8,14 @@ import { desktop } from '@utils/media';
     height: inherit;
     color: inherit;
     transition: opacity 1s, visibility 1s;
+    nav {
+      position: absolute;
+    }
 `;
 
 const styleOnScrollHeaderWrapperUnvisible = css`
-  height: 1px;
-  width: 1px;
+  height: 0;
+  width: 0;
   opacity: 0;
   visibility: hidden;
 `;
