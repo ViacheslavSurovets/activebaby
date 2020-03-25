@@ -8,15 +8,15 @@ import './styles/index.css';
 import i18n from './core/i18n';
 import theme from './core/theme';
 
-import Root from '@src/Root';
+import Root from '@src/Root/Root';
 
 render (
   <Router>
-      <ThemeProvider theme={ theme }>
-        <I18nextProvider i18n={ i18n }>
-          <Root />
-        </I18nextProvider>
-      </ThemeProvider>
+    <ThemeProvider theme={ theme }>
+      <I18nextProvider i18n={ i18n }>
+        <Root />
+      </I18nextProvider>
+    </ThemeProvider>
   </Router>
   ,
   document.getElementById ( 'root' )

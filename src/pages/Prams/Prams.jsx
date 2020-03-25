@@ -1,12 +1,13 @@
 import React from 'react';
 import { SliderMain, CardContainer, SliderSmall } from '@components';
-import sliderSmallData from '@components/SliderSmall/data';
+import dataSliderSmall from '@components/SliderSmall/data';
+import dataMainSlider from '@components/SliderMain/dataSliderMain';
 
 const Prams = () => (
   <>
-    <SliderMain />
-    <CardContainer />
-    <SliderSmall items={ sliderSmallData () } />
+    <SliderMain items={ dataMainSlider () } />
+    <CardContainer  />
+    <SliderSmall items={ dataSliderSmall () } />
   </>
 );
 

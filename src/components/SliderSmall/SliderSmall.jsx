@@ -23,7 +23,7 @@ const SliderSmall = ( { items } ) => {
     ),
     []
   );
-console.log(window.innerWidth);
+
   return (
     <Swiper params={ params }>
       { items.map ( renderItem ) }

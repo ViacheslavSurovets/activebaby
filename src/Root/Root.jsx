@@ -1,24 +1,9 @@
 import React, { useRef, useState } from 'react';
 import { memoizeWith, identity } from 'ramda';
 import { Switch, Route, Redirect } from 'react-router-dom';
-import styled from 'styled-components';
+
 import { Header, OnScrollHeader } from '@components';
-
-
-
-const Layout = styled.div`
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  overflow: auto;
-  overflow-x: hidden;
-`;
-
-const MainContentWrapper = styled.main`
-  margin-top: 3rem;
-  margin-bottom: 3rem;
-`;
+import { Layout, MainContentWrapper } from './styles';
 
 const lazy = memoizeWith ( identity, ( path ) =>
   React.lazy ( () =>
