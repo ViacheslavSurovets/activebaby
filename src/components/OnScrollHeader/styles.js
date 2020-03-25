@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import { desktop } from '@utils/media';
 
- const styleOnScrollHeaderWrapperVisible = css`
+const styleOnScrollHeaderWrapperVisible = css`
     visibility: visible;
     opacity: 1;
     width: 100%;
@@ -21,7 +21,7 @@ const styleOnScrollHeaderWrapperUnvisible = css`
 `;
 
 export const getStylesScrollWrapper = ( props ) => {
-  if ( props.visible ){
+  if ( props.visible ) {
     return styleOnScrollHeaderWrapperVisible;
   } else {
     return styleOnScrollHeaderWrapperUnvisible;
@@ -29,12 +29,12 @@ export const getStylesScrollWrapper = ( props ) => {
 };
 
 export const OnScrollHeaderWrapper = styled.div`
-   ${desktop}{
+   ${ desktop }{
       z-index: 10;
       position: sticky;
       top:0;
-      background-color:#fff;
+      background-color: ${ ( { theme } ) => theme.main.onScrollHeader.onScrollHeaderWrapperBackground };
       
-      ${getStylesScrollWrapper};
+      ${ getStylesScrollWrapper };
    }
 `;

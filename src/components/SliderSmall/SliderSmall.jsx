@@ -1,6 +1,7 @@
 import React, { useCallback } from 'react';
 import Swiper from '../../core/swiper';
 import { SliderSmallCard } from '@components/SliderSmallCard';
+import { SliderWrapper } from '@commonStyles';
 import PropTypes from 'prop-types';
 
 const SliderSmall = ( { items } ) => {
@@ -18,16 +19,18 @@ const SliderSmall = ( { items } ) => {
   };
 
   const renderItem = useCallback (
-    ( { idx, url, title } ) => (
-      <SliderSmallCard url={ url } title={ title } key={ `slide_${ idx }` } />
+    ( { idx, ...rest } ) => (
+      <SliderSmallCard key={ `slide_${ idx }` } { ...rest } />
     ),
     []
   );
 
   return (
-    <Swiper params={ params }>
-      { items.map ( renderItem ) }
-    </Swiper>
+    <SliderWrapper>
+      <Swiper params={ params }>
+        { items.map ( renderItem ) }
+      </Swiper>
+    </SliderWrapper>
   );
 };
 

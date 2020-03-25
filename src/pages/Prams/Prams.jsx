@@ -8,6 +8,8 @@ const Prams = () => (
     <SliderMain items={ dataMainSlider () } />
     <CardContainer  />
     <SliderSmall items={ dataSliderSmall () } />
+    <SliderMain items={ dataMainSlider () } />
+    <SliderSmall items={ dataSliderSmall () } />
   </>
 );
 

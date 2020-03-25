@@ -63,6 +63,9 @@ export default {
     },
     sliderSmallCard:{
       sliderSmallCardText: colors.darkGray
+    },
+    onScrollHeader: {
+      onScrollHeaderWrapperBackground: colors.white
     }
   }
 };

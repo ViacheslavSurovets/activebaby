@@ -1,4 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+import { createGlobalStyle } from 'styled-components';
+
+export default createGlobalStyle`
+  @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 
 * {
     margin: 0;
@@ -43,3 +46,5 @@ body, html {
     transition: .4s all .15s;
 }
 
+
+`;

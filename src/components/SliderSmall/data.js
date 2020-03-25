@@ -5,7 +5,8 @@ export default ( content = 'Slide' ) => {
   const dataSliderMain = [
     {
       url:cristiano,
-      title: 'Cristiano'
+      title: 'Cristiano',
+
     },
     {
       url:chantal,
@@ -22,6 +23,7 @@ export default ( content = 'Slide' ) => {
     idx: idx + 1,
     content: `${ content } #${ idx + 1 }`,
     url : item.url,
-    title: item.title
+    title: item.title,
+    label : 'label'
   }) );
 };

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { flexCommon } from '@src/styles/commonStyles';
+import { flexCommon } from '@src/styles/commonStylesAndStyledComponents';
 import { mobile, tablet } from '@utils/media';
 
 export const LinkCard = styled ( Link )`
@@ -22,7 +22,7 @@ export const LinkCard = styled ( Link )`
 `;
 
 export const LinkCardTitle = styled.span`
-  font-size: 5rem;
+  font-size: 4rem;
   background:linear-gradient(currentColor, currentColor) 50% 100% no-repeat;
   background-size:0 1px;
   transform: translateY(1rem);

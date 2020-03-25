@@ -1,9 +1,9 @@
 import React, { useCallback } from 'react';
 import Swiper from '../../core/swiper';
 import { PopUpButton, Slide, PopUpTitle, PopUpText, PopUp, Img } from './styles';
+import { SliderWrapper } from '@commonStyles';
 
-
-const SliderMain = ({ items }) => {
+const SliderMain = ( { items } ) => {
 
   const params = {
     ContainerEl: 'section',
@@ -21,11 +21,11 @@ const SliderMain = ({ items }) => {
   const renderItem = useCallback (
     ( { idx, url, title, popUpData } ) => (
       <Slide to={ '#' } key={ idx } background={ url }>
-        <Img src={ url } alt={title} />
+        <Img src={ url } alt={ title } />
         <PopUp>
           <PopUpText>{ popUpData.info }</PopUpText>
           <PopUpTitle>{ popUpData.title }</PopUpTitle>
-          <PopUpText>{ popUpData.text} </PopUpText>
+          <PopUpText>{ popUpData.text } </PopUpText>
           <PopUpButton>button</PopUpButton>
         </PopUp>
       </Slide>
@@ -34,9 +34,11 @@ const SliderMain = ({ items }) => {
   );
 
   return (
-    <Swiper params={ params }>
-      { items.map ( renderItem )}
-    </Swiper>
+    <SliderWrapper>
+      <Swiper params={ params }>
+        { items.map ( renderItem ) }
+      </Swiper>
+    </SliderWrapper>
   );
 };
 
