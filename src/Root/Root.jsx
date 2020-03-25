@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react';
 import { memoizeWith, identity } from 'ramda';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
-import { Header, OnScrollHeader } from '@components';
+import { Header, OnScrollHeader, Footer } from '@components';
 import { Layout, MainContentWrapper } from './styles';
 
 const lazy = memoizeWith ( identity, ( path ) =>
@@ -42,6 +42,7 @@ const Root = () => {
           </Switch>
         </MainContentWrapper>
       </React.Suspense>
+      <Footer />
     </Layout>
   );
 };

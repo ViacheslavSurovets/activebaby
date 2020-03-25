@@ -16,6 +16,7 @@ export default {
   blue: colors.blue,
   pink: colors.pink,
   white: colors.white,
+  darkGray: colors.darkGray,
   unit: baseUnit,
   header: {
     shopCartBackground: colors.orangeSoft,
@@ -45,6 +46,10 @@ export default {
       borderLeft: colors.pink
     },
   },
+  customButton: {
+    customButtonColor: colors.darkGray,
+    customButtonBorderColor: colors.darkGray
+  },
   main: {
     sliderPopUp: {
       popUpBackgroundMediaHuge: colors.black,
@@ -62,7 +67,9 @@ export default {
       linkCardColor: colors.white
     },
     sliderSmallCard:{
-      sliderSmallCardText: colors.darkGray
+      sliderSmallCardText: colors.darkGray,
+      sliderSmallCardLabelBackground: colors.orangeSoft,
+      sliderSmallCardLabelTextColor: colors.white
     },
     onScrollHeader: {
       onScrollHeaderWrapperBackground: colors.white

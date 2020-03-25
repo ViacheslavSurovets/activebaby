@@ -16,3 +16,6 @@ export { HeaderNavContainer } from './HeaderNavContainer';
 export { OnScrollHeader } from './OnScrollHeader';
 export { SliderSmall } from './SliderSmall';
 export { SliderSmallCard } from './SliderSmallCard';
+export { VisitUsContainer } from './VisitUsContainer';
+export { CustomButton } from './CustomButton';
+export { Footer } from './Footer';

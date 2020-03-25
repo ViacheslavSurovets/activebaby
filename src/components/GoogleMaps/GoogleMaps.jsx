@@ -56,7 +56,7 @@ const ContainerElement = styled.div`
 
 const WrappedMap = withScriptjs ( withGoogleMap ( Map ) );
 const key = 'AIzaSyCg8Z60pVSnEIA2-Du5koKHPPtJsNTIKYg';
-
+console.log(process.env.GOOGLE_SECRET);
 const GoogleMaps = () => (
   <WrappedMap
     googleMapURL={ `https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${ key }` }

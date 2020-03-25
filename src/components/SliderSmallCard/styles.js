@@ -24,15 +24,15 @@ export const SliderSmallCardText = styled.span`
 `;
 
 export const SliderSmallLabel = styled.div`
-  ${flexCommon};
+  ${ flexCommon };
    position: absolute;
    top:0;
    right: 0; 
-   background:tomato; 
+   background: ${ ( { theme } ) => theme.main.sliderSmallCard.sliderSmallCardLabelBackground }; 
 `;
 
 export const SliderSmallLabelText = styled.span`
-  color: white;
+  color: ${ ( { theme } ) => theme.main.sliderSmallCard.sliderSmallCardLabelTextColor };
   font-size: 2vw;
   padding: .5vw 1vw;
 `;

@@ -6,6 +6,7 @@ const MiniCssExtractPlugin = require ( 'mini-css-extract-plugin' );
 const OptimizeCssAssetsPlugin = require ( 'optimize-css-assets-webpack-plugin' );
 const TerserWebpackPlugin = require ( 'terser-webpack-plugin' );
 const { BundleAnalyzerPlugin } = require ( 'webpack-bundle-analyzer' );
+const Dotenv = require('dotenv-webpack');
 
 
 const isDev = process.env.NODE_ENV === 'development';
@@ -70,6 +71,7 @@ const plugins = () => {
       }
     } ),
     new CleanWebpackPlugin (),
+    new Dotenv(),
     new MiniCssExtractPlugin ( {
       filename: filename ( '.css' )
     } )

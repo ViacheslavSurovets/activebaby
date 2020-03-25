@@ -1,7 +1,16 @@
 import React from 'react';
+import { Button } from './styles';
+import PropTypes from 'prop-types';
 
-const CustomButton = () => (
-  <h1>Custom Button</h1>
+const CustomButton = ( { children }, ...rest ) => (
+  <Button { ...rest }>
+    { children }
+  </Button>
 );
 
 export default CustomButton;
+
+CustomButton.propTypes = {
+  children: PropTypes.object
+};
+
