@@ -14,7 +14,7 @@ const styleBurgerMenuWrapper = css`
 export const BurgerMenuWrapper = styled.div`
   ${ desktop }{
     display:none;
-  }export 
+  }
   ${ tablet }{
    ${ styleBurgerMenuWrapper };
   }

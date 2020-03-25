@@ -1,30 +1,30 @@
 import React, { useMemo, useState } from 'react';
-import { useTranslation } from 'react-i18next';
 
+import { useTranslation } from 'react-i18next';
 import {
-  BurgerMenuWrapper,
-  BurgerMenuLabel,
-  BurgerMenuLine,
-  BurgerMenuLinesWrapper,
-  BurgerMenuLink,
+  BurgerMenuNav,
   InputCheckbox,
-  BurgerMenuNav
+  BurgerMenuLink,
+  BurgerMenuLinesWrapper,
+  BurgerMenuLine,
+  BurgerMenuLabel,
+  BurgerMenuWrapper
 } from './styles';
-import { burgerMenuLinksData } from '@components/BurgerMenu/data';
+import { burgerMenuLinksData } from './data';
 
 
 const BurgerMenu = () => {
   const [ checkBoxStatus, setCheckBoStatus ] = useState ( false );
   const { t, i18n } = useTranslation ();
-
   const burgerMenuLinks = useMemo ( () => (
-    burgerMenuLinksData.map((item,idx) => {
+
+    burgerMenuLinksData.map ( ( item, idx ) => {
       return {
         key: idx,
-        title: t(item.title),
+        title: t ( item.title ),
         path: item.path
       };
-    })
+    } )
 
   ), [ i18n.language ] );
   return (
@@ -38,7 +38,7 @@ const BurgerMenu = () => {
         <BurgerMenuLine />
       </BurgerMenuLinesWrapper>
 
-      <BurgerMenuLabel htmlFor='burger-menu-checkbox' onClick={ () => setCheckBoStatus ( !checkBoxStatus ) } >
+      <BurgerMenuLabel htmlFor='burger-menu-checkbox' onClick={ () => setCheckBoStatus ( !checkBoxStatus ) }>
         <span>{ t ( 'header.burgerMenuLabel.menu' ) }</span>
       </BurgerMenuLabel>
       <BurgerMenuNav>
