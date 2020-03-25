@@ -19,7 +19,7 @@ export const VisitUsImageContainer = styled ( Link )`
   width: 50vw;
   height: 30vw;
   &:hover {
-    filter: opacity(15%);
+    filter: opacity(75%);
   }
   ${mobile}{
     width: 100vw;

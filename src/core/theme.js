@@ -17,6 +17,7 @@ export default {
   pink: colors.pink,
   white: colors.white,
   darkGray: colors.darkGray,
+  black: colors.black,
   unit: baseUnit,
   header: {
     shopCartBackground: colors.orangeSoft,
@@ -74,5 +75,9 @@ export default {
     onScrollHeader: {
       onScrollHeaderWrapperBackground: colors.white
     }
+  },
+  footer: {
+    footerBackground: colors.black,
+    footerColor: colors.white
   }
 };

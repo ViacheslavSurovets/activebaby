@@ -19,3 +19,4 @@ export { SliderSmallCard } from './SliderSmallCard';
 export { VisitUsContainer } from './VisitUsContainer';
 export { CustomButton } from './CustomButton';
 export { Footer } from './Footer';
+export { CustomLinkLikeButton } from './CustomLinkLikeButton';

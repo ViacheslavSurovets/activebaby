@@ -9,6 +9,10 @@ const stylesButtonDefault = css`
   outline: none;
   width: 10rem;
   height: 5rem;
+  &:hover {
+    color: ${ ( { theme } ) => theme.colors.white };
+    background: ${ ( { theme } ) => theme.colors.black };
+  }
 `;
 
 

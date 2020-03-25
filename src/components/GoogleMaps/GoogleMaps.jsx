@@ -1,30 +1,14 @@
 import React, { useState } from 'react';
 import { GoogleMap, withScriptjs, withGoogleMap, Marker, InfoWindow } from 'react-google-maps';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { mobile } from '@utils/media';
 import { useTranslation } from 'react-i18next';
+import { InfoWindowTitleText, InfoWindowTitle } from './styles';
 
-
-const stylesInfoWindow = css`
-  font-size: 2rem;
-`;
-
-const InfoWindowTitle = styled.div`
-`;
-
-const InfoWindowTitleText = styled.span`
-  ${ stylesInfoWindow };
-  &:first-child {
-  color: ${ ( { theme } ) => theme.blue };
-  }
-  &:last-child{
-  color: ${ ( { theme } ) => theme.pink };
-  }
-`;
 
 const Map = () => {
   const [ infoWindow, setInfoWindow ] = useState ( false );
-  const { t, i18n } = useTranslation ();
+  const { t } = useTranslation ();
   return (
     <GoogleMap
       defaultZoom={ 15 }
@@ -37,7 +21,7 @@ const Map = () => {
             <InfoWindowTitleText>Active</InfoWindowTitleText>
             <InfoWindowTitleText>Baby</InfoWindowTitleText>
           </InfoWindowTitle>
-          <p>{t('googleMaps.tooltipInfo')}</p>
+          <p>{ t ( 'googleMaps.tooltipInfo' ) }</p>
         </>
       </InfoWindow> }
 
@@ -55,8 +39,7 @@ const ContainerElement = styled.div`
 `;
 
 const WrappedMap = withScriptjs ( withGoogleMap ( Map ) );
-const key = 'AIzaSyCg8Z60pVSnEIA2-Du5koKHPPtJsNTIKYg';
-console.log(process.env.GOOGLE_SECRET);
+const key = process.env.GOOGLE_SECRET;
 const GoogleMaps = () => (
   <WrappedMap
     googleMapURL={ `https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${ key }` }

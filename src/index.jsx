@@ -9,8 +9,6 @@ import i18n from './core/i18n';
 import theme from './core/theme';
 
 import Root from '@src/Root/Root';
-// import dotenv from 'dotenv';
-// dotenv.config();
 
 
 render (

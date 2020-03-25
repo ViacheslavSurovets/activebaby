@@ -1,21 +1,36 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
-const FooterContainer = styled.footer`
+export const FooterContainer = styled.footer`
   display: flex;
   flex-direction: column;
-  width: 90%;
-  background:#000;
+  background: ${ ( { theme } ) => theme.footer.footerBackground };
+  color: ${ ( { theme } ) => theme.footer.footerColor };
 `;
 
-const FooterContent = styled.div`
+export const FooterWrapper = styled.div`
+  width: 90%;
+  margin: 0 auto;
+`;
+
+export const FooterContent = styled.div`
   display: flex;
   justify-content: space-between;
 `;
 
-const FooterInfo = styled.div`
+export const FooterInfo = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
+`;
+
+export const SocialLinks = styled.figure`
+  display: flex;
+  width: 20rem;
+  justify-content: space-between;
+`;
+
+export const SocialsLinksWrapper = styled ( Link )`
 `;
 
 
