@@ -22,6 +22,11 @@ body, html {
     overflow: hidden;
 }
 
+*::selection {
+color: ${ ( { theme } ) => theme.blue };
+background-color: ${ ( { theme } ) => theme.black };
+}
+
 #root {
     height: 100%;
 }

@@ -24,6 +24,14 @@ export const commonStyleTitleText = css`
   font-size: 2.5rem;
 `;
 
+export const commonStyleTextTwoRem = css`
+  font-size: 2rem;
+`;
+
+export const commonStyleTextThreeRem = css`
+  font-size: 3rem;
+`;
+
 export const commonStyleText = css`
   ${commonFontColor};
   ${commonFontSize};

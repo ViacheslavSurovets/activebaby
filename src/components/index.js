@@ -20,3 +20,6 @@ export { VisitUsContainer } from './VisitUsContainer';
 export { CustomButton } from './CustomButton';
 export { Footer } from './Footer';
 export { CustomLinkLikeButton } from './CustomLinkLikeButton';
+export { CustomInput } from './CustomInput';
+export { CustomLabel } from './CustomLabel';
+export { CustomForm } from './CustomForm';

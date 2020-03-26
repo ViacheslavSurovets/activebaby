@@ -12,6 +12,7 @@ const stylesLinkLikeButtonDefault = css`
   text-decoration: none;
   width: 10rem;
   height: 5rem;
+  user-select: none;
   &:hover {
     background: ${ ( { theme } ) => theme.black };
     color: ${ ( { theme } ) => theme.white };

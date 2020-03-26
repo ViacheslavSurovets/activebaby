@@ -2,7 +2,7 @@ import React from 'react';
 import { Button } from './styles';
 import PropTypes from 'prop-types';
 
-const CustomButton = ( { children }, ...rest ) => (
+const CustomButton = ( { children , ...rest } ) => (
   <Button { ...rest }>
     { children }
   </Button>
@@ -11,6 +11,6 @@ const CustomButton = ( { children }, ...rest ) => (
 export default CustomButton;
 
 CustomButton.propTypes = {
-  children: PropTypes.object
+  children: PropTypes.string
 };
 

@@ -19,6 +19,7 @@ export default {
   darkGray: colors.darkGray,
   black: colors.black,
   unit: baseUnit,
+  orangeSoft: colors.orangeSoft,
   header: {
     shopCartBackground: colors.orangeSoft,
     searchColor: colors.blue,
@@ -78,6 +79,7 @@ export default {
   },
   footer: {
     footerBackground: colors.black,
-    footerColor: colors.white
+    footerColor: colors.white,
+    footerColorOnHover: colors.blue
   }
 };

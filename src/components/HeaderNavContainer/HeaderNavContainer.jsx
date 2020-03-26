@@ -18,7 +18,6 @@ const HeaderNavContainer = () => {
 
   const { t } = useTranslation ();
 
-
   return (
     <HeaderNav>
       <List>

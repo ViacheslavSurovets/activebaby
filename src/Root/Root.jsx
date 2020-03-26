@@ -16,7 +16,7 @@ const Root = () => {
 
   const layout = useRef ( '' );
   const handleScroll = async () => {
-    if ( layout.current.scrollTop >= 250 ) {
+    if ( layout.current.scrollTop >= 300 ) {
       await setMenuTopVisibility ( true );
 
     } else {
