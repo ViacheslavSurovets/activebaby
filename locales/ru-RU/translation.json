@@ -60,5 +60,10 @@
   },
   "googleMaps" : {
     "tooltipInfo" : "Магазин товаров для новорожденных"
+  },
+  "footer" : {
+    "subscribeInfoText" : "Подписывайтесь на наши акции",
+    "subscribeInputPlaceholder" : "Ваша почта ...",
+    "subscribeButton" : "Подписаться"
   }
 }

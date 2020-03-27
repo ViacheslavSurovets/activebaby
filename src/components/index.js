@@ -23,3 +23,4 @@ export { CustomLinkLikeButton } from './CustomLinkLikeButton';
 export { CustomInput } from './CustomInput';
 export { CustomLabel } from './CustomLabel';
 export { CustomForm } from './CustomForm';
+export { SuspenseComponent } from './SuspenseComponent';

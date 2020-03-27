@@ -1,8 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { memoizeWith, identity } from 'ramda';
 import { Switch, Route, Redirect } from 'react-router-dom';
-
-import { Header, OnScrollHeader, Footer } from '@components';
+import { Header, OnScrollHeader, Footer, SuspenseComponent } from '@components';
 import { Layout, MainContentWrapper } from './styles';
 
 const lazy = memoizeWith ( identity, ( path ) =>
@@ -28,7 +27,7 @@ const Root = () => {
     <Layout id='js-layout' ref={ layout } onScroll={ handleScroll }>
       <Header />
 
-      <React.Suspense fallback="Root content suspense">
+      <React.Suspense fallback={<SuspenseComponent size={10} />}>
         <MainContentWrapper>
 
           <OnScrollHeader visible={ !!menuTopVisibility } />
@@ -41,8 +40,8 @@ const Root = () => {
             <Route path="/map" component={ lazy ( 'Map' ) } />
           </Switch>
         </MainContentWrapper>
+        <Footer />
       </React.Suspense>
-      <Footer />
     </Layout>
   );
 };

@@ -60,15 +60,15 @@ const Footer = ( props ) => {
               </SocialLinksMediaTablet>
 
               <CustomForm marginBottom='1'>
-                <CustomFormTitle>Подписывайтесь на наши акции</CustomFormTitle>
+                <CustomFormTitle>{t('footer.subscribeInfoText')}</CustomFormTitle>
                 <InputWrapper>
-                  <CustomInput id='footer-form-input' inlineBlock big />
+                  <CustomInput id='footer-form-input' inlineBlock big placeholder={`${' '}` + t('footer.subscribeInputPlaceholder')} />
                   <CustomLabel htmlFor='footer-form-input' fontSize='1.3'>
                     EMAIL
                   </CustomLabel>
                 </InputWrapper>
 
-                <CustomButton orangeSoft block marginTop='1'>Subscribe</CustomButton>
+                <CustomButton orangeSoft block marginTop='1'>{t('footer.subscribeButton')}</CustomButton>
 
               </CustomForm>
             </FooterFormWrapper>

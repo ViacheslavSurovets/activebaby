@@ -36,5 +36,9 @@ export const Input = styled.input`
     transform: translateY(-120%);
     transition: all .5s;
   }
+  &::placeholder{
+    font-size: 1.8rem;
+    color: gray;
+  }
 `;
 
