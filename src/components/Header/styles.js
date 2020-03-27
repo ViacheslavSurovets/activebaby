@@ -18,7 +18,12 @@ export const styleLink = css`
 `;
 
 export const HeaderMainContainer = styled.header`
-  
+  ${tablet},
+  ${mobile}{
+  position: sticky;
+    top: 0;
+    z-index: 10;
+  }
 `;
 
 //-------------------------------- Header Info Container Black
