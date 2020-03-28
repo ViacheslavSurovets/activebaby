@@ -7,7 +7,7 @@ export const Label = styled.label`
   position: absolute;
   left: 0;
   top: 0;
-  transform: translateY(-100%);
+  transform: translateY(-110%);
   transition: 300ms ease all;
   margin-top: ${ props => props.marginTop }rem;
   margin-bottom: ${ props => props.marginBottom }rem;

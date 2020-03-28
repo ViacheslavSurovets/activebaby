@@ -11,6 +11,8 @@ export const Layout = styled.div`
 `;
 
 export const MainContentWrapper = styled.main`
+  display: flex;
+  flex-direction: column;
   margin-top: 3rem;
   margin-bottom: 3rem;
 `;

@@ -5,40 +5,43 @@ const styleInlineBlock = css`
   width: 100%;
 `;
 
-const getInlineBlock = (props) => {
-  if(props.inlineBlock){
+const getInlineBlock = ( props ) => {
+  if ( props.inlineBlock ) {
     return styleInlineBlock;
   }
   return;
 };
 
 const styleButtonSizeBig = css`
-  height: 3rem;
-  font-size: 2.5rem;
+  height: 4rem;
+  font-size: 3rem;
 `;
 
 const getButtonSize = ( props ) => {
-  if(props.big){
+  if ( props.big ) {
     return styleButtonSizeBig;
   }
   return;
 };
 
 
-
 export const Input = styled.input`
-  ${getInlineBlock};
-  ${getButtonSize};
+  ${ getInlineBlock };
+  ${ getButtonSize };
   outline: none;
-  border: none;
-  font-size: ${props => props.fontSize}rem;
+  font-size: 2rem;
+  border: .01rem solid ${ ( { theme } ) => theme.darkGray };
+  font-size: ${ props => props.fontSize }rem;
+  color: ${ ( { theme } ) => theme.input.inputColor };
+  text-indent: .5rem;
+  
   &:focus ~ label {
-    transform: translateY(-120%);
+    transform: translateY(-130%);
     transition: all .5s;
   }
   &::placeholder{
     font-size: 1.8rem;
-    color: gray;
+    color: ${ ( { theme } ) => theme.input.inputPlaceholder };
   }
 `;
 

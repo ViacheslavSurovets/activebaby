@@ -7,7 +7,8 @@ const colors = {
   opacityBlue: 'rgba(33, 168, 244, .2)',
   opacityPink: 'rgba(242, 4, 197, .2)',
   opacityGray: 'rgba(22, 22, 22, .2)',
-  orangeSoft: '#ff504f'
+  orangeSoft: '#ff504f',
+  gray: '#808080'
 };
 
 const baseUnit = 4;
@@ -27,7 +28,7 @@ export default {
     dropdownBackground: colors.white,
     borderBottomDropdownHover: colors.blue,
     borderBottomDropdown: colors.darkGray,
-    color: colors.blue,
+    colorOnHover: colors.blue,
     linkColor: colors.darkGray,
     bordersDropdown: colors.darkGray,
     cartBackground: colors.white,
@@ -77,9 +78,14 @@ export default {
       onScrollHeaderWrapperBackground: colors.white
     }
   },
+  input: {
+    inputColor:colors.blue,
+    inputPlaceholder: colors.gray
+  },
   footer: {
     footerBackground: colors.black,
     footerColor: colors.white,
-    footerColorOnHover: colors.blue
+    footerColorOnHover: colors.blue,
+
   }
 };

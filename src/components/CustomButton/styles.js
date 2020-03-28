@@ -58,4 +58,5 @@ export const Button = styled.button`
      margin-right: ${props=> props.marginRight}rem;
      margin-left: ${props=> props.marginLeft}rem;
      font-size: ${props => props.fontSize}rem;
+     cursor:pointer;
 `;

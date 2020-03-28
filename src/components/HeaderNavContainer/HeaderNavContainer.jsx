@@ -37,7 +37,6 @@ const HeaderNavContainer = () => {
       <LogoDesktopWrapper>
         <LogoDesktop />
       </LogoDesktopWrapper>
-
       <List>
         <ListItem><HeaderNavLink to="/">{ t ( 'header.links.payments' ) }</HeaderNavLink></ListItem>
         <ListItem><HeaderNavLink to="#">{ t ( 'header.links.articles' ) }</HeaderNavLink>

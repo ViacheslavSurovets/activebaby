@@ -1,13 +1,13 @@
 import React, { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { CustomInput, CustomLabel, CustomButton, CustomForm } from '@components';
+import { InputWrapper } from '@commonStyles';
 import {
   FooterContainer,
   FooterContent, FooterInfo,
   FooterWrapper,
   FooterContentItem,
   FooterNavLink,
-  InputWrapper,
   CustomFormTitle,
   FooterFormWrapper,
   SocialLinksMediaDesktop,
@@ -37,7 +37,7 @@ const Footer = ( props ) => {
       <FooterWrapper>
         <FooterContent>
 
-          {/* desctop */}
+          {/* desctop */ }
           <SocialLinksMediaDesktop>
             <SocialLinksComponent />
           </SocialLinksMediaDesktop>
@@ -54,21 +54,29 @@ const Footer = ( props ) => {
           <FooterContentItem>
             <FooterFormWrapper>
 
-              {/*tablet*/}
+              {/*tablet*/ }
               <SocialLinksMediaTablet>
                 <SocialLinksComponent />
               </SocialLinksMediaTablet>
 
               <CustomForm marginBottom='1'>
-                <CustomFormTitle>{t('footer.subscribeInfoText')}</CustomFormTitle>
+                <CustomFormTitle>{ t ( 'footer.subscribeInfoText' ) }</CustomFormTitle>
                 <InputWrapper>
-                  <CustomInput id='footer-form-input' inlineBlock big placeholder={`${' '}` + t('footer.subscribeInputPlaceholder')} />
+                  <CustomInput id='footer-form-input' inlineBlock big
+                               placeholder={ `${ ' ' }` + t ( 'footer.subscribeInputPlaceholder' ) } />
                   <CustomLabel htmlFor='footer-form-input' fontSize='1.3'>
                     EMAIL
                   </CustomLabel>
                 </InputWrapper>
 
-                <CustomButton orangeSoft block marginTop='1'>{t('footer.subscribeButton')}</CustomButton>
+                <CustomButton
+                  type='submit'
+                  orangeSoft
+                  block
+                  marginTop='1'
+                >
+                  { t ( 'footer.subscribeButton' ) }
+                </CustomButton>
 
               </CustomForm>
             </FooterFormWrapper>

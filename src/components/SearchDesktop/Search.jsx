@@ -37,7 +37,7 @@ const HeaderSearchContainer = styled.div`
       
       border-bottom: 1px solid ${ ( { theme } ) => theme.white };
       &:hover {
-      border-bottom: 1px solid ${ ( { theme } ) => theme.header.color };
+      border-bottom: 1px solid ${ ( { theme } ) => theme.header.colorOnHover };
     };
   }
   ${ desktop }{

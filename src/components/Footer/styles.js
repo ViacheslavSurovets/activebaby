@@ -45,7 +45,7 @@ export const SocialLinks = styled.figure`
 export const SocialsLinksWrapper = styled.a`
   &:hover {
     svg path {
-      fill: ${ ( { theme } ) => theme.header.color }
+      fill: ${ ( { theme } ) => theme.header.colorOnHover }
     }
   }
 `;
@@ -68,13 +68,6 @@ export const FooterNavLink = styled ( Link )`
     }
 `;
 
-export const InputWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  width: 100%;
-  position: relative;
-`;
 
 export const CustomFormTitle = styled.div`
   color: ${ ( { theme } ) => theme.white } !important;

@@ -15,7 +15,7 @@ const Root = () => {
 
   const layout = useRef ( '' );
   const handleScroll = async () => {
-    if ( layout.current.scrollTop >= 300 ) {
+    if ( layout.current.scrollTop >= 100 ) {
       await setMenuTopVisibility ( true );
 
     } else {
@@ -27,17 +27,18 @@ const Root = () => {
     <Layout id='js-layout' ref={ layout } onScroll={ handleScroll }>
       <Header />
 
-      <React.Suspense fallback={<SuspenseComponent size={10} />}>
+      <React.Suspense fallback={ <SuspenseComponent size={ 10 } /> }>
         <MainContentWrapper>
 
           <OnScrollHeader visible={ !!menuTopVisibility } />
 
           <Switch>
-            <Route exact path="/">
-              <Redirect to="/prams" />
+            <Route exact path='/'>
+              <Redirect to='prams' />
             </Route>
-            <Route path="/prams" component={ lazy ( 'Prams' ) } />
-            <Route path="/map" component={ lazy ( 'Map' ) } />
+            <Route path='/prams' component={ lazy ( 'Prams' ) } />
+            <Route path='/map' component={ lazy ( 'Map' ) } />
+            <Route path='/auth' component={ lazy ( 'Auth' ) } />
           </Switch>
         </MainContentWrapper>
         <Footer />

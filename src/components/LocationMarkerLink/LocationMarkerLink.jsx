@@ -14,7 +14,7 @@ const MapIconWrapper = styled.figure`
   
   &:hover {
     svg path {
-      fill: ${ ( { theme } ) => theme.header.color }
+      fill: ${ ( { theme } ) => theme.header.colorOnHover }
     }
   }
 `;

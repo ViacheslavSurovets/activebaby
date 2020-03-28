@@ -25,6 +25,6 @@ export const burgerMenuLinksData = [
   },
   {
     title: 'header.links.login',
-    path: '#'
+    path: '/auth'
   }
 ];

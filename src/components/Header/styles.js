@@ -12,7 +12,7 @@ export const styleLink = css`
   transition: all .3s ease;
   font-size: 1.8rem;
     &:hover{
-      color: ${ ( { theme } ) => theme.header.color };
+      color: ${ ( { theme } ) => theme.header.colorOnHover };
       transition: all .3s ease;
     }
 `;
@@ -68,7 +68,7 @@ export const styleHeaderItem = css`
   cursor: pointer;
   user-select: none;
     &:hover{
-      color:  ${ ( { theme } ) => theme.header.color };
+      color:  ${ ( { theme } ) => theme.header.colorOnHover };
     }
 `;
 
@@ -100,7 +100,7 @@ export const HeaderNavLink = styled ( NavLink )`
   border-bottom: 1px solid ${ ( { theme } ) => theme.white };
   height: 6rem;
   &:hover{
-    border-bottom: 1px solid ${ ( { theme } ) => theme.header.color };
+    border-bottom: 1px solid ${ ( { theme } ) => theme.header.colorOnHover };
   }
 `;
 

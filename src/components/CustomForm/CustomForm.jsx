@@ -11,5 +11,8 @@ const CustomForm = ( { children, ...rest } ) => (
 export default CustomForm;
 
 CustomForm.propTypes = {
-  children: PropTypes.array
+  children: PropTypes.oneOfType([
+    PropTypes.array,
+    PropTypes.object
+  ])
 };

@@ -20,7 +20,7 @@ export const SliderWrapper = styled.div`
 `;
 
 export const commonStyleTitleText = css`
-  ${commonFontColor};
+  ${ commonFontColor };
   font-size: 2.5rem;
 `;
 
@@ -32,8 +32,26 @@ export const commonStyleTextThreeRem = css`
   font-size: 3rem;
 `;
 
-export const commonStyleText = css`
-  ${commonFontColor};
-  ${commonFontSize};
+export const commonStyleTextFourRem = css`
+  font-size: 4rem;
 `;
 
+export const commonStyleText = css`
+  ${ commonFontColor };
+  ${ commonFontSize };
+`;
+
+export const InputWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  min-height: 8rem;
+  width: 100%;
+  position: relative;
+`;
+
+export const commonLinkStyle = css`
+  text-decoration: none;
+  text-underline: none;
+  font-size: 1.6rem;
+`;

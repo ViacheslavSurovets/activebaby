@@ -65,5 +65,21 @@
     "subscribeInfoText" : "Подписывайтесь на наши акции",
     "subscribeInputPlaceholder" : "Ваша почта ...",
     "subscribeButton" : "Подписаться"
+  },
+  "loginPage": {
+    "login": "Логин",
+    "email": "Email",
+    "password": "Пароль",
+    "loginTitle": "Индефикация пользователя",
+    "loginButton": "Логин",
+    "restorePasswordLink": "Забыли Ваш пароль?",
+    "loginQuestion": "Новый Пользователь?",
+    "registrationLink": "Регистрация",
+    "registrationTitle" : "Создание Аккаунта",
+    "registrationQuestion": "Уже Есть Аккаунт?",
+    "loginLink": "Логин",
+    "registrationButton" : "Регистрация",
+    "firstName": "Имя",
+    "lastName": "Фамилия"
   }
 }

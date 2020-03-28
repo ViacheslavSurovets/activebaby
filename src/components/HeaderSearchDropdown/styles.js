@@ -35,6 +35,9 @@ export const DropdownSearchWrapper = styled.div`
   border-bottom: 1px solid ${ ( { theme } ) => theme.header.searchDropdownBorderBottom };
   height: 90%;
   width: 50%;
+  ${mobile}{
+    width: 75%;
+  }
 `;
 
 const stylesDropdownInput = css`

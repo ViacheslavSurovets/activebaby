@@ -36,5 +36,5 @@ export const OnScrollHeaderWrapper = styled.div`
       background-color: ${ ( { theme } ) => theme.main.onScrollHeader.onScrollHeaderWrapperBackground };
       
       ${ getStylesScrollWrapper };
-   }
+   } 
 `;
