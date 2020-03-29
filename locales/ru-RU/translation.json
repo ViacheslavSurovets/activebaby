@@ -41,7 +41,6 @@
       }
     },
     "headerSearchPlaceholder": "Поиск",
-    "headerLoginLink" : "Логин",
     "headerCart" : {
       "cartIsEmpty" : "Ваша корзина пуста"
     },
@@ -52,7 +51,8 @@
       "payments" : "Оплата",
       "articles" : "Статьи",
       "map" : "Карта",
-      "login" : "Логин"
+      "login" : "Войти",
+      "logout": "Выйти"
     },
     "burgerMenuLabel": {
       "menu" : "Меню"
@@ -66,12 +66,13 @@
     "subscribeInputPlaceholder" : "Ваша почта ...",
     "subscribeButton" : "Подписаться"
   },
-  "loginPage": {
-    "login": "Логин",
+  "authPage": {
+    "login": "Войти",
     "email": "Email",
     "password": "Пароль",
     "loginTitle": "Индефикация пользователя",
     "loginButton": "Логин",
+    "confirmPassword": "Подтвердите пароль",
     "restorePasswordLink": "Забыли Ваш пароль?",
     "loginQuestion": "Новый Пользователь?",
     "registrationLink": "Регистрация",
@@ -80,6 +81,8 @@
     "loginLink": "Логин",
     "registrationButton" : "Регистрация",
     "firstName": "Имя",
-    "lastName": "Фамилия"
+    "lastName": "Фамилия",
+    "checkPasswords": "Пароли не совпадают",
+    "enterWithGoogle": "Войти из Google"
   }
 }

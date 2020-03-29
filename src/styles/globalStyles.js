@@ -22,6 +22,10 @@ body, html {
     overflow: hidden;
 }
 
+*{
+box-sizing: border-box;
+}
+
 *::selection {
 color: ${ ( { theme } ) => theme.blue };
 background-color: ${ ( { theme } ) => theme.black };

@@ -27,6 +27,8 @@ export const LoginContentWrapper = styled.div`
 
 export const LoginContainerButtonWrapper = styled.div`
   display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 `;
 
 export const LoginContainerTitle = styled.div`

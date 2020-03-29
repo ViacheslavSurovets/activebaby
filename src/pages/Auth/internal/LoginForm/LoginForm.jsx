@@ -1,8 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { InputWrapper } from '@commonStyles';
-import { CustomButton, CustomForm, CustomInput, CustomLabel } from '@components';
+import { CustomButton, CustomForm, CustomInput } from '@components';
 import {
   LoginContainerButtonWrapper,
   LoginContainerTitle,
@@ -12,37 +11,98 @@ import {
   LoginNewCustomerText,
   RestorePasswordLink
 } from '@pages/Auth/styles';
+
+import { signInWithGoogle, auth } from '@core/firebase';
+
 import PropTypes from 'prop-types';
 
 
-
 const LoginForm = ( props ) => {
+  const [ userCredentials, setUserCredentials ] = useState ( {
+    email: '',
+    password: ''
+  } );
+
   const { t, i18n } = useTranslation ();
   const { match } = props;
 
+  const { email, password } = userCredentials;
+
+  const handleSubmit = async ( event ) => {
+    event.preventDefault ();
+    try {
+      await auth.signInWithEmailAndPassword ( email, password );
+      setUserCredentials ( { email: '', password: '' } );
+    } catch ( error ) {
+      console.log ( error );
+    }
+  };
+
+  const handleChange = ( event ) => {
+    const { name, value } = event.target;
+    setUserCredentials ( { ...userCredentials, [ name ]: value } );
+
+  };
+
   return (
     <>
-      <LoginContainerTitle>{ t ( 'loginPage.loginTitle' ) }</LoginContainerTitle>
+      <LoginContainerTitle>{ t ( 'authPage.loginTitle' ) }</LoginContainerTitle>
       <LoginContentWrapper>
-        <CustomForm>
-          <InputWrapper>
-            <CustomInput type='email' inlineBlock big />
-            <CustomLabel>{ t ( 'loginPage.login' ) }</CustomLabel>
-          </InputWrapper>
-          <InputWrapper>
-            <RestorePasswordLink to={ '#' }>{ t ( 'loginPage.restorePasswordLink' ) }</RestorePasswordLink>
-            <CustomInput type='password' inlineBlock big />
-            <CustomLabel>{ t ( 'loginPage.password' ) }</CustomLabel>
-          </InputWrapper>
+        <CustomForm onSubmit={ handleSubmit }>
+          <CustomInput
+            type='email'
+            onChange={ handleChange }
+            inlineBlock
+            name='email'
+            value={ email }
+            autocomplete='on'
+            label={ t ( 'authPage.email' ) }
+            required
+            big
+          />
+
+          <CustomInput
+            type='password'
+            name='password'
+            value={ password }
+            onChange={ handleChange }
+            inlineBlock
+            autocomplete='current-password'
+            label={ t ( 'authPage.password' ) }
+            required
+            big
+          >
+            <RestorePasswordLink to={ '#' }>{ t ( 'authPage.restorePasswordLink' ) }</RestorePasswordLink>
+          </CustomInput>
+
+
           <LoginContainerButtonWrapper>
-            <CustomButton orangeSoft>{ t ( 'loginPage.loginButton' ) }</CustomButton>
+            <CustomButton
+              type='submit'
+              orangeSoft
+              marginTop={ .5 }
+              width={ '40%' }
+              mobile
+            >
+              { t ( 'authPage.loginButton' ) }
+            </CustomButton>
+
+            <CustomButton
+              onClick={ signInWithGoogle }
+              marginTop={ .5 }
+              width={ '40%' }
+              googleButton
+              mobile
+            >
+              { t ( 'authPage.enterWithGoogle' ) }
+            </CustomButton>
           </LoginContainerButtonWrapper>
         </CustomForm>
         <LoginNewCustomerContainer>
-          <LoginNewCustomerText>{ t ( 'loginPage.loginQuestion' ) }</LoginNewCustomerText>
+          <LoginNewCustomerText>{ t ( 'authPage.loginQuestion' ) }</LoginNewCustomerText>
           <LoginNewCustomerLink
             to={ `${ match.path }/registration` }
-          >{ t ( 'loginPage.registrationLink' ) }</LoginNewCustomerLink>
+          >{ t ( 'authPage.registrationLink' ) }</LoginNewCustomerLink>
         </LoginNewCustomerContainer>
       </LoginContentWrapper>
     </>
@@ -50,6 +110,7 @@ const LoginForm = ( props ) => {
 };
 
 export default LoginForm;
+
 
 LoginForm.propTypes = {
   match: PropTypes.object.isRequired

@@ -8,7 +8,8 @@ const colors = {
   opacityPink: 'rgba(242, 4, 197, .2)',
   opacityGray: 'rgba(22, 22, 22, .2)',
   orangeSoft: '#ff504f',
-  gray: '#808080'
+  gray: '#808080',
+  googleColor: '#4285f4'
 };
 
 const baseUnit = 4;
@@ -21,6 +22,7 @@ export default {
   black: colors.black,
   unit: baseUnit,
   orangeSoft: colors.orangeSoft,
+  googleButtonColor: colors.googleColor,
   header: {
     shopCartBackground: colors.orangeSoft,
     searchColor: colors.blue,

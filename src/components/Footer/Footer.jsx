@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { CustomInput, CustomLabel, CustomButton, CustomForm } from '@components';
-import { InputWrapper } from '@commonStyles';
+import { CustomInput, CustomButton, CustomForm } from '@components';
+import { SocialLinksComponent } from './internal';
 import {
   FooterContainer,
   FooterContent, FooterInfo,
@@ -15,7 +15,6 @@ import {
   FooterNavLinksMediaMobile
 } from './styles';
 import { burgerMenuLinksData } from './data';
-import { SocialLinksComponent } from './internal';
 
 
 const Footer = ( props ) => {
@@ -37,7 +36,7 @@ const Footer = ( props ) => {
       <FooterWrapper>
         <FooterContent>
 
-          {/* desctop */ }
+          {/* desktop */ }
           <SocialLinksMediaDesktop>
             <SocialLinksComponent />
           </SocialLinksMediaDesktop>
@@ -61,14 +60,12 @@ const Footer = ( props ) => {
 
               <CustomForm marginBottom='1'>
                 <CustomFormTitle>{ t ( 'footer.subscribeInfoText' ) }</CustomFormTitle>
-                <InputWrapper>
-                  <CustomInput id='footer-form-input' inlineBlock big
-                               placeholder={ `${ ' ' }` + t ( 'footer.subscribeInputPlaceholder' ) } />
-                  <CustomLabel htmlFor='footer-form-input' fontSize='1.3'>
-                    EMAIL
-                  </CustomLabel>
-                </InputWrapper>
-
+                <CustomInput
+                  inlineBlock
+                  big
+                  label='EMAIL'
+                  placeholder={ t ( 'footer.subscribeInputPlaceholder' ) }
+                />
                 <CustomButton
                   type='submit'
                   orangeSoft
