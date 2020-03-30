@@ -1,36 +1,44 @@
 import React from 'react';
 import { LoginIcon } from '@components';
-import styled from 'styled-components';
-import { desktop, tablet, mobile } from '@utils/media';
-
-import { styleHeaderItem } from '@components/Header/styles';
-
-const Wrapper = styled.div`
-  display: none;
-  ${desktop}{
-  ${ styleHeaderItem };
-  display: inherit;
-  justify-content: space-between;
-  width: 8rem;
-  margin-right: 2rem;
-  &:hover {
-    svg path {
-      fill: ${ ( { theme } ) => theme.header.color }
-    }
-  }
-  } 
-`;
-
-const LoginText = styled.span` 
-`;
-
-const LoginHeaderLink = () => (
-  <Wrapper>
-    <LoginIcon />
-    <LoginText>Логин</LoginText>
-  </Wrapper>
+import { LoginText, WrapperLink } from './styles';
+import { useTranslation } from 'react-i18next';
+import { connect } from 'react-redux';
+import { auth } from '@core/firebase';
+import PropTypes from 'prop-types';
 
 
-);
+const LoginHeaderLink = ( { currentUser } ) => {
+  const { t, i18n } = useTranslation ();
 
-export default LoginHeaderLink;
+  return (
+    <>
+      {
+        currentUser ?
+          (<WrapperLink as='div' onClick={ () => auth.signOut () }>
+            <LoginIcon />
+            <LoginText>{ t ( 'header.links.logout' ) }</LoginText>
+          </WrapperLink>)
+          :
+          (<WrapperLink to='/auth'>
+            <LoginIcon />
+            <LoginText>{ t ( 'header.links.login' ) }</LoginText>
+          </WrapperLink>)
+      }
+    </>
+  );
+};
+
+const mapStateToProps = ( { user: { currentUser } } ) => ({
+  currentUser
+});
+
+// const mapDispatchToProps = dispatch => ({
+//   signOut: dispatch(signOut());
+// });
+
+export default connect ( mapStateToProps ) ( LoginHeaderLink );
+
+LoginHeaderLink.propTypes = {
+  currentUser: PropTypes.oneOfType ( [ () => null, PropTypes.object ] )
+};
+

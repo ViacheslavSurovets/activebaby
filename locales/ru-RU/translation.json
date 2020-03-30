@@ -19,7 +19,7 @@
         "used" : "Б/У"
       },
       "columnFour" : {
-        "accessories" : "Аксусуары",
+        "accessories" : "Аксесуары",
         "adapters" : "Адаптеры",
         "tires" : "Покрышки",
         "cameras": "Камеры"
@@ -41,7 +41,6 @@
       }
     },
     "headerSearchPlaceholder": "Поиск",
-    "headerLoginLink" : "Логин",
     "headerCart" : {
       "cartIsEmpty" : "Ваша корзина пуста"
     },
@@ -52,7 +51,8 @@
       "payments" : "Оплата",
       "articles" : "Статьи",
       "map" : "Карта",
-      "login" : "Логин"
+      "login" : "Войти",
+      "logout": "Выйти"
     },
     "burgerMenuLabel": {
       "menu" : "Меню"
@@ -60,5 +60,29 @@
   },
   "googleMaps" : {
     "tooltipInfo" : "Магазин товаров для новорожденных"
+  },
+  "footer" : {
+    "subscribeInfoText" : "Подписывайтесь на наши акции",
+    "subscribeInputPlaceholder" : "Ваша почта ...",
+    "subscribeButton" : "Подписаться"
+  },
+  "authPage": {
+    "login": "Войти",
+    "email": "Email",
+    "password": "Пароль",
+    "loginTitle": "Индефикация пользователя",
+    "loginButton": "Логин",
+    "confirmPassword": "Подтвердите пароль",
+    "restorePasswordLink": "Забыли Ваш пароль?",
+    "loginQuestion": "Новый Пользователь?",
+    "registrationLink": "Регистрация",
+    "registrationTitle" : "Создание Аккаунта",
+    "registrationQuestion": "Уже Есть Аккаунт?",
+    "loginLink": "Логин",
+    "registrationButton" : "Регистрация",
+    "firstName": "Имя",
+    "lastName": "Фамилия",
+    "checkPasswords": "Пароли не совпадают",
+    "enterWithGoogle": "Войти из Google"
   }
 }

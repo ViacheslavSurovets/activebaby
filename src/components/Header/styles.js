@@ -12,13 +12,18 @@ export const styleLink = css`
   transition: all .3s ease;
   font-size: 1.8rem;
     &:hover{
-      color: ${ ( { theme } ) => theme.header.color };
+      color: ${ ( { theme } ) => theme.header.colorOnHover };
       transition: all .3s ease;
     }
 `;
 
 export const HeaderMainContainer = styled.header`
-  
+  ${tablet},
+  ${mobile}{
+  position: sticky;
+    top: 0;
+    z-index: 10;
+  }
 `;
 
 //-------------------------------- Header Info Container Black
@@ -63,7 +68,7 @@ export const styleHeaderItem = css`
   cursor: pointer;
   user-select: none;
     &:hover{
-      color:  ${ ( { theme } ) => theme.header.color };
+      color:  ${ ( { theme } ) => theme.header.colorOnHover };
     }
 `;
 
@@ -86,7 +91,8 @@ export const HeaderItem = styled.div`
 
 //-------------------------------- Header Nav Container White
 
-export const HeaderNavContainer = styled.div`
+export const HeaderNavWrapper = styled.div`
+
 `;
 
 export const HeaderNavLink = styled ( NavLink )`
@@ -94,7 +100,7 @@ export const HeaderNavLink = styled ( NavLink )`
   border-bottom: 1px solid ${ ( { theme } ) => theme.white };
   height: 6rem;
   &:hover{
-    border-bottom: 1px solid ${ ( { theme } ) => theme.header.color };
+    border-bottom: 1px solid ${ ( { theme } ) => theme.header.colorOnHover };
   }
 `;
 
@@ -104,7 +110,10 @@ export const DropdownLink = styled ( NavLink )`
 `;
 
 export const HeaderNav = styled.nav`
-display: none;
+  display: none;
+  width: 100%;
+  background-color: ${ ( { theme } ) => theme.header.headerNavBackground };
+  position: relative;
   ${ desktop }{
     display: flex;
     flex-wrap: wrap;

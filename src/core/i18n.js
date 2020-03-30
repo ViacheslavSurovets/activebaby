@@ -43,9 +43,9 @@ i18n
     ns: [ 'translations' ],
     defaultNS: [ 'translations' ],
     react: {
-      wait: true
+      wait: true,
+      useSuspense: false
     }
-
   }
   );
 

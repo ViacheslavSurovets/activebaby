@@ -22,7 +22,8 @@ module.exports = {
         "sourceType": "module"
     },
     "plugins": [
-        "react"
+        "react",
+        "react-hooks"
     ],
     "rules": {
         "semi": ["error", "always"],
@@ -31,6 +32,7 @@ module.exports = {
         "object-curly-spacing": ["error", "always"],
         "no-console": ["error", {allow: ["warn", "error"]}],
         "react/jsx-indent": [2, 2, {indentLogicalExpressions: true}],
-        "eol-last": ["error", "always"]
+        "eol-last": ["error", "always"],
+        "react-hooks/exhaustive-deps": "warn"
     }
 };

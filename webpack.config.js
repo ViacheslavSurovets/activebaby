@@ -6,6 +6,7 @@ const MiniCssExtractPlugin = require ( 'mini-css-extract-plugin' );
 const OptimizeCssAssetsPlugin = require ( 'optimize-css-assets-webpack-plugin' );
 const TerserWebpackPlugin = require ( 'terser-webpack-plugin' );
 const { BundleAnalyzerPlugin } = require ( 'webpack-bundle-analyzer' );
+const Dotenv = require('dotenv-webpack');
 
 
 const isDev = process.env.NODE_ENV === 'development';
@@ -70,6 +71,7 @@ const plugins = () => {
       }
     } ),
     new CleanWebpackPlugin (),
+    new Dotenv(),
     new MiniCssExtractPlugin ( {
       filename: filename ( '.css' )
     } )
@@ -103,7 +105,11 @@ module.exports = {
       '@assets': path.resolve ( __dirname, 'src/assets' ),
       '@media': path.resolve(__dirname, 'src/utils/media'),
       '@utils': path.resolve ( __dirname, 'src/utils' ),
-      '@stylesCommon' : path.resolve(__dirname, 'src/styles/commonStyles')
+      '@commonStyles' : path.resolve(__dirname, 'src/styles/commonStylesAndStyledComponents'),
+      '@swiper' : path.resolve(__dirname, 'src/core/swiper'),
+      '@icons' : path.resolve(__dirname, 'src/components/icons'),
+      '@core': path.resolve(__dirname, 'src/core'),
+      '@redux': path.resolve(__dirname, 'src/redux')
     }
   },
   optimization: optimization (),
@@ -145,7 +151,7 @@ module.exports = {
         }
       },
       {
-        test: /\.jsx$/,
+        test: /\.jsx?$/,
         exclude: /node_modules/,
         loader: {
           loader: 'babel-loader',
