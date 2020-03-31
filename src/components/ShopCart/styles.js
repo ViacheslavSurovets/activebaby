@@ -17,11 +17,11 @@ export const CartWrapper = styled.figure`
       span {
         color: ${ ( { theme } ) => theme.header.cartColor };
       }
-      div {
-       opacity: 1;
-       visibility: visible;
-       transition: .4s all .15s;
-      }
+      //div {
+      // opacity: 1;
+      // visibility: visible;
+      // transition: .4s all .15s;
+      //}
  }
 `;
 
@@ -36,23 +36,38 @@ export const Counter = styled.span`
   }
 `;
 
-export const ShopCartInfo = styled.div`
+// const styleCartDropdownTransition = css`
+//    opacity: 1;
+//    visibility: visible;
+//    transition: 5s all .15s;
+// `;
+
+// const getTransition = ( props ) => {
+//   if ( props.transition ) {
+//     return styleCartDropdownTransition;
+//   }
+//   return;
+// };
+
+export const ShopCartDropdown = styled.div`
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
   position: absolute;
   bottom: 0;
   right:0;
   transform: translateY(100%);
-  width: 25rem;
-  height: 10rem;
+  width: 30rem;
+  min-height: 20rem;
   font-size: 2rem;
+  cursor:initial;
   background: ${ ( { theme } ) => theme.header.cartBackground };
   border-bottom: 1px solid ${ ( { theme } ) => theme.header.bordersDropdown };
   border-left: 1px solid ${ ( { theme } ) => theme.header.bordersDropdown };
   color:${ ( { theme } ) => theme.header.linkColor };
-  opacity: 0;
-  visibility: hidden;
-  transition: .4s all .15s;
   z-index: 3;
+  //opacity: 0;
+  //visibility: hidden;
+  //transition: .4s all .15s;
 `;

@@ -97,5 +97,4 @@ export const BurgerMenuLink = styled ( NavLink )`
    align-items: center;
    height: 4rem;
    width: 100%;
-   
 `;

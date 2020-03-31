@@ -8,6 +8,7 @@ export const Layout = styled.div`
   overflow: auto;
   overflow-x: hidden;
   position: relative;
+  min-height: 50rem;
 `;
 
 export const MainContentWrapper = styled.main`

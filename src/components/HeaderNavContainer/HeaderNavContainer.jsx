@@ -21,8 +21,8 @@ const HeaderNavContainer = () => {
   return (
     <HeaderNav>
       <List>
-        <ListItem><HeaderNavLink to="/">{ t ( 'header.links.main' ) }</HeaderNavLink></ListItem>
-        <ListItem><HeaderNavLink to="#">{ t ( 'header.links.categories' ) }</HeaderNavLink>
+        <ListItem><HeaderNavLink to='/'>{ t ( 'header.links.main' ) }</HeaderNavLink></ListItem>
+        <ListItem><HeaderNavLink to='/shop'>{ t ( 'header.links.categories' ) }</HeaderNavLink>
           <Dropdown>
             <DropdownGroupWrapper>
 

@@ -1,0 +1,1 @@
+export { ShopCartDropdownComponent } from './ShopCartDropDown';

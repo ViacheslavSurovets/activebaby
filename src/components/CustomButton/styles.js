@@ -14,7 +14,7 @@ const styleButton = css`
   color: ${ ( { theme } ) => theme.customButton.customButtonColor };
   border: 1px solid ${ ( { theme } ) => theme.customButton.customButtonBorderColor };
   background-color: ${ ( { theme } ) => theme.white };
-&:hover {
+  &:hover {
     color: ${ ( { theme } ) => theme.white };
     background: ${ ( { theme } ) => theme.black };
   }
@@ -81,7 +81,7 @@ export const Button = styled.button`
     ${ stylesButtonDefault };
     ${ getStyleButtonDisplayBlock };
     ${ getStyleButton };
-    ${getMediaQuery};
+    ${ getMediaQuery };
      margin-top: ${ props => props.marginTop }rem;
      margin-bottom: ${ props => props.marginBottom }rem;
      margin-right: ${ props => props.marginRight }rem;
@@ -89,4 +89,5 @@ export const Button = styled.button`
      font-size: ${ props => props.fontSize }rem;
      width: ${ props => props.width };
      cursor:pointer;
+     user-select: none;
 `;

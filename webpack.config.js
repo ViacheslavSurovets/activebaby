@@ -109,7 +109,8 @@ module.exports = {
       '@swiper' : path.resolve(__dirname, 'src/core/swiper'),
       '@icons' : path.resolve(__dirname, 'src/components/icons'),
       '@core': path.resolve(__dirname, 'src/core'),
-      '@redux': path.resolve(__dirname, 'src/redux')
+      '@redux': path.resolve(__dirname, 'src/redux'),
+      '@data': path.resolve(__dirname, 'src/data')
     }
   },
   optimization: optimization (),

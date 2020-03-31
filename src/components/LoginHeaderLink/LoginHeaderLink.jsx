@@ -3,9 +3,11 @@ import { LoginIcon } from '@components';
 import { LoginText, WrapperLink } from './styles';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
 import { auth } from '@core/firebase';
 import PropTypes from 'prop-types';
 
+import { selectCurrentUser } from '@redux/user/user.selectors';
 
 const LoginHeaderLink = ( { currentUser } ) => {
   const { t, i18n } = useTranslation ();
@@ -28,8 +30,8 @@ const LoginHeaderLink = ( { currentUser } ) => {
   );
 };
 
-const mapStateToProps = ( { user: { currentUser } } ) => ({
-  currentUser
+const mapStateToProps = createStructuredSelector({
+  currentUser: selectCurrentUser
 });
 
 // const mapDispatchToProps = dispatch => ({

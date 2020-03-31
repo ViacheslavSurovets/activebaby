@@ -1,4 +1,6 @@
 import React, { useMemo, useState } from 'react';
+import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
 
 import { useTranslation } from 'react-i18next';
 import {
@@ -11,11 +13,12 @@ import {
   BurgerMenuWrapper
 } from './styles';
 import { burgerMenuLinksData } from './data';
+import { auth } from '@core/firebase';
+import { selectCurrentUser } from '@redux/user/user.selectors';
+import PropTypes from 'prop-types';
 
 
-
-
-const BurgerMenu = () => {
+const BurgerMenu = ( { currentUser } ) => {
   const [ checkBoxStatus, setCheckBoStatus ] = useState ( false );
   const { t, i18n } = useTranslation ();
   const burgerMenuLinks = useMemo ( () => (
@@ -23,12 +26,18 @@ const BurgerMenu = () => {
     burgerMenuLinksData.map ( ( item, idx ) => {
       return {
         key: idx,
-        title: t ( item.title ),
+        title: t ( (item.title) ),
         path: item.path
       };
     } )
 
-  ), [ i18n.language ] );
+  ), [ i18n ] );
+
+  const handleClick = async () => {
+    setCheckBoStatus ( false );
+    return await auth.signOut ();
+  };
+
   return (
     <BurgerMenuWrapper>
       <InputCheckbox type='checkbox' id='burger-menu-checkbox' checked={ checkBoxStatus } readOnly />
@@ -53,9 +62,32 @@ const BurgerMenu = () => {
             { item.title }
           </BurgerMenuLink>
         ) }
+        {
+          currentUser ?
+            (<BurgerMenuLink to='#' onClick={ handleClick }>
+              { t ( 'header.links.logout' ) }
+            </BurgerMenuLink>)
+            :
+            (<BurgerMenuLink
+              to='/auth'
+              onClick={ () => setCheckBoStatus ( false ) }
+            >
+              { t ( 'header.links.login' ) }
+            </BurgerMenuLink>)
+        }
       </BurgerMenuNav>
     </BurgerMenuWrapper>
   );
 };
 
-export default BurgerMenu;
+
+const mapStateToProps = createStructuredSelector({
+  currentUser: selectCurrentUser
+});
+
+
+export default connect ( mapStateToProps ) ( BurgerMenu );
+
+BurgerMenu.propTypes = {
+  currentUser: PropTypes.oneOfType ( [ () => null, PropTypes.object ] )
+};
