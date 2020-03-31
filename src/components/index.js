@@ -24,3 +24,6 @@ export { CustomInput } from './CustomInput';
 export { CustomLabel } from './CustomLabel';
 export { CustomForm } from './CustomForm';
 export { SuspenseComponent } from './SuspenseComponent';
+export { Collectionitem } from './CollectionItem';
+export { CollectionPreview } from './CollectionPreview';
+export { CollectionOverview } from './CollectionOverview';

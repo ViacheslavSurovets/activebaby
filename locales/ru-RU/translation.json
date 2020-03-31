@@ -84,5 +84,12 @@
     "lastName": "Фамилия",
     "checkPasswords": "Пароли не совпадают",
     "enterWithGoogle": "Войти из Google"
+  },
+  "categories": {
+    "prams": "Модульные Коляски",
+    "strollers": "Прогулочные Коляски",
+    "carSeats": "Автолюльки",
+    "accessories": "Аксессуары",
+    "linens": "Бельё"
   }
 }

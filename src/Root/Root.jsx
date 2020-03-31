@@ -34,7 +34,7 @@ const Root = ( { setCurrentUser } ) => {
 
       }
 
-      setCurrentUser(userAuth);
+      setCurrentUser ( userAuth );
 
     } );
   } );
@@ -63,9 +63,10 @@ const Root = ( { setCurrentUser } ) => {
             <Route exact path='/'>
               <Redirect to='prams' />
             </Route>
-            <Route path='/prams' component={ lazy ( 'Prams' ) } />
+            <Route path='/prams' component={ lazy ( 'Home' ) } />
             <Route path='/map' component={ lazy ( 'Map' ) } />
             <Route path='/auth' component={ lazy ( 'Auth' ) } />
+            <Route path='/shop' component={ lazy ( 'Shop' ) } />
           </Switch>
         </MainContentWrapper>
         <Footer />

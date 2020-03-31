@@ -1,27 +1,29 @@
-import React from 'react';
-import { useTranslation } from 'react-i18next';
+import React, { useState } from 'react';
+import { ShopCartIcon } from '@components';
+import { ShopCartDropdownComponent } from './internal';
+import { CartWrapper, Counter } from './styles';
+
 import PropTypes from 'prop-types';
 
-import { ShopCartIcon } from '@components';
-import {CartWrapper, Counter, ShopCartInfo} from './styles';
-
-
-
 const ShopCart = ( { count = 0 } ) => {
-  const { t, i18n } = useTranslation ();
+  const [ hidden, setHidden ] = useState ( true );
+
+
   return (
-    <CartWrapper>
+    <CartWrapper onClick={ () => setHidden ( !hidden ) }>
       <ShopCartIcon />
       <Counter>{ count }</Counter>
-      <ShopCartInfo>
-        <span>{ t ( 'header.headerCart.cartIsEmpty' ) }</span>
-      </ShopCartInfo>
+      {
+        !hidden && <ShopCartDropdownComponent transition />
+      }
     </CartWrapper>
   );
 };
 
+
 export default ShopCart;
 
 ShopCart.propTypes = {
-  count: PropTypes.number
+  count: PropTypes.number,
 };
+

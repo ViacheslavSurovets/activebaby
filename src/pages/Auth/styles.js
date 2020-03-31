@@ -6,9 +6,10 @@ import { mobile, tablet } from '@media';
 
 
 export const LoginContainer = styled.div`
-  ${ flexCommon };
+  display: flex;
+  align-items: center;
   flex-direction: column;
-  min-height: 80vh;
+  min-height: 65rem;
   width: 90%;
   margin: 0 auto;
 `;
