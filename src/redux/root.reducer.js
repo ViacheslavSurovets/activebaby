@@ -2,10 +2,14 @@ import { combineReducers } from 'redux';
 
 import userReducer from '@redux/user/user.reducer';
 import cartReducer from '@redux/cart/cart.reducer';
+import shopReducer from '@redux/shop/shop.reducer';
+import previewItemReducer from '@redux/previewItem/previewItem.reducer';
 
 export default combineReducers ( {
   user: userReducer,
-  cart: cartReducer
+  cart: cartReducer,
+  shop: shopReducer,
+  previewItem: previewItemReducer
 } );
 
 

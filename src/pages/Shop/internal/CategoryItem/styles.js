@@ -1,6 +1,5 @@
 import styled, { css } from 'styled-components';
-import { desktop, tablet, mobile } from '@media';
-import { flexCommon, commonStyleTextThreeRem, commonStyleTextFourRem } from '@commonStyles';
+import { tablet, mobile } from '@media';
 
 
 const styleCategoryItemBig = css`

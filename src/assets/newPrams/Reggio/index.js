@@ -22,9 +22,9 @@ import reggio21 from './reggio21.jpeg';
 import reggio22 from './reggio22.jpeg';
 import reggio23 from './reggio23.jpeg';
 import reggio24 from './reggio24.jpeg';
-import reggio125 from './reggio25.jpeg';
-import reggio126 from './reggio26.jpeg';
-import reggio127 from './reggio27.jpeg';
+import reggio25 from './reggio25.jpeg';
+import reggio26 from './reggio26.jpeg';
+import reggio27 from './reggio27.jpeg';
 import reggio28 from './reggio28.jpeg';
 
 export {
@@ -53,9 +53,9 @@ export {
   reggio23,
   reggio24,
   reggio28,
-  reggio125,
-  reggio126,
-  reggio127
+  reggio25,
+  reggio26,
+  reggio27
 };
 
 

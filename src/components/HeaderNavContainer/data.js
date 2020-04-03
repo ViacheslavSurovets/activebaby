@@ -5,7 +5,7 @@ export const headerCategoryData = [
     listItems: [
       {
         text: 'header.headerCategory.columnOne.strollers',
-        path: '/shop/strollers'
+        path: '/shop/new-strollers'
       },
       {
         text: 'header.headerCategory.columnOne.quatro',
@@ -26,7 +26,7 @@ export const headerCategoryData = [
     listItems: [
       {
         text: 'header.headerCategory.columnTwo.modules',
-        path: '/shop/prams'
+        path: '/shop/new-prams'
       },
       {
         text: 'header.headerCategory.columnTwo.adamex',
@@ -43,7 +43,7 @@ export const headerCategoryData = [
     listItems: [
       {
         text: 'header.headerCategory.columnThree.carSeats',
-        path: '/shop/car-seats'
+        path: '/shop/new-car-seats'
       },
       {
         text: 'header.headerCategory.columnThree.carlo',
@@ -64,19 +64,19 @@ export const headerCategoryData = [
     listItems: [
       {
         text: 'header.headerCategory.columnFour.accessories',
-        path: 'accessories'
+        path: '/shop/accessories'
       },
       {
         text: 'header.headerCategory.columnFour.adapters',
-        path: '#'
+        path: '/shop/accessories'
       },
       {
         text: 'header.headerCategory.columnFour.tires',
-        path: '#'
+        path: '/shop/accessories'
       },
       {
         text: 'header.headerCategory.columnFour.cameras',
-        path: '#'
+        path: '/shop/accessories'
       }
     ],
   },

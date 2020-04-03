@@ -14,9 +14,32 @@ const isProd = !isDev;
 
 const optimization = () => {
   const config = {
+    runtimeChunk: {
+      name: 'manifest',
+    },
     splitChunks: {
-      chunks: 'all'
-    }
+      chunks: 'all',
+      minSize: 30000,
+      minChunks: 1,
+      maxAsyncRequests: 5,
+      maxInitialRequests: 10,
+      automaticNameDelimiter: '~',
+      name: true,
+      cacheGroups: {
+        vendors: {
+          test: /[\\/]node_modules[\\/]/,
+          priority: -10,
+        },
+        react: {
+          test: /react\/|react-dom\//,
+        },
+        default: {
+          minChunks: 2,
+          priority: -20,
+          reuseExistingChunk: true,
+        },
+      },
+    },
   };
   if ( isProd ) {
     config.minimizer = [
@@ -93,8 +116,10 @@ module.exports = {
   mode: 'development',
   entry: [ '@babel/polyfill', './index.jsx' ],
   output: {
+    publicPath: '/',
     path: path.resolve ( __dirname, 'dist' ),
-    filename: filename ( '.js' )
+    filename: filename ( '.js' ),
+    chunkFilename: isProd ? 'immutable/[contenthash].js' : '[name].js',
   },
   resolve: {
     extensions: [ '.js', '.jsx', '.json' ],

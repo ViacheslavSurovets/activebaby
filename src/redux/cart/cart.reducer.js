@@ -1,15 +1,15 @@
 import CartActionTypes from '@redux/cart/cart.types';
 
 const INITIAL_STATE = {
-  hidden: true
+ cartItems: []
 };
 
-const cartReducer = (state=INITIAL_STATE, actions)=>{
-  switch (actions.type ) {
-    case CartActionTypes.TOGGLE_CART_HIDDEN:
-      return {
+const cartReducer = (state=INITIAL_STATE, action)=>{
+  switch (action.type ) {
+    case CartActionTypes.ADD_ITEM:
+      return{
         ...state,
-        hidden: !state.hidden
+        cartItems: [...state.cartItems, action.payload]
       };
     default:
       return state;

@@ -91,5 +91,35 @@
     "carSeats": "Автолюльки",
     "accessories": "Аксессуары",
     "linens": "Бельё"
+  },
+  "shopData": {
+    "titles": {
+      "newPrams": "Новые Коляски",
+      "newStrollers": "Новые Прогулки",
+      "newCarSeats": "Новые Автолюльки",
+      "accessories" : "Аксессуары",
+      "linens": "Текстиль"
+    },
+    "accessories": {
+      "adaptersTitle": {
+        "adaptersKite": "Адаптеры Kite",
+        "adaptersCarlo": "Адаптеры Carlo",
+        "adaptersGalactic": "Адаптеры Galactic",
+        "adaptesGussio": "Адаптеры Gussio"
+      },
+      "camerasAndTires": {
+        "title": "Камеры и покрышки",
+        "tires": "Покрышки",
+        "cameras": "Камеры"
+      },
+      "mechanisms": {
+        "title" : "Механизмы",
+        "mechanism": "Механизм"
+      }
+    }
+  },
+  "shopItem": {
+    "price": "Цена",
+    "toCart": "В корзину"
   }
 }

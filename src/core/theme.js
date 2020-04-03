@@ -22,6 +22,7 @@ export default {
   black: colors.black,
   unit: baseUnit,
   orangeSoft: colors.orangeSoft,
+  gray: colors.gray,
   googleButtonColor: colors.googleColor,
   header: {
     shopCartBackground: colors.orangeSoft,

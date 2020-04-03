@@ -61,9 +61,9 @@ const Root = ( { setCurrentUser } ) => {
 
           <Switch>
             <Route exact path='/'>
-              <Redirect to='prams' />
+              <Redirect to='home' />
             </Route>
-            <Route path='/prams' component={ lazy ( 'Home' ) } />
+            <Route path='/home' component={ lazy ( 'Home' ) } />
             <Route path='/map' component={ lazy ( 'Map' ) } />
             <Route path='/auth' component={ lazy ( 'Auth' ) } />
             <Route path='/shop' component={ lazy ( 'Shop' ) } />

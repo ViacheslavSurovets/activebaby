@@ -11,6 +11,6 @@ const CustomButton = ( { children , ...rest } ) => (
 export default CustomButton;
 
 CustomButton.propTypes = {
-  children: PropTypes.string
+  children: PropTypes.any
 };
 

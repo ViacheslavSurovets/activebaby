@@ -14,6 +14,7 @@ html {
 
 body {
     font-size: 1.6rem;
+    position: relative;
 }
 
 body, html {

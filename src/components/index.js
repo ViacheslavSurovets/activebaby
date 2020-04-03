@@ -1,6 +1,6 @@
 export { LogoDesktop, LogoTablet } from './Logo';
 export { Header } from './Header';
-export { SearchIcon, ShopCartIcon, LoginIcon, LocationMarkerIcon } from './icons';
+export { SearchIcon, ShopCartIcon, LoginIcon, LocationMarkerIcon, CloseIcon, VkIcon, InstagramIcon } from './icons';
 export { SearchDesktop } from './SearchDesktop';
 export { ShopCart } from './ShopCart';
 export { LoginHeaderLink } from './LoginHeaderLink';
@@ -25,5 +25,6 @@ export { CustomLabel } from './CustomLabel';
 export { CustomForm } from './CustomForm';
 export { SuspenseComponent } from './SuspenseComponent';
 export { Collectionitem } from './CollectionItem';
-export { CollectionPreview } from './CollectionPreview';
-export { CollectionOverview } from './CollectionOverview';
+export { CollectionPreviewItem } from './CollectionPreviewItem';
+export { CollectionOverviewItem } from './CollectionOverviewItem';
+export { Portal } from './Portal';
