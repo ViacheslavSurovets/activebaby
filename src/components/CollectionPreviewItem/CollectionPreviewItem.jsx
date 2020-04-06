@@ -24,9 +24,10 @@ import PropTypes from 'prop-types';
 import { createStructuredSelector } from 'reselect';
 import { closePortalPreviewItem } from '@redux/previewItem/previewItem.actions';
 import { selectPreviewItemData, selectPreviewItemInfo } from '@redux/previewItem/previewItem.selectors';
+import { addItem } from '@redux/cart/cart.actions';
 
 
-const CollectionPreviewItem = ( { item, info, closePortalPreviewItem } ) => {
+const CollectionPreviewItem = ( { item, info, closePortalPreviewItem, addItem } ) => {
 
   // const removeElem = async () => {
   //   let a = await document.getElementById ( 'portal' );
@@ -59,7 +60,7 @@ const CollectionPreviewItem = ( { item, info, closePortalPreviewItem } ) => {
           </CategoryItemText>
         </CategoryItemTextWrapper>
         <PreviewItemCustomButtonWrapper>
-          <CustomButton orangeSoft width={ '100%' } height={ '5rem' }>
+          <CustomButton onClick={()=>addItem(item)} orangeSoft width={ '100%' } height={ '5rem' }>
             <CustomButtonText>{ t ( 'shopItem.toCart' ) }</CustomButtonText>
             <ShopCartIcon />
           </CustomButton>
@@ -72,12 +73,14 @@ const CollectionPreviewItem = ( { item, info, closePortalPreviewItem } ) => {
 
 const mapStateToProps = createStructuredSelector({
   item: selectPreviewItemData,
-  info: selectPreviewItemInfo
+  info: selectPreviewItemInfo,
+
 });
 
 
 const mapDispatchToProps = dispatch => ({
-  closePortalPreviewItem: () => dispatch ( closePortalPreviewItem () )
+  closePortalPreviewItem: () => dispatch ( closePortalPreviewItem () ),
+  addItem: item => dispatch ( addItem ( item ) ),
 });
 
 export default connect ( mapStateToProps, mapDispatchToProps ) ( CollectionPreviewItem );
@@ -85,5 +88,6 @@ export default connect ( mapStateToProps, mapDispatchToProps ) ( CollectionPrevi
 CollectionPreviewItem.propTypes = {
   item: PropTypes.object,
   info: PropTypes.string,
-  closePortalPreviewItem: PropTypes.func
+  closePortalPreviewItem: PropTypes.func,
+  addItem: PropTypes.func
 };

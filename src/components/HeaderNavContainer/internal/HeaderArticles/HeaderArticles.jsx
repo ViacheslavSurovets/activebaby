@@ -1,7 +1,10 @@
 import React, { useMemo } from 'react';
+import { connect } from 'react-redux';
 import { useTranslation } from 'react-i18next';
+import { selectHeaderArticlesData } from '@redux/header/header.selectors';
 import { DropdownGroupArticle, DropdownLink, ListItem } from '@components/Header/styles';
 import Proptypes from 'prop-types';
+import { createStructuredSelector } from 'reselect';
 
 const HeaderArticles = ( { headerArticlesData } ) => {
   const { t, i18n } = useTranslation ();
@@ -29,7 +32,12 @@ const HeaderArticles = ( { headerArticlesData } ) => {
   );
 };
 
-export default HeaderArticles;
+
+const mapStateToProps = createStructuredSelector ( {
+  headerArticlesData: selectHeaderArticlesData
+} );
+
+export default connect ( mapStateToProps ) ( HeaderArticles );
 
 HeaderArticles.propTypes = {
   headerArticlesData: Proptypes.array.isRequired

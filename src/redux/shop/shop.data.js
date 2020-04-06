@@ -1,3 +1,5 @@
+import { v4 as uuidv4 } from 'uuid';
+
 import * as cnl from '@assets/newPrams/Chantal';
 import * as crno from '@assets/newPrams/Cristiano';
 import * as nxt from '@assets/newPrams/Neonex';
@@ -31,7 +33,7 @@ const priceKite = '180';
 const priceCarlo = '150';
 const priceAdapterKite = '40';
 const priceAdapterCarlo = '35';
-const priceAdapterGussio ='30';
+const priceAdapterGussio = '30';
 const priceAdapterGalactic = '25';
 const priceCameras = '10';
 const priceTires = '10';
@@ -39,8 +41,8 @@ const priceMechanism = '50';
 const priceLinens = '170';
 
 
-const SHOP_DATA = [
-  {
+const SHOP_DATA = {
+  newPrams: {
     id: 'new-prams',
     title: 'shopData.titles.newPrams',
     routeName: 'new-prams',
@@ -50,79 +52,94 @@ const SHOP_DATA = [
         info: 'good pram',
         types: [
           {
+            id: uuidv4 (),
             title: 'Chantal',
             price: priceChantal,
-            images: [cnl.chantal1]
+            images: [ cnl.chantal1 ]
           },
           {
+            id: uuidv4 (),
             title: 'Chantal',
             price: priceChantal,
-            images: [cnl.chantal2]
+            images: [ cnl.chantal2 ]
           },
           {
+            id: uuidv4 (),
             title: 'Chantal',
             price: priceChantal,
-            images: [cnl.chantal3]
+            images: [ cnl.chantal3 ]
           },
           {
+            id: uuidv4 (),
             title: 'Chantal Sp.Ed.',
             price: priceChantalSpEdition,
-            images: [cnl.chantal4]
+            images: [ cnl.chantal4 ]
           },
           {
+            id: uuidv4 (),
             title: 'Chantal',
             price: priceChantal,
-            images: [cnl.chantal5]
+            images: [ cnl.chantal5 ]
           },
           {
+            id: uuidv4 (),
             title: 'Chantal Sp.Ed.',
             price: priceChantalSpEdition,
-            images: [cnl.chantal6]
+            images: [ cnl.chantal6 ]
           },
           {
+            id: uuidv4 (),
             title: 'Chantal',
             price: priceChantal,
-            images: [cnl.chantal7]
+            images: [ cnl.chantal7 ]
           },
           {
+            id: uuidv4 (),
             title: 'Chantal Sp.Ed.',
             price: priceChantalSpEdition,
-            images: [cnl.chantal8]
+            images: [ cnl.chantal8 ]
           },
           {
+            id: uuidv4 (),
             title: 'Chantal',
             price: priceChantal,
-            images: [cnl.chantal9]
+            images: [ cnl.chantal9 ]
           },
           {
+            id: uuidv4 (),
             title: 'Chantal',
             price: priceChantal,
-            images: [cnl.chantal10]
+            images: [ cnl.chantal10 ]
           },
           {
+            id: uuidv4 (),
             title: 'Chantal',
             price: priceChantal,
-            images: [cnl.chantal11]
+            images: [ cnl.chantal11 ]
           },
           {
+            id: uuidv4 (),
             title: 'Chantal',
             price: priceChantal,
-            images: [cnl.chantal12]
+            images: [ cnl.chantal12 ]
           },
           {
+            id: uuidv4 (),
             title: 'Chantal',
             price: priceChantal,
-            images: [cnl.chantal13]
+            images: [ cnl.chantal13 ]
           },
           {
+            id: uuidv4 (),
             title: 'Chantal',
             price: priceChantal,
-            images: [cnl.chantal14]
+            images: [ cnl.chantal14 ]
           },
           {
+            id: uuidv4 (),
             title: 'Chantal Sp.Ed.',
             price: priceChantalSpEdition,
-            images: [cnl.chantal15]
+            images: [ cnl.chantal15 ]
           },
         ]
       },
@@ -133,77 +150,77 @@ const SHOP_DATA = [
           {
             title: 'Cristiano',
             price: priceCristiano,
-            images: [crno.cristiano1]
+            images: [ crno.cristiano1 ]
           },
           {
             title: 'Cristiano',
             price: priceCristiano,
-            images: [crno.cristiano2]
+            images: [ crno.cristiano2 ]
           },
           {
             title: 'Cristiano',
             price: priceCristiano,
-            images: [crno.cristiano3]
+            images: [ crno.cristiano3 ]
           },
           {
             title: 'Cristiano Sp.Ed.',
             price: priceCristianoSpEdition,
-            images: [crno.cristiano5]
+            images: [ crno.cristiano5 ]
           },
           {
             title: 'Cristiano',
             price: priceCristiano,
-            images: [crno.cristiano6]
+            images: [ crno.cristiano6 ]
           },
           {
             title: 'Cristiano',
             price: priceCristiano,
-            images: [crno.cristiano7]
+            images: [ crno.cristiano7 ]
           },
           {
             title: 'Cristiano',
             price: priceCristiano,
-            images: [crno.cristiano8]
+            images: [ crno.cristiano8 ]
           },
           {
             title: 'Cristiano',
             price: priceCristiano,
-            images: [crno.cristiano9]
+            images: [ crno.cristiano9 ]
           },
           {
             title: 'Cristiano',
             price: priceCristiano,
-            images: [crno.cristiano10]
+            images: [ crno.cristiano10 ]
           },
           {
             title: 'Cristiano Sp.Ed.',
             price: priceCristianoSpEdition,
-            images: [crno.cristiano11]
+            images: [ crno.cristiano11 ]
           },
           {
             title: 'Cristiano',
             price: priceCristiano,
-            images: [crno.cristiano12]
+            images: [ crno.cristiano12 ]
           },
           {
             title: 'Cristiano Sp.Ed.',
             price: priceCristianoSpEdition,
-            images: [crno.cristiano13]
+            images: [ crno.cristiano13 ]
           },
           {
             title: 'Cristiano',
             price: priceCristiano,
-            images: [crno.cristiano14]
+            images: [ crno.cristiano14 ]
           },
           {
             title: 'Cristiano',
             price: priceCristiano,
-            images: [crno.cristiano15]
+            images: [ crno.cristiano15 ]
           },
           {
             title: 'Cristiano Sp.Ed.',
             price: priceCristianoSpEdition,
-            images: [crno.cristiano16]
+            images: [ crno.cristiano16 ]
           },
         ],
       },
@@ -212,74 +229,88 @@ const SHOP_DATA = [
         info: 'good pram',
         types: [
           {
+            id: uuidv4 (),
             title: 'Neonex',
             price: priceNeonex,
-            images: [nxt.neonex1]
+            images: [ nxt.neonex1 ]
           },
           {
+            id: uuidv4 (),
             title: 'Neonex',
             price: priceNeonex,
-            images: [nxt.neonex7]
+            images: [ nxt.neonex7 ]
           },
           {
+            id: uuidv4 (),
             title: 'Neonex',
             price: priceNeonex,
-            images: [nxt.neonex8]
+            images: [ nxt.neonex8 ]
           },
           {
+            id: uuidv4 (),
             title: 'Neonex',
             price: priceNeonex,
-            images: [nxt.neonex9]
+            images: [ nxt.neonex9 ]
           },
           {
+            id: uuidv4 (),
             title: 'Neonex',
             price: priceNeonex,
-            images: [nxt.neonex10]
+            images: [ nxt.neonex10 ]
           },
           {
+            id: uuidv4 (),
             title: 'Neonex',
             price: priceNeonex,
-            images: [nxt.neonex11]
+            images: [ nxt.neonex11 ]
           },
           {
+            id: uuidv4 (),
             title: 'Neonex',
             price: priceNeonex,
-            images: [nxt.neonex12]
+            images: [ nxt.neonex12 ]
           },
           {
+            id: uuidv4 (),
             title: 'Neonex',
             price: priceNeonex,
-            images: [nxt.neonex13]
+            images: [ nxt.neonex13 ]
           },
           {
+            id: uuidv4 (),
             title: 'Neonex',
             price: priceNeonex,
-            images: [nxt.neonex14]
+            images: [ nxt.neonex14 ]
           },
           {
+            id: uuidv4 (),
             title: 'Neonex',
             price: priceNeonex,
-            images: [nxt.neonex15]
+            images: [ nxt.neonex15 ]
           },
           {
+            id: uuidv4 (),
             title: 'Neonex',
             price: priceNeonex,
-            images: [nxt.neonex16]
+            images: [ nxt.neonex16 ]
           },
           {
+            id: uuidv4 (),
             title: 'Neonex',
             price: priceNeonex,
-            images: [nxt.neonex17]
+            images: [ nxt.neonex17 ]
           },
           {
+            id: uuidv4 (),
             title: 'Neonex',
             price: priceNeonex,
-            images: [nxt.neonex18]
+            images: [ nxt.neonex18 ]
           },
           {
+            id: uuidv4 (),
             title: 'Neonex',
             price: priceNeonex,
-            images: [nxt.neonex19]
+            images: [ nxt.neonex19 ]
           },
         ],
       },
@@ -288,139 +319,166 @@ const SHOP_DATA = [
         info: 'goodPram',
         types: [
           {
+            id: uuidv4 (),
             title: 'Reggio',
             price: priceReggio,
-            images: [rgo.reggio1]
+            images: [ rgo.reggio1 ]
           },
           {
+            id: uuidv4 (),
             title: 'Reggio Sp.Ed.',
             price: priceReggioSpEdition,
-            images: [rgo.reggio2]
+            images: [ rgo.reggio2 ]
           },
           {
+            id: uuidv4 (),
             title: 'Reggio',
             price: priceReggio,
-            images: [rgo.reggio3]
+            images: [ rgo.reggio3 ]
           },
           {
+            id: uuidv4 (),
             title: 'Reggio',
             price: priceReggio,
-            images: [rgo.reggio4]
+            images: [ rgo.reggio4 ]
           },
           {
+            id: uuidv4 (),
             title: 'Reggio',
             price: priceReggio,
-            images: [rgo.reggio5]
+            images: [ rgo.reggio5 ]
           },
           {
+            id: uuidv4 (),
             title: 'Reggio',
             price: priceReggio,
-            images: [rgo.reggio6]
+            images: [ rgo.reggio6 ]
           },
           {
+            id: uuidv4 (),
             title: 'Reggio',
             price: priceReggio,
-            images: [rgo.reggio7]
+            images: [ rgo.reggio7 ]
           },
           {
+            id: uuidv4 (),
             title: 'Reggio',
             price: priceReggio,
-            images: [rgo.reggio8]
+            images: [ rgo.reggio8 ]
           },
           {
+            id: uuidv4 (),
             title: 'Reggio',
             price: priceReggio,
-            images: [rgo.reggio9]
+            images: [ rgo.reggio9 ]
           },
           {
+            id: uuidv4 (),
             title: 'Reggio',
             price: priceReggio,
-            images: [rgo.reggio10]
+            images: [ rgo.reggio10 ]
           },
           {
+            id: uuidv4 (),
             title: 'Reggio',
             price: priceReggio,
-            images: [rgo.reggio11]
+            images: [ rgo.reggio11 ]
           },
           {
+            id: uuidv4 (),
             title: 'Reggio',
             price: priceReggio,
-            images: [rgo.reggio13]
+            images: [ rgo.reggio13 ]
           },
           {
+            id: uuidv4 (),
             title: 'Reggio',
             price: priceReggio,
-            images: [rgo.reggio14]
+            images: [ rgo.reggio14 ]
           },
           {
+            id: uuidv4 (),
             title: 'Reggio',
             price: priceReggio,
-            images: [rgo.reggio15]
+            images: [ rgo.reggio15 ]
           },
           {
+            id: uuidv4 (),
             title: 'Reggio',
             price: priceReggio,
-            images: [rgo.reggio16]
+            images: [ rgo.reggio16 ]
           },
           {
+            id: uuidv4 (),
             title: 'Reggio Sp.Ed.',
             price: priceReggioSpEdition,
-            images: [rgo.reggio17]
+            images: [ rgo.reggio17 ]
           },
           {
+            id: uuidv4 (),
             title: 'Reggio',
             price: priceReggio,
-            images: [rgo.reggio18]
+            images: [ rgo.reggio18 ]
           },
           {
+            id: uuidv4 (),
             title: 'Reggio Sp.Ed',
             price: priceReggioSpEdition,
-            images: [rgo.reggio19]
+            images: [ rgo.reggio19 ]
           },
           {
+            id: uuidv4 (),
             title: 'Reggio',
             price: priceReggio,
-            images: [rgo.reggio20]
+            images: [ rgo.reggio20 ]
           },
           {
+            id: uuidv4 (),
             title: 'Reggio',
             price: priceReggio,
-            images: [rgo.reggio21]
+            images: [ rgo.reggio21 ]
           },
           {
+            id: uuidv4 (),
             title: 'Reggio Sp.Ed.',
             price: priceReggioSpEdition,
-            images: [rgo.reggio22]
+            images: [ rgo.reggio22 ]
           },
           {
+            id: uuidv4 (),
             title: 'Reggio',
             price: priceReggio,
-            images: [rgo.reggio23]
+            images: [ rgo.reggio23 ]
           },
           {
+            id: uuidv4 (),
             title: 'Reggio',
             price: priceReggio,
-            images: [rgo.reggio24]
+            images: [ rgo.reggio24 ]
           },
           {
+            id: uuidv4 (),
             title: 'Reggio',
             price: priceReggio,
-            images: [rgo.reggio25]
+            images: [ rgo.reggio25 ]
           },
           {
+            id: uuidv4 (),
             title: 'Reggio',
             price: priceReggio,
-            images: [rgo.reggio26]
+            images: [ rgo.reggio26 ]
           },
           {
+            id: uuidv4 (),
             title: 'Reggio Sp.Ed.',
             price: priceReggio,
-            images: [rgo.reggio27]
+            images: [ rgo.reggio27 ]
           },
           {
+            id: uuidv4 (),
             title: 'Reggio',
             price: priceReggio,
-            images: [rgo.reggio28]
+            images: [ rgo.reggio28 ]
           },
         ],
       },
@@ -429,50 +487,58 @@ const SHOP_DATA = [
         info: 'good pram',
         types: [
           {
+            id: uuidv4 (),
             title: 'Sierra',
             price: priceSierra,
-            images: [sra.sierra1]
+            images: [ sra.sierra1 ]
           },
           {
+            id: uuidv4 (),
             title: 'Sierra Sp.Ed.',
             price: priceSierraSpEd,
-            images: [sra.sierra2]
+            images: [ sra.sierra2 ]
           },
           {
+            id: uuidv4 (),
             title: 'Sierra Sp.Ed.',
             price: priceSierraSpEd,
-            images: [sra.sierra3]
+            images: [ sra.sierra3 ]
           },
           {
+            id: uuidv4 (),
             title: 'Sierra Sp.Ed.',
             price: priceSierraSpEd,
-            images: [sra.sierra4]
+            images: [ sra.sierra4 ]
           },
           {
+            id: uuidv4 (),
             title: 'Sierra Sp.Ed.',
             price: priceSierraSpEd,
-            images: [sra.sierra5]
+            images: [ sra.sierra5 ]
           },
           {
+            id: uuidv4 (),
             title: 'Sierra Sp.Ed.',
             price: priceSierraSpEd,
-            images: [sra.sierra6]
+            images: [ sra.sierra6 ]
           },
           {
+            id: uuidv4 (),
             title: 'Sierra Sp.Ed.',
             price: priceSierraSpEd,
-            images: [sra.sierra7,sra.sierra8]
+            images: [ sra.sierra7, sra.sierra8 ]
           },
           {
+            id: uuidv4 (),
             title: 'Sierra Sp.Ed.',
             price: priceSierraSpEd,
-            images: [sra.sierra9]
+            images: [ sra.sierra9 ]
           },
         ],
       }
     ]
   },
-  {
+  newStrollers: {
     id: 'new-strollers',
     title: 'shopData.titles.newStrollers',
     routeName: 'new-strollers',
@@ -482,24 +548,28 @@ const SHOP_DATA = [
         info: 'good pram',
         types: [
           {
+            id: uuidv4 (),
             title: 'Capri Gray',
             price: priceCapri,
-            images: [cpr.capri6]
+            images: [ cpr.capri6 ]
           },
           {
+            id: uuidv4 (),
             title: 'Capri Blue',
             price: priceCapri,
-            images: [cpr.capri3, cpr.capri4, cpr.capri7]
+            images: [ cpr.capri3, cpr.capri4, cpr.capri7 ]
           },
           {
+            id: uuidv4 (),
             title: 'Capri Brown',
             price: priceCapri,
-            images: [cpr.capri5]
+            images: [ cpr.capri5 ]
           },
           {
+            id: uuidv4 (),
             title: 'Capri Gold',
             price: priceCapriGold,
-            images: [cpr.capri1,cpr.capri2,cpr.capri8]
+            images: [ cpr.capri1, cpr.capri2, cpr.capri8 ]
           }
         ],
       },
@@ -508,24 +578,28 @@ const SHOP_DATA = [
         info: 'good pram',
         types: [
           {
+            id: uuidv4 (),
             title: 'Levi Blue',
             price: priceLevi,
-            images: [lvy.levi1, lvy.levi5,lvy.levi6]
+            images: [ lvy.levi1, lvy.levi5, lvy.levi6 ]
           },
           {
+            id: uuidv4 (),
             title: 'Levi Brown',
             price: priceLevi,
-            images: [lvy.levi4]
+            images: [ lvy.levi4 ]
           },
           {
+            id: uuidv4 (),
             title: 'Levi Gray',
             price: priceLevi,
-            images: [lvy.levi2]
+            images: [ lvy.levi2 ]
           },
           {
+            id: uuidv4 (),
             title: 'Levi Graphite',
             price: priceLevi,
-            images: [lvy.levi3]
+            images: [ lvy.levi3 ]
           },
         ],
       },
@@ -534,35 +608,39 @@ const SHOP_DATA = [
         info: 'good pram',
         types: [
           {
+            id: uuidv4 (),
             title: 'Safari Brown',
             price: priceSafari,
-            images: [sfr.safari1]
+            images: [ sfr.safari1 ]
           },
           {
+            id: uuidv4 (),
             title: 'Safari Graphite',
             price: priceSafari,
-            images: [sfr.safari2, sfr.safari3, sfr.safari4, sfr.safari5]
+            images: [ sfr.safari2, sfr.safari3, sfr.safari4, sfr.safari5 ]
           },
           {
+            id: uuidv4 (),
             title: 'Safari Gray',
-            price:priceSafari,
-            images:[
+            price: priceSafari,
+            images: [
               sfr.safari6,
               sfr.safari7,
               sfr.safari8,
               sfr.safari9,
-              sfr.safari10]
+              sfr.safari10 ]
           },
           {
+            id: uuidv4 (),
             title: 'Safari Blue',
-            price:priceSafari,
-            images:[ sfr.safari11, sfr.safari12, sfr.safari13]
+            price: priceSafari,
+            images: [ sfr.safari11, sfr.safari12, sfr.safari13 ]
           }
         ],
       }
     ]
   },
-  {
+  newCarSeats: {
     id: 'new-car-seats',
     title: 'shopData.titles.newCarSeats',
     routeName: 'new-car-seats',
@@ -572,59 +650,70 @@ const SHOP_DATA = [
         info: 'good car seat',
         types: [
           {
+            id: uuidv4 (),
             title: 'Kite',
             price: priceKite,
-            images: [kt.kite1]
+            images: [ kt.kite1 ]
           },
           {
+            id: uuidv4 (),
             title: 'Kite',
             price: priceKite,
-            images: [kt.kite2]
+            images: [ kt.kite2 ]
           },
           {
+            id: uuidv4 (),
             title: 'Kite',
             price: priceKite,
-            images: [kt.kite3]
+            images: [ kt.kite3 ]
           },
           {
+            id: uuidv4 (),
             title: 'Kite',
             price: priceKite,
-            images: [kt.kite4]
+            images: [ kt.kite4 ]
           },
           {
+            id: uuidv4 (),
             title: 'Kite',
             price: priceKite,
-            images: [kt.kite5]
+            images: [ kt.kite5 ]
           },
           {
+            id: uuidv4 (),
             title: 'Kite',
             price: priceKite,
-            images: [kt.kite6]
+            images: [ kt.kite6 ]
           },
           {
+            id: uuidv4 (),
             title: 'Kite',
             price: priceKite,
-            images: [kt.kite7]
+            images: [ kt.kite7 ]
           },
           {
+            id: uuidv4 (),
             title: 'Kite',
             price: priceKite,
-            images: [kt.kite8]
+            images: [ kt.kite8 ]
           },
           {
+            id: uuidv4 (),
             title: 'Kite',
             price: priceKite,
-            images: [kt.kite9]
+            images: [ kt.kite9 ]
           },
           {
+            id: uuidv4 (),
             title: 'Kite',
             price: priceKite,
-            images: [kt.kite10]
+            images: [ kt.kite10 ]
           },
           {
+            id: uuidv4 (),
             title: 'Kite',
             price: priceKite,
-            images: [kt.kite11]
+            images: [ kt.kite11 ]
           },
         ],
       },
@@ -633,40 +722,46 @@ const SHOP_DATA = [
         info: 'good car seat',
         types: [
           {
+            id: uuidv4 (),
             title: 'Carlo',
             price: priceCarlo,
-            images: [crl.carlo1]
+            images: [ crl.carlo1 ]
           },
           {
+            id: uuidv4 (),
             title: 'Carlo',
             price: priceCarlo,
-            images: [crl.carlo2]
+            images: [ crl.carlo2 ]
           },
           {
+            id: uuidv4 (),
             title: 'Carlo',
             price: priceCarlo,
-            images: [crl.carlo3]
+            images: [ crl.carlo3 ]
           },
           {
+            id: uuidv4 (),
             title: 'Carlo',
             price: priceCarlo,
-            images: [crl.carlo4]
+            images: [ crl.carlo4 ]
           },
           {
+            id: uuidv4 (),
             title: 'Carlo',
             price: priceCarlo,
-            images: [crl.carlo5]
+            images: [ crl.carlo5 ]
           },
           {
+            id: uuidv4 (),
             title: 'Carlo',
             price: priceCarlo,
-            images: [crl.carlo6]
+            images: [ crl.carlo6 ]
           },
         ],
       }
     ]
   },
-  {
+  accessories: {
     id: 'accessories',
     title: 'shopData.titles.accessories',
     routeName: 'accessories',
@@ -676,37 +771,43 @@ const SHOP_DATA = [
         info: 'good adapter',
         types: [
           {
+            id: uuidv4 (),
             title: 'shopData.accessories.adaptersTitle.adaptersKite',
             price: priceAdapterKite,
-            images: [adp.adapterKite]
+            images: [ adp.adapterKite ]
           },
           {
+            id: uuidv4 (),
             title: 'shopData.accessories.adaptersTitle.adaptersCarlo',
             price: priceAdapterCarlo,
-            images: [adp.adapterCarlo]
+            images: [ adp.adapterCarlo ]
           },
           {
+            id: uuidv4 (),
             title: 'shopData.accessories.adaptersTitle.adaptersGussio',
             price: priceAdapterGussio,
-            images: [adp.adapterGussio]
+            images: [ adp.adapterGussio ]
           },
           {
+            id: uuidv4 (),
             title: 'shopData.accessories.adaptersTitle.adaptersGalactic',
             price: priceAdapterGalactic,
-            images: [adp.adapterGalactic]
+            images: [ adp.adapterGalactic ]
           },
         ],
       },
       {
         title: 'shopData.accessories.camerasAndTires.title',
         info: 'good cameras and tires',
-        types:[
+        types: [
           {
+            id: uuidv4 (),
             title: 'shopData.accessories.camerasAndTires.cameras',
             price: priceCameras,
-            images: [cmr.camera]
+            images: [ cmr.camera ]
           },
           {
+            id: uuidv4 (),
             title: 'shopData.accessories.camerasAndTires.tires',
             price: priceTires,
             images: [ trs.tire ],
@@ -718,6 +819,7 @@ const SHOP_DATA = [
         info: 'mechanism',
         types: [
           {
+            id: uuidv4 (),
             title: 'shopData.accessories.mechanisms.mechanism',
             price: priceMechanism,
             images: [ mcs.mechanism ],
@@ -726,7 +828,7 @@ const SHOP_DATA = [
       }
     ]
   },
-  {
+  linens: {
     id: 'linens',
     title: 'shopData.titles.linens',
     routeName: 'linens',
@@ -736,26 +838,31 @@ const SHOP_DATA = [
         info: 'good linens',
         types: [
           {
+            id: uuidv4 (),
             title: 'Linens',
             price: priceLinens,
             images: [ lns.linens1 ],
           },
           {
+            id: uuidv4 (),
             title: 'Linens',
             price: priceLinens,
             images: [ lns.linens2 ],
           },
           {
+            id: uuidv4 (),
             title: 'Linens',
             price: priceLinens,
             images: [ lns.linens3 ],
           },
           {
+            id: uuidv4 (),
             title: 'Linens',
             price: priceLinens,
             images: [ lns.linens4 ],
           },
           {
+            id: uuidv4 (),
             title: 'Linens',
             price: priceLinens,
             images: [ lns.linens5 ],
@@ -764,7 +871,7 @@ const SHOP_DATA = [
       }
     ]
   }
-];
+};
 
 export default SHOP_DATA;
 

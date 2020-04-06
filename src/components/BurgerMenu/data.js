@@ -1,11 +1,11 @@
-export const burgerMenuLinksData = [
+export const BURGER_MENU_DATA = [
   {
     title: 'header.links.main',
     path: '/'
   },
   {
     title: 'header.links.categories',
-    path: '#'
+    path: '/categories'
   },
   {
     title: 'header.links.aboutUs',

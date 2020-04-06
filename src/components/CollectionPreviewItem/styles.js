@@ -4,42 +4,43 @@ import {
   commonStyleTextTwoRem,
   flexCommon
 } from '@src/styles/commonStylesAndStyledComponents';
-import {desctop, tablet, mobile} from '@media';
+import { tablet, mobile } from '@media';
 
 export const CollectionPreviewItemContainer = styled.section`
   position: absolute;
-  top: 15%;
+  top: 50%;
   left:50%;
-  margin-left:-275px;
+  margin-left:-27.5rem;
+  margin-top: -26rem;
   display: flex;
   flex-direction: column;
   flex: 0 0 auto;
-  background-color: ghostwhite;
+  background-color: ${ ( { theme } ) => theme.ghostWhite };
   z-index: 10;
-  width: 550px;
-  ${tablet}{
+  width: 55rem;
+  ${ tablet }{
     width: 90%;
     margin-left: -46%
   };
-  ${mobile}{
+  ${ mobile }{
     margin-left:-47%;
   }
 `;
 
 export const CollectionPreviewItemTitle = styled.span`
-  ${flexCommon}; 
-  ${commonStyleTextThreeRem};
+  ${ flexCommon }; 
+  ${ commonStyleTextThreeRem };
 `;
 
 
 export const CollectionPreviewItemImage = styled.div`
-  background-image: url(${props => props.background});
+  background-image: url(${ props => props.background });
   background-size: 100% 100%;
   width: 90%;
 `;
 
 export const CollectionPreviewItemHeader = styled.div`
-  ${flexCommon};
+  ${ flexCommon };
   position: relative;
 `;
 
@@ -55,25 +56,25 @@ export const CollectionPreviewItemImageWrapper = styled.figure`
   display: flex;
   justify-content: center;
   width: 100%;
-  height: 400px;
-  ${mobile}{
+  height: 40rem;
+  ${ mobile }{
     height: 80vw;
   }
 `;
 
 export const CustomButtonText = styled.span`
-  ${commonStyleTextTwoRem};
+  ${ commonStyleTextTwoRem };
   margin-right: 2rem;
 `;
 
 export const CollectionPreviewInfoWrapper = styled.div`
-  ${flexCommon};
+  ${ flexCommon };
   width: 90%;
   margin: 1rem auto;
 `;
 
 export const CollectionPreviewInfoText = styled.span`
-  ${commonStyleTextTwoRem};
+  ${ commonStyleTextTwoRem };
 `;
 
 export const CategoryItemTextWrapper = styled.div`
@@ -85,14 +86,14 @@ export const PreviewItemInfoWrapper = styled.div`
   align-items: center; 
   justify-content: space-between;
   flex-wrap: wrap;
-  ${mobile}{
+  ${ mobile }{
     justify-content: center;
   }
 `;
 
 export const PreviewItemCustomButtonWrapper = styled.div`
   width: 19rem;
-  ${mobile}{
+  ${ mobile }{
     width: 100%;
     margin-top:.5rem;
   };

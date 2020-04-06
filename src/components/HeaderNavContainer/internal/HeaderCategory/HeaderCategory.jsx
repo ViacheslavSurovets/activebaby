@@ -1,14 +1,17 @@
 import React, { useMemo } from 'react';
+import { connect } from 'react-redux';
 import { DropdownGroup, DropdownLink, ListItem } from '@components/Header/styles';
 import { useTranslation } from 'react-i18next';
+import { selectHeaderCategoriesData } from '@redux/header/header.selectors';
 import Proptypes from 'prop-types';
+import { createStructuredSelector } from 'reselect';
 
-const HeaderCategory = ( { headerCategoryData } ) => {
+const HeaderCategory = ( { headerCategoriesData } ) => {
   const { t, i18n } = useTranslation ();
 
 
   const headerCategory = useMemo ( () => (
-    headerCategoryData.map ( item => {
+    headerCategoriesData.map ( item => {
       return {
         key: item.id,
         listItems: item.listItems.map ( ( listItem, idx ) => {
@@ -38,8 +41,13 @@ const HeaderCategory = ( { headerCategoryData } ) => {
 };
 
 
-export default HeaderCategory;
+const mapStateToProps = createStructuredSelector({
+  headerCategoriesData : selectHeaderCategoriesData
+});
+
+
+export default connect(mapStateToProps)(HeaderCategory);
 
 HeaderCategory.propTypes = {
-  headerCategoryData: Proptypes.array.isRequired
+  headerCategoriesData: Proptypes.array.isRequired
 };

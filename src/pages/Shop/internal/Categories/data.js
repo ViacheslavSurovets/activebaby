@@ -4,19 +4,19 @@ export const CATEGORIES_DATA = [
   {
     title: 'categories.strollers',
     imageUrl: strollers,
-    linkUrl: 'shop/strollers',
+    linkUrl: 'shop/new-strollers',
     size: 'big'
   },
   {
     title: 'categories.prams',
     imageUrl: prams,
-    linkUrl: 'shop/prams',
+    linkUrl: 'shop/new-prams',
     size: 'big'
   },
   {
     title: 'categories.carSeats',
     imageUrl: carSeats,
-    linkUrl: 'shop/car-seats',
+    linkUrl: 'shop/new-car-seats',
     size: 'small'
   },
   {

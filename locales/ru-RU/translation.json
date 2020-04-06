@@ -121,5 +121,29 @@
   "shopItem": {
     "price": "Цена",
     "toCart": "В корзину"
+  },
+  "shopCartDropdown": {
+    "goToCheckout": "Перейти к оформлению"
+  },
+  "checkoutPage": {
+    "product" : "Товар",
+    "description": "Описание",
+    "quantity": "Количество",
+    "price" : "Цена",
+    "remove": "Удалить"
+  },
+  "articles": {
+    "howToChoosePram": {
+      "title": "Как Выбрать Коляску",
+      "content": "text"
+    },
+    "linenSelection": {
+      "title": "Подюор Белья",
+      "content": "text"
+    },
+    "interesting": {
+      "title": "Интересно",
+      "content": "text"
+    }
   }
 }

@@ -20,7 +20,6 @@ body {
 body, html {
     height: 100%;
     max-height: 100%;
-    overflow: hidden;
 }
 
 *{
@@ -31,6 +30,9 @@ box-sizing: border-box;
 color: ${ ( { theme } ) => theme.blue };
 background-color: ${ ( { theme } ) => theme.black };
 }
+
+
+
 
 #root {
     height: 100%;
@@ -54,5 +56,10 @@ background-color: ${ ( { theme } ) => theme.black };
     visibility: visible;
     transition: .4s all .15s;
 }
+
+::-webkit-scrollbar { width: 10px; height: 10px;};
+::-webkit-scrollbar-track-piece { background-color: #ffffff;};
+::-webkit-scrollbar-thumb { height: 50px; background-color: ${ ( { theme } ) => theme.gray }; border-radius: 2px;};
+
 
 `;

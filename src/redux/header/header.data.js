@@ -1,11 +1,11 @@
 
-export const headerCategoryData = [
+export const HEADER_CATEGORY_DATA = [
   {
     id: 'Прогулки',
     listItems: [
       {
         text: 'header.headerCategory.columnOne.strollers',
-        path: '/shop/new-strollers'
+        path: '/shop/newStrollers'
       },
       {
         text: 'header.headerCategory.columnOne.quatro',
@@ -26,7 +26,7 @@ export const headerCategoryData = [
     listItems: [
       {
         text: 'header.headerCategory.columnTwo.modules',
-        path: '/shop/new-prams'
+        path: '/shop/newPrams'
       },
       {
         text: 'header.headerCategory.columnTwo.adamex',
@@ -43,7 +43,7 @@ export const headerCategoryData = [
     listItems: [
       {
         text: 'header.headerCategory.columnThree.carSeats',
-        path: '/shop/new-car-seats'
+        path: '/shop/newCarSeats'
       },
       {
         text: 'header.headerCategory.columnThree.carlo',
@@ -96,18 +96,18 @@ export const headerCategoryData = [
 ];
 
 
-export const headerArticlesData = [
+export const HEADER_ARTICLE_DATA = [
   {
     text: 'header.headerArticle.articleOne.title',
-    path: '#'
+    path: '/articles/howToChoosePram'
   },
   {
     text: 'header.headerArticle.articleTwo.title',
-    path: '#'
+    path: '/articles/howToChooseLinen'
   },
   {
     text: 'header.headerArticle.articleThree.title',
-    path: '#'
+    path: '/articles/interesting'
   }
 ];
 

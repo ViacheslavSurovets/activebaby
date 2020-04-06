@@ -12,18 +12,18 @@ import {
   BurgerMenuLabel,
   BurgerMenuWrapper
 } from './styles';
-import { burgerMenuLinksData } from './data';
 import { auth } from '@core/firebase';
 import { selectCurrentUser } from '@redux/user/user.selectors';
+import { selectMenuData } from '@redux/menu/menu.selectors';
 import PropTypes from 'prop-types';
 
 
-const BurgerMenu = ( { currentUser } ) => {
+const BurgerMenu = ( { currentUser, menuData } ) => {
   const [ checkBoxStatus, setCheckBoStatus ] = useState ( false );
   const { t, i18n } = useTranslation ();
   const burgerMenuLinks = useMemo ( () => (
 
-    burgerMenuLinksData.map ( ( item, idx ) => {
+    menuData.map ( ( item, idx ) => {
       return {
         key: idx,
         title: t ( (item.title) ),
@@ -81,13 +81,15 @@ const BurgerMenu = ( { currentUser } ) => {
 };
 
 
-const mapStateToProps = createStructuredSelector({
-  currentUser: selectCurrentUser
-});
+const mapStateToProps = createStructuredSelector ( {
+  currentUser: selectCurrentUser,
+  menuData: selectMenuData
+} );
 
 
 export default connect ( mapStateToProps ) ( BurgerMenu );
 
 BurgerMenu.propTypes = {
-  currentUser: PropTypes.oneOfType ( [ () => null, PropTypes.object ] )
+  currentUser: PropTypes.oneOfType ( [ () => null, PropTypes.object ] ),
+  menuData: PropTypes.array
 };

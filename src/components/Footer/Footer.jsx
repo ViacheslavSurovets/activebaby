@@ -1,4 +1,5 @@
 import React, { useMemo } from 'react';
+import { connect } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { CustomInput, CustomButton, CustomForm } from '@components';
 import { SocialLinksComponent } from './internal';
@@ -14,14 +15,16 @@ import {
   SocialLinksMediaTablet,
   FooterNavLinksMediaMobile
 } from './styles';
-import { burgerMenuLinksData } from './data';
+import { selectMenuData } from '@redux/menu/menu.selectors';
+import { createStructuredSelector } from 'reselect';
+import Proptypes from 'prop-types';
 
 
-const Footer = ( props ) => {
+const Footer = ( { menuData } ) => {
   const { t, i18n } = useTranslation ();
   const footerNavLinks = useMemo ( () => (
 
-    burgerMenuLinksData.map ( ( item, idx ) => {
+    menuData.map ( ( item, idx ) => {
       return {
         key: idx,
         title: t ( item.title ),
@@ -88,4 +91,13 @@ const Footer = ( props ) => {
   );
 };
 
-export default Footer;
+const mapStateToProps = createStructuredSelector ( {
+  menuData: selectMenuData
+} );
+
+export default connect ( mapStateToProps ) ( Footer );
+
+
+Footer.propTypes = {
+  menuData: Proptypes.array
+};

@@ -1,8 +1,6 @@
 import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import { selectCollection, selectCollections } from '@redux/shop/shop.selecors';
-import styled from 'styled-components';
-import {v4} from 'uuid';
 import { CollectionOverviewItem, CollectionPreviewItem, Portal } from '@components';
 import {
   CategoryPageContainer,

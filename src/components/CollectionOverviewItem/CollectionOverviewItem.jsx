@@ -17,7 +17,7 @@ import { addItemToPreviewComponent, showPortalPreviewItem } from '@redux/preview
 
 
 const CollectionOverviewItem = ( { item, info, addItem, addPreviewItem, showPortalPreviewItem } ) => {
-  const { t, i18n } = useTranslation ();
+  const { t } = useTranslation ();
 
   const { images } = item;
 

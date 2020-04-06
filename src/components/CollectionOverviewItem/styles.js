@@ -10,6 +10,7 @@ export const CategoryItem = styled.div`
   height: 30rem;
   margin: 1rem;
   transition: all 1s;
+  user-select: none;
 
   background-color: ghostwhite;
   &:hover{
