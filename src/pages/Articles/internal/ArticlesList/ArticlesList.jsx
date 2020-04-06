@@ -3,21 +3,22 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { selectArticlesForOverview } from '@redux/articles/articles.selectors';
 import { ArticleListItemComponent } from '../ArticleListitemComponent';
+import { ArticleListContainer } from './styles';
 import PropTypes from 'prop-types';
 
 
 const ArticlesList = ( { articles } ) => {
 
   return (
-    <>
+    <ArticleListContainer>
       {
-        articles.map (  article =>
+        articles.map ( article =>
           <Fragment key={ article.id }>
             <ArticleListItemComponent article={ article } />
           </Fragment>
         )
       }
-    </>
+    </ArticleListContainer>
   );
 };
 

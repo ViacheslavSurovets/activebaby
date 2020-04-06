@@ -117,7 +117,6 @@ const RegistrationForm = ( props ) => {
               />
             )
           }
-
           <LoginContainerButtonWrapper>
             <CustomButton
               type='submit'

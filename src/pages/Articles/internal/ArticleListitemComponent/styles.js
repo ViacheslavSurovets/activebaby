@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { commonLinkStyle } from '@commonStyles';
+import { commonLinkStyle, commonStyleTextThreeRem } from '@commonStyles';
 
 export const ArticleListItemContainer = styled.div`
   display:flex;
@@ -8,10 +8,11 @@ export const ArticleListItemContainer = styled.div`
   align-items: center;
   width: 90%;
   min-height: 5rem;
-  margin: 0 auto;
+  margin: 1rem auto;
 `;
 
 export const ArticleListItem = styled ( Link )`
   ${ commonLinkStyle };
+  ${commonStyleTextThreeRem};
   color: ${ ( { theme } ) => theme.blue };
 `;

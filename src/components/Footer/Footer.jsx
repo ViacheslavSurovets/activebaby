@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useState } from 'react';
 import { connect } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { CustomInput, CustomButton, CustomForm } from '@components';
@@ -17,10 +17,12 @@ import {
 } from './styles';
 import { selectMenuData } from '@redux/menu/menu.selectors';
 import { createStructuredSelector } from 'reselect';
+import { createSubscription } from '@core/firebase';
 import Proptypes from 'prop-types';
 
 
 const Footer = ( { menuData } ) => {
+  const [ userEmail, setUserEmail ] = useState ( { email: '' } );
   const { t, i18n } = useTranslation ();
   const footerNavLinks = useMemo ( () => (
 
@@ -33,6 +35,26 @@ const Footer = ( { menuData } ) => {
     } )
 
   ), [ i18n.language ] );
+
+
+  const { email } = userEmail;
+
+  const handleSubmit = async ( event ) => {
+    event.preventDefault ();
+    try {
+      await createSubscription ( email );
+      setUserEmail ( { email: '' } );
+    } catch ( error ) {
+      console.log ( error.message );
+    }
+
+  };
+
+  const handleChange = ( event ) => {
+    const { name, value } = event.target;
+    return setUserEmail ( { [ name ]: value } );
+  };
+
 
   return (
     <FooterContainer>
@@ -61,9 +83,13 @@ const Footer = ( { menuData } ) => {
                 <SocialLinksComponent />
               </SocialLinksMediaTablet>
 
-              <CustomForm marginBottom='1'>
+              <CustomForm marginBottom='1' onSubmit={ handleSubmit }>
                 <CustomFormTitle>{ t ( 'footer.subscribeInfoText' ) }</CustomFormTitle>
                 <CustomInput
+                  type='email'
+                  name='email'
+                  value={ email }
+                  onChange={ handleChange }
                   inlineBlock
                   big
                   label='EMAIL'
