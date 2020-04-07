@@ -8,13 +8,14 @@ import {
   ListItem, LogoDesktopWrapper, SearchItemDesktop
 } from '@components/Header/styles';
 import { LogoDesktop } from '@components/Logo';
+import { withRouter } from 'react-router-dom';
 import { SearchDesktop } from '@components/SearchDesktop';
 import { useTranslation } from 'react-i18next';
-import { headerCategoryData, headerArticlesData } from '@components/HeaderNavContainer/data';
 import { HeaderCategory, HeaderArticles } from './internal';
+import PropTypes from 'prop-types';
 
 
-const HeaderNavContainer = () => {
+const HeaderNavContainer = ( { history } ) => {
 
   const { t } = useTranslation ();
 
@@ -26,24 +27,24 @@ const HeaderNavContainer = () => {
           <Dropdown>
             <DropdownGroupWrapper>
 
-              <HeaderCategory headerCategoryData={ headerCategoryData } />
+              <HeaderCategory />
 
             </DropdownGroupWrapper>
           </Dropdown>
         </ListItem>
-        <ListItem><HeaderNavLink to="#">{ t ( 'header.links.aboutUs' ) }</HeaderNavLink></ListItem>
+        <ListItem><HeaderNavLink to="/info/about">{ t ( 'header.links.aboutUs' ) }</HeaderNavLink></ListItem>
       </List>
 
-      <LogoDesktopWrapper>
+      <LogoDesktopWrapper onClick={ () => history.push ( '/' ) }>
         <LogoDesktop />
       </LogoDesktopWrapper>
       <List>
-        <ListItem><HeaderNavLink to="/">{ t ( 'header.links.payments' ) }</HeaderNavLink></ListItem>
-        <ListItem><HeaderNavLink to="#">{ t ( 'header.links.articles' ) }</HeaderNavLink>
+        <ListItem><HeaderNavLink to="/info/payments">{ t ( 'header.links.payments' ) }</HeaderNavLink></ListItem>
+        <ListItem><HeaderNavLink to="/articles">{ t ( 'header.links.articles' ) }</HeaderNavLink>
           <Dropdown>
             <DropdownGroupWrapper>
 
-              <HeaderArticles headerArticlesData={ headerArticlesData } />
+              <HeaderArticles />
 
             </DropdownGroupWrapper>
           </Dropdown>
@@ -60,4 +61,8 @@ const HeaderNavContainer = () => {
   );
 };
 
-export default HeaderNavContainer;
+export default withRouter(HeaderNavContainer);
+
+HeaderNavContainer.propTypes = {
+  history: PropTypes.object
+};

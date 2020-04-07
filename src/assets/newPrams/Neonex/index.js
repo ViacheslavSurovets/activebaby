@@ -1,9 +1,4 @@
 import neonex1 from './neonex1.jpg';
-import neonex2 from './neonex2.jpg';
-import neonex3 from './neonex3.jpg';
-import neonex4 from './neonex4.jpg';
-import neonex5 from './neonex5.jpg';
-import neonex6 from './neonex6.jpg';
 import neonex7 from './neonex7.jpg';
 import neonex8 from './neonex8.jpg';
 import neonex9 from './neonex9.jpg';
@@ -20,11 +15,6 @@ import neonex19 from './neonex19.jpg';
 
 export {
   neonex1,
-  neonex2,
-  neonex3,
-  neonex4,
-  neonex5,
-  neonex6,
   neonex7,
   neonex8,
   neonex9,

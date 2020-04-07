@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 import {
   HeaderMainContainer,
@@ -18,9 +19,10 @@ import {
   LocationMarkerLink,
   BurgerMenu
 } from '@components';
+import PropTypes from 'prop-types';
 
 
-const Header = () => {
+const Header = ( { history } ) => {
   return (
     <HeaderMainContainer>
       <HeaderInfoContainer>
@@ -38,7 +40,7 @@ const Header = () => {
         </HeaderItemsWrapperLeft>
 
         { /*Laptop / mobile*/ }
-        <LogoTabletWrapper>
+        <LogoTabletWrapper onClick={ () => history.push ( '/' ) }>
           <LogoTablet />
         </LogoTabletWrapper>
 
@@ -62,4 +64,8 @@ const Header = () => {
 };
 
 
-export default Header;
+export default withRouter ( Header );
+
+Header.propTypes = {
+  history: PropTypes.object
+};

@@ -27,11 +27,13 @@
     "react-id-swiper": "^3.0.0",
     "react-redux": "^7.2.0",
     "react-router-dom": "^5.1.2",
+    "react-stripe-checkout": "^2.6.3",
     "redux": "^4.0.5",
     "redux-logger": "^3.0.6",
     "redux-persist": "^6.0.0",
     "reselect": "^4.0.0",
-    "swiper": "^5.3.6"
+    "swiper": "^5.3.6",
+    "uuid": "^7.0.3"
   },
   "browserslist": "> 0.25%, not dead",
   "author": "Surovets Viacheslav",

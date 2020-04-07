@@ -9,7 +9,8 @@ const colors = {
   opacityGray: 'rgba(22, 22, 22, .2)',
   orangeSoft: '#ff504f',
   gray: '#808080',
-  googleColor: '#4285f4'
+  googleColor: '#4285f4',
+  ghostWhite: '#f8f8ff'
 };
 
 const baseUnit = 4;
@@ -22,6 +23,8 @@ export default {
   black: colors.black,
   unit: baseUnit,
   orangeSoft: colors.orangeSoft,
+  gray: colors.gray,
+  ghostWhite: colors.ghostWhite,
   googleButtonColor: colors.googleColor,
   header: {
     shopCartBackground: colors.orangeSoft,

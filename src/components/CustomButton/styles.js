@@ -1,11 +1,10 @@
 import styled, { css } from 'styled-components';
-import { commonFontSize } from '@commonStyles';
+import { commonFontSize, flexCommon } from '@commonStyles';
 import { mobile } from '@utils/media';
 
 const stylesButtonDefault = css`
   ${ commonFontSize };
   outline: none;
-  min-width: 10rem;
   height: 5rem;
   font-size: 1.6rem;
 `;
@@ -82,12 +81,15 @@ export const Button = styled.button`
     ${ getStyleButtonDisplayBlock };
     ${ getStyleButton };
     ${ getMediaQuery };
+    ${flexCommon};
      margin-top: ${ props => props.marginTop }rem;
      margin-bottom: ${ props => props.marginBottom }rem;
      margin-right: ${ props => props.marginRight }rem;
      margin-left: ${ props => props.marginLeft }rem;
      font-size: ${ props => props.fontSize }rem;
      width: ${ props => props.width };
+     height: ${ props => props.height };
      cursor:pointer;
      user-select: none;
+     
 `;

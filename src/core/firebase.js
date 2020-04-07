@@ -39,6 +39,41 @@ export const createUserProfileDocument = async ( userAuth, additionalData ) => {
 
 };
 
+export const createSubscription = async ( email ) => {
+  const subscriptionRef = firestore.doc ( `subscription/${ email }` );
+  const snapShot = subscriptionRef.get();
+
+  if(snapShot.exists){
+    return alert('The user with the email, such as yours, already subscribed');
+  }
+
+  if(!snapShot.exists){
+    const createdAt = new Date();
+
+    try {
+      await subscriptionRef.set({
+        email,
+        createdAt
+      });
+    } catch ( error ) {
+      console.log('error of creating subscription');
+    }
+  }
+  return subscriptionRef;
+};
+
+export const addCollectionsAndDocuments = async ( collectionKey, objectsToAdd ) => {
+  const collectionRef = firestore.collection ( collectionKey );
+
+  const batch = firestore.batch ();
+  objectsToAdd.forEach ( obj => {
+    const newDocRef = collectionRef.doc ();
+    batch.set ( newDocRef, obj );
+  } );
+
+  return await batch.commit ();
+};
+
 
 firebase.initializeApp ( config );
 

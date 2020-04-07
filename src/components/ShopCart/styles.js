@@ -1,10 +1,9 @@
 import styled from 'styled-components';
 import { desktop, mobile, tablet } from '@utils/media';
+import { flexCommon } from '@commonStyles';
 
 export const CartWrapper = styled.figure`
-  display: flex;
-  justify-content: center;
-  align-items: center;
+${flexCommon};
   position: relative;
   background: ${ ( { theme } ) => theme.header.shopCartBackground };
   width: 100%;
@@ -52,14 +51,15 @@ export const Counter = styled.span`
 export const ShopCartDropdown = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: center;
   position: absolute;
   bottom: 0;
   right:0;
   transform: translateY(100%);
   width: 30rem;
-  min-height: 20rem;
+  min-height: 10rem;
+  text-align: center;
   font-size: 2rem;
   cursor:initial;
   background: ${ ( { theme } ) => theme.header.cartBackground };
@@ -70,4 +70,21 @@ export const ShopCartDropdown = styled.div`
   //opacity: 0;
   //visibility: hidden;
   //transition: .4s all .15s;
+`;
+
+export const ShopCartDropdownItemsWrapper = styled.div`
+  overflow: scroll;
+  max-height: 40rem;
+`;
+
+export const CustomButtonWrapper = styled.div`
+  height: 5rem;
+  width: 75%;
+  margin-top: 1rem;
+  margin-bottom: .5rem;
+`;
+
+
+export const ShopCartDropDownText = styled.div`
+  margin: 5rem auto;
 `;

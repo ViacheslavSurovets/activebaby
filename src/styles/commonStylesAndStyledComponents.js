@@ -55,3 +55,20 @@ export const commonLinkStyle = css`
   text-underline: none;
   font-size: 1.6rem;
 `;
+
+export const commonContentWrapper = css`
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 90%;
+  margin: 0 auto;
+  min-height: 70vh;
+`;
+
+export const Paragraph = styled.p`
+  ${ commonStyleTextTwoRem };
+  text-indent: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+`;
