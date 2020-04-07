@@ -190,6 +190,7 @@ module.exports = {
     contentBase: 'dist/',
     hot: true,
     inline: false,
+    historyApiFallback: true,
     proxy: [
       {
         context: [ '/api' ],

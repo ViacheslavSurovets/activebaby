@@ -8,6 +8,7 @@ import { selectCartItemsCount } from '@redux/cart/cart.selectors';
 
 import PropTypes from 'prop-types';
 
+
 const ShopCart = ( { itemCount } ) => {
   const [ hidden, setHidden ] = useState ( true );
 
@@ -16,16 +17,18 @@ const ShopCart = ( { itemCount } ) => {
     <CartWrapper onClick={ () => setHidden ( !hidden ) }>
       <ShopCartIcon />
       <Counter>{ itemCount }</Counter>
+
       {
-        !hidden && <ShopCartDropdownComponent transition />
+        !hidden && <ShopCartDropdownComponent />
       }
+
     </CartWrapper>
   );
 };
 
-const mapStateToProps = createStructuredSelector({
+const mapStateToProps = createStructuredSelector ( {
   itemCount: selectCartItemsCount
-});
+} );
 
 export default connect ( mapStateToProps ) ( ShopCart );
 

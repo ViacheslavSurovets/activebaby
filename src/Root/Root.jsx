@@ -1,27 +1,30 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState, useEffect, Suspense } from 'react';
 import { connect } from 'react-redux';
 import { memoizeWith, identity } from 'ramda';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { Header, OnScrollHeader, Footer, SuspenseComponent } from '@components';
 import { Layout, MainContentWrapper } from './styles';
-import PropTypes from 'prop-types';
-
-import { auth, createUserProfileDocument, addCollectionsAndDocuments } from '@core/firebase';
+import { auth, createUserProfileDocument } from '@core/firebase';
 import { setCurrentUser } from '@redux/user/user.actions';
 import { selectCollectionsForPreview } from '@redux/shop/shop.selecors';
 import { createStructuredSelector } from 'reselect';
+import PropTypes from 'prop-types';
 
 const lazy = memoizeWith ( identity, ( path ) =>
   React.lazy ( () =>
     import(`@pages/${ path }`) ) );
 
 
-const Root = ( { setCurrentUser, collectionArray } ) => {
+const Root = ( { setCurrentUser } ) => {
   const [ menuTopVisibility, setMenuTopVisibility ] = useState ( false );
-
+  // console.log(collectionArray);
 
   useEffect ( () => {
+
     auth.onAuthStateChanged ( async userAuth => {
+
+      //------------------------ user authentication
+
       if ( userAuth ) {
         const userRef = await createUserProfileDocument ( userAuth );
 
@@ -33,18 +36,17 @@ const Root = ( { setCurrentUser, collectionArray } ) => {
             }
           } );
         } );
-
       }
 
       await setCurrentUser ( userAuth );
+
+
+      // --------------- This function is used to upload static shop data to firebase database  path __dirname/src/data/  need to put collectionArray
       // await addCollectionsAndDocuments (
       //   'collections',
-      //   collectionArray.map ( ( { title, items } ) => ({
-      //     title,
-      //     items
-      //   }) ) );
+      //   collectionArray );
     } );
-  } );
+  }, [] );
 
   const layout = useRef ( '' );
   const handleScroll = async () => {
@@ -61,7 +63,7 @@ const Root = ( { setCurrentUser, collectionArray } ) => {
     <Layout id='js-layout' ref={ layout } onScroll={ handleScroll }>
       <Header />
 
-      <React.Suspense fallback={ <SuspenseComponent size={ 10 } /> }>
+      <Suspense fallback={ <SuspenseComponent size={ 10 } /> }>
         <MainContentWrapper>
 
           <OnScrollHeader visible={ !!menuTopVisibility } />
@@ -80,7 +82,7 @@ const Root = ( { setCurrentUser, collectionArray } ) => {
           </Switch>
         </MainContentWrapper>
         <Footer />
-      </React.Suspense>
+      </Suspense>
     </Layout>
   );
 };
@@ -97,5 +99,6 @@ const mapDispatchToProps = dispatch => ({
 export default connect ( mapStateToProps, mapDispatchToProps ) ( Root );
 
 Root.propTypes = {
-  setCurrentUser: PropTypes.func.isRequired
+  setCurrentUser: PropTypes.func.isRequired,
+  collectionArray: PropTypes.array,
 };

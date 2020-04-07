@@ -20,12 +20,13 @@ const RegistrationForm = ( props ) => {
     lastName: '',
     email: '',
     password: '',
-    confirmPassword: ''
+    confirmPassword: '',
+    checkbox: true
   } );
 
   const { t } = useTranslation ();
 
-  const { firstName, lastName, email, password, confirmPassword } = userCredentials;
+  const { firstName, lastName, email, password, confirmPassword, checkbox } = userCredentials;
 
   const handleSubmit = async ( event ) => {
     event.preventDefault ();
@@ -36,19 +37,20 @@ const RegistrationForm = ( props ) => {
 
     try {
       const { user } = await auth.createUserWithEmailAndPassword ( email, password );
-     await createUserProfileDocument ( user, { firstName, lastName } );
+      await createUserProfileDocument ( user, { firstName, lastName } );
 
     } catch ( error ) {
       console.log ( error );
     }
 
-    setUserCredentials({
+    setUserCredentials ( {
       firstName: '',
       lastName: '',
       email: '',
       password: '',
-      confirmPassword: ''
-    });
+      confirmPassword: '',
+      checkbox: true
+    } );
   };
 
   const handleChange = ( event ) => {
@@ -92,6 +94,12 @@ const RegistrationForm = ( props ) => {
         name: 'confirmPassword',
         value: confirmPassword,
         label: 'authPage.confirmPassword',
+      },
+      {
+        type: 'checkbox',
+        name: 'checkbox',
+        value: { checkbox },
+        label: null
       }
     ];
   }, [ firstName, email, lastName, password, confirmPassword ] );
