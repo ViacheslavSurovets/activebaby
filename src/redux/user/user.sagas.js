@@ -21,6 +21,7 @@ export function* getSnapshotFromUserAuth ( userAuth ) {
     );
   } catch ( error ) {
     put ( singInFailure ( error.message ) );
+
   }
 }
 

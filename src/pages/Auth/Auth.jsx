@@ -1,14 +1,9 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, withRouter } from 'react-router-dom';
 import { LoginForm, RegistrationForm } from './internal';
 import { LoginContainer } from './styles';
 
 import PropTypes from 'prop-types';
-
-
-// const lazy = memoizeWith ( identity, ( path ) =>
-//   React.lazy ( () =>
-//     import(`@components/${ path }`) ) );
 
 const Auth = ( props ) => {
   const { match } = props;
@@ -23,8 +18,7 @@ const Auth = ( props ) => {
   );
 };
 
-export default Auth;
-
+export default withRouter(Auth);
 
 Auth.propTypes = {
   match: PropTypes.object.isRequired

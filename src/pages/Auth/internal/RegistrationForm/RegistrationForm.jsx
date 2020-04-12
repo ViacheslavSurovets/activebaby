@@ -93,12 +93,6 @@ const RegistrationForm = ( { signUpStart } ) => {
         name: 'confirmPassword',
         value: confirmPassword,
         label: 'authPage.confirmPassword',
-      },
-      {
-        type: 'checkbox',
-        name: 'checkbox',
-        value: { checkbox },
-        label: null
       }
     ];
   }, [ firstName, email, lastName, password, confirmPassword ] );

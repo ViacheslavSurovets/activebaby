@@ -4,7 +4,10 @@ import Root from './Root';
 
 
 it ( 'should ', () => {
-  expect ( shallow ( <Root /> ) ).toMatchSnapshot();
+  const mockStore = {
+
+  };
+  expect ( shallow ( <Root store={mockStore} /> ) ).toMatchSnapshot();
 } );
 
 

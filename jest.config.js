@@ -1,12 +1,28 @@
 module.exports = {
   clearMocks: true,
-  moduleFileExtensions: [ 'js', 'jsx' ],
-  setupFiles: [ '<rootDir>/enzyme.config.js' ],
+  collectCoverageFrom: [ 'src/**/*.{js,jsx,mjs}' ],
+  coverageDirectory: 'coverage',
+  moduleFileExtensions: [ 'js', 'json', 'jsx' ],
+  setupFiles: [ '<rootDir>/test/enzyme.config.js' ],
+  testEnvironment: 'jsdom',
   testMatch: [ '**/__tests__/**/*.js?(x)', '**/?(*.)+(spec|test).js?(x)' ],
   testPathIgnorePatterns: [ '\\\\node_modules\\\\' ],
+  testURL: 'http://localhost',
   transformIgnorePatterns: [ '<rootDir>/node_modules/' ],
-  verbose: true,
-  transform: {
-    '^.+\\.[t|j]sx?$': 'babel-jest'
+  verbose: false,
+  moduleNameMapper: {
+    '.+\\.(css|styl|less|sass|scss|png|jpe?g|ttf|woff|woff2)$': 'identity-obj-proxy',
+    '^@src(.*)$': '<rootDir>/src$1',
+    '^@components(.*)$': '<rootDir>/src/components$1',
+    '^@pages(.*)$': '<rootDir>/src/pages$1',
+    '^@assets(.*)$': '<rootDir>/src/assets$1',
+    '^@media(.*)$': '<rootDir>/src/utils/media$1',
+    '^@commonStyles(.*)$': '<rootDir>/src/styles/commonStylesAndStyledComponents$1',
+    '^@swiper(.*)$': '<rootDir>/src/core/swiper$1',
+    '^@icons(.*)$': '<rootDir>/src/components/icons$1',
+    '^@core(.*)$': '<rootDir>/src/core$1',
+    '^@data(.*)$': '<rootDir>/src/data$1',
+    '^@utils(.*)$': '<rootDir>/src/utils$1',
+    '^@redux(.*)$': '<rootDir>/src/redux$1',
   }
 };

@@ -143,7 +143,7 @@ module.exports = {
   plugins: plugins (),
   module: {
     rules: [
-      {
+        {
         test: /\.css$/,
         use: cssLoaders ()
       },
