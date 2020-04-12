@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
 import { useTranslation } from 'react-i18next';
+
+import { googleSingInStart, emailSingInStart } from '@redux/user/user.actions';
 
 import { CustomButton, CustomForm, CustomInput } from '@components';
 import {
@@ -12,8 +15,6 @@ import {
   RestorePasswordLink
 } from '@pages/Auth/styles';
 
-import { signInWithGoogle, auth } from '@core/firebase';
-
 import PropTypes from 'prop-types';
 
 
@@ -23,19 +24,15 @@ const LoginForm = ( props ) => {
     password: ''
   } );
 
-  const { t, i18n } = useTranslation ();
-  const { match } = props;
+  const { t } = useTranslation ();
+  const { match, googleSingInStart, emailSingInStart } = props;
 
   const { email, password } = userCredentials;
 
   const handleSubmit = async ( event ) => {
     event.preventDefault ();
-    try {
-      await auth.signInWithEmailAndPassword ( email, password );
-      setUserCredentials ( { email: '', password: '' } );
-    } catch ( error ) {
-      console.log ( error );
-    }
+    emailSingInStart ( email, password );
+    setUserCredentials ( { email: '', password: '' } );
   };
 
   const handleChange = ( event ) => {
@@ -88,7 +85,8 @@ const LoginForm = ( props ) => {
             </CustomButton>
 
             <CustomButton
-              onClick={ signInWithGoogle }
+              onClick={ googleSingInStart }
+              type='button'
               marginTop={ .5 }
               width={ '40%' }
               googleButton
@@ -109,9 +107,17 @@ const LoginForm = ( props ) => {
   );
 };
 
-export default LoginForm;
+
+const mapDispatchToProps = dispatch => ({
+  googleSingInStart: () => dispatch ( googleSingInStart () ),
+  emailSingInStart: ( email, password ) => dispatch ( emailSingInStart ( { email, password } ) )
+});
+
+export default connect ( null, mapDispatchToProps ) ( LoginForm );
 
 
 LoginForm.propTypes = {
-  match: PropTypes.object.isRequired
+  match: PropTypes.object.isRequired,
+  googleSingInStart: PropTypes.func,
+  emailSingInStart: PropTypes.func
 };

@@ -29,13 +29,7 @@ import { addItem } from '@redux/cart/cart.actions';
 
 const CollectionPreviewItem = ( { item, info, closePortalPreviewItem, addItem } ) => {
 
-  // const removeElem = async () => {
-  //   let a = await document.getElementById ( 'portal' );
-  //   a.parentNode.removeChild ( a );
-  //   console.log ( a );
-  // };
-
-  const { t, i18n } = useTranslation ();
+  const { t } = useTranslation ();
   return (
     <CollectionPreviewItemContainer>
       <CollectionPreviewItemHeader>

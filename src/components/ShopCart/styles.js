@@ -16,11 +16,6 @@ ${flexCommon};
       span {
         color: ${ ( { theme } ) => theme.header.cartColor };
       }
-      //div {
-      // opacity: 1;
-      // visibility: visible;
-      // transition: .4s all .15s;
-      //}
  }
 `;
 
@@ -35,19 +30,6 @@ export const Counter = styled.span`
   }
 `;
 
-// const styleCartDropdownTransition = css`
-//    opacity: 1;
-//    visibility: visible;
-//    transition: 5s all .15s;
-// `;
-
-// const getTransition = ( props ) => {
-//   if ( props.transition ) {
-//     return styleCartDropdownTransition;
-//   }
-//   return;
-// };
-
 export const ShopCartDropdown = styled.div`
   display: flex;
   flex-direction: column;
@@ -57,7 +39,7 @@ export const ShopCartDropdown = styled.div`
   bottom: 0;
   right:0;
   transform: translateY(100%);
-  width: 30rem;
+  min-width: 30rem;
   min-height: 10rem;
   text-align: center;
   font-size: 2rem;
@@ -67,9 +49,6 @@ export const ShopCartDropdown = styled.div`
   border-left: 1px solid ${ ( { theme } ) => theme.header.bordersDropdown };
   color:${ ( { theme } ) => theme.header.linkColor };
   z-index: 3;
-  //opacity: 0;
-  //visibility: hidden;
-  //transition: .4s all .15s;
 `;
 
 export const ShopCartDropdownItemsWrapper = styled.div`

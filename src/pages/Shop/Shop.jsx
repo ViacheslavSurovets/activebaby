@@ -3,21 +3,22 @@ import { connect } from 'react-redux';
 import { Route } from 'react-router-dom';
 import { Categories } from './internal';
 import { CategoryPage } from './internal';
+import { ShopContainer } from './styles';
 import { selectCollections, selectCollectionsLoaded } from '@redux/shop/shop.selecors';
 import { createStructuredSelector } from 'reselect';
-import { fetchCollectionsStartAsync } from '@redux/shop/shop.actions';
+import { fetchCollectionsStart } from '@redux/shop/shop.actions';
 import PropTypes from 'prop-types';
 
 
-const Shop = ( { match, fetchCollectionsStartAsync, collectionsLoaded } ) => {
+const Shop = ( { match, fetchCollectionsStart, collectionsLoaded } ) => {
 
   useEffect ( () => {
     //----------------- pasting data from firebase to redux
-    fetchCollectionsStartAsync ();
+    fetchCollectionsStart ();
   }, [] );
 
   return (
-    <>
+    <ShopContainer>
       {
         collectionsLoaded && (
           <>
@@ -26,7 +27,7 @@ const Shop = ( { match, fetchCollectionsStartAsync, collectionsLoaded } ) => {
           </>
         )
       }
-    </>
+    </ShopContainer>
   );
 };
 
@@ -36,7 +37,7 @@ const mapStateToProps = createStructuredSelector ( {
 } );
 
 const mapDispatchToProps = dispatch => ({
-  fetchCollectionsStartAsync: () => dispatch ( fetchCollectionsStartAsync () )
+  fetchCollectionsStart: () => dispatch ( fetchCollectionsStart () )
 });
 
 
@@ -44,6 +45,6 @@ export default connect ( mapStateToProps, mapDispatchToProps ) ( Shop );
 
 Shop.propTypes = {
   match: PropTypes.object,
-  fetchCollectionsStartAsync: PropTypes.func,
+  fetchCollectionsStart: PropTypes.func,
   collectionsLoaded: PropTypes.bool
 };

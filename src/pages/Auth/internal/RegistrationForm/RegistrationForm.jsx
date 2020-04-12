@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from 'react';
+import { connect } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 
 import { CustomButton, CustomForm, CustomInput } from '@components';
@@ -13,7 +14,11 @@ import {
 
 import { signInWithGoogle, auth, createUserProfileDocument } from '@core/firebase';
 
-const RegistrationForm = ( props ) => {
+import { signUpStart } from '@redux/user/user.actions';
+
+import PropTypes from 'prop-types';
+
+const RegistrationForm = ( { signUpStart } ) => {
 
   const [ userCredentials, setUserCredentials ] = useState ( {
     firstName: '',
@@ -35,13 +40,7 @@ const RegistrationForm = ( props ) => {
       return;
     }
 
-    try {
-      const { user } = await auth.createUserWithEmailAndPassword ( email, password );
-      await createUserProfileDocument ( user, { firstName, lastName } );
-
-    } catch ( error ) {
-      console.log ( error );
-    }
+    await signUpStart ( { firstName, lastName, email, password } );
 
     setUserCredentials ( {
       firstName: '',
@@ -157,4 +156,14 @@ const RegistrationForm = ( props ) => {
   );
 };
 
-export default RegistrationForm;
+
+const mapDispatchToProps = dispatch => ({
+  signUpStart: ( user ) => dispatch ( signUpStart ( user ) )
+});
+
+
+export default connect ( null, mapDispatchToProps ) ( RegistrationForm );
+
+RegistrationForm.propTypes = {
+  signUpStart: PropTypes.func
+};

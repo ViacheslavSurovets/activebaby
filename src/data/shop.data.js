@@ -786,7 +786,7 @@ const SHOP_DATA = {
     routeName: 'accessories',
     items: [
       {
-        title: 'adapters',
+        title: 'shopData.accessories.adaptersTitle.adapters',
         info: 'good adapter',
         types: [
           {

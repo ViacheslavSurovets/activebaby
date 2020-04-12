@@ -17,7 +17,6 @@ const ShopCart = ( { itemCount } ) => {
     <CartWrapper onClick={ () => setHidden ( !hidden ) }>
       <ShopCartIcon />
       <Counter>{ itemCount }</Counter>
-
       {
         !hidden && <ShopCartDropdownComponent />
       }
