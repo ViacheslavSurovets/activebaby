@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from 'react';
+import { connect } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 
 import { CustomButton, CustomForm, CustomInput } from '@components';
@@ -13,19 +14,24 @@ import {
 
 import { signInWithGoogle, auth, createUserProfileDocument } from '@core/firebase';
 
-const RegistrationForm = ( props ) => {
+import { signUpStart } from '@redux/user/user.actions';
+
+import PropTypes from 'prop-types';
+
+const RegistrationForm = ( { signUpStart } ) => {
 
   const [ userCredentials, setUserCredentials ] = useState ( {
     firstName: '',
     lastName: '',
     email: '',
     password: '',
-    confirmPassword: ''
+    confirmPassword: '',
+    checkbox: true
   } );
 
   const { t } = useTranslation ();
 
-  const { firstName, lastName, email, password, confirmPassword } = userCredentials;
+  const { firstName, lastName, email, password, confirmPassword, checkbox } = userCredentials;
 
   const handleSubmit = async ( event ) => {
     event.preventDefault ();
@@ -34,21 +40,16 @@ const RegistrationForm = ( props ) => {
       return;
     }
 
-    try {
-      const { user } = await auth.createUserWithEmailAndPassword ( email, password );
-     await createUserProfileDocument ( user, { firstName, lastName } );
+    await signUpStart ( { firstName, lastName, email, password } );
 
-    } catch ( error ) {
-      console.log ( error );
-    }
-
-    setUserCredentials({
+    setUserCredentials ( {
       firstName: '',
       lastName: '',
       email: '',
       password: '',
-      confirmPassword: ''
-    });
+      confirmPassword: '',
+      checkbox: true
+    } );
   };
 
   const handleChange = ( event ) => {
@@ -92,6 +93,12 @@ const RegistrationForm = ( props ) => {
         name: 'confirmPassword',
         value: confirmPassword,
         label: 'authPage.confirmPassword',
+      },
+      {
+        type: 'checkbox',
+        name: 'checkbox',
+        value: { checkbox },
+        label: null
       }
     ];
   }, [ firstName, email, lastName, password, confirmPassword ] );
@@ -149,4 +156,14 @@ const RegistrationForm = ( props ) => {
   );
 };
 
-export default RegistrationForm;
+
+const mapDispatchToProps = dispatch => ({
+  signUpStart: ( user ) => dispatch ( signUpStart ( user ) )
+});
+
+
+export default connect ( null, mapDispatchToProps ) ( RegistrationForm );
+
+RegistrationForm.propTypes = {
+  signUpStart: PropTypes.func
+};

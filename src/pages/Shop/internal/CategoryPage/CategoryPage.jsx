@@ -14,16 +14,15 @@ import { useTranslation } from 'react-i18next';
 import { selectShowPortalPreviewItem } from '@redux/previewItem/previewItem.selectors';
 
 
-
 const CategoryPage = ( { collection, showPortalPreviewItem } ) => {
-  const { t, i18n } = useTranslation ();
-  console.log ( collection );
+  const { t } = useTranslation ();
+
   return (
     <CategoryPageContainer>
       <CategorySectionTitle>{ t ( collection.title ) }</CategorySectionTitle>
 
       {
-        showPortalPreviewItem && <Portal component={CollectionPreviewItem} />
+        showPortalPreviewItem && <Portal component={ CollectionPreviewItem } />
       }
 
       {
@@ -32,9 +31,9 @@ const CategoryPage = ( { collection, showPortalPreviewItem } ) => {
             <CategoryItemTitle>{ t ( section.title ).toUpperCase () }</CategoryItemTitle>
             <CategoryItemWrapper>
               {
-                section.types.map ( (item, index) =>
-                  <Fragment key={index}>
-                    <CollectionOverviewItem item={ item } info={section.info}/>
+                section.types.map ( ( item, index ) =>
+                  <Fragment key={ index }>
+                    <CollectionOverviewItem item={ item } info={ section.info } />
                   </Fragment>
                 )
               }
@@ -48,18 +47,16 @@ const CategoryPage = ( { collection, showPortalPreviewItem } ) => {
 
 const mapStateToProps = ( state, ownProps ) => ({
   collection: selectCollection ( ownProps.match.params.collectionId ) ( state ),
-  showPortalPreviewItem: selectShowPortalPreviewItem(state),
+  showPortalPreviewItem: selectShowPortalPreviewItem ( state ),
   collections: selectCollections ( state )
 });
-
-
-
 
 export default connect ( mapStateToProps ) ( CategoryPage );
 
 
 CategoryPage.propTypes = {
   collection: PropTypes.object,
-  showPortalPreviewItem: PropTypes.bool
+  showPortalPreviewItem: PropTypes.bool,
+  updateCollections: PropTypes.func
 };
 

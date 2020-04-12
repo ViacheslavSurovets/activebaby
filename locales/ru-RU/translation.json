@@ -25,7 +25,7 @@
         "cameras": "Камеры"
       },
       "columnFive" : {
-        "linens": "Постельное белье",
+        "linens": "Текстиль",
         "individualTailoring" : "Индивидуальный пошив"
       }
     },
@@ -34,7 +34,7 @@
         "title" : "Как выбрать коляску"
       },
       "articleTwo": {
-        "title": "Подбор белья"
+        "title": "Подбор Текстиля"
       },
       "articleThree": {
         "title": "Интерессно"
@@ -90,7 +90,7 @@
     "strollers": "Прогулочные Коляски",
     "carSeats": "Автолюльки",
     "accessories": "Аксессуары",
-    "linens": "Бельё"
+    "linens": "Текстиль"
   },
   "shopData": {
     "titles": {
@@ -102,6 +102,7 @@
     },
     "accessories": {
       "adaptersTitle": {
+        "adapters" : "Адартеры",
         "adaptersKite": "Адаптеры Kite",
         "adaptersCarlo": "Адаптеры Carlo",
         "adaptersGalactic": "Адаптеры Galactic",
@@ -138,7 +139,7 @@
       "content": "text"
     },
     "linenSelection": {
-      "title": "Подюор Белья",
+      "title": "Подбор Текстиля",
       "content": "text"
     },
     "interesting": {

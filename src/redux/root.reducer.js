@@ -11,6 +11,9 @@ import menuReducer from '@redux/menu/menu.reducer';
 import headerReducer from '@redux/header/header.reducer';
 import articlesReducer from '@redux/articles/articles.reducer';
 
+//---------- For pasting data to the firebase remove shop from whitelist
+
+
 const persistConfig = {
   key: 'root',
   storage,

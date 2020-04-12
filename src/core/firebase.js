@@ -39,24 +39,53 @@ export const createUserProfileDocument = async ( userAuth, additionalData ) => {
 
 };
 
+export const convertCollectionSnapshotToMap = collectionsSnapshot => {
+  const transformCollection = collectionsSnapshot.docs.map ( doc => {
+    const { title, items, routeName, id } = doc.data ();
+
+    return {
+      routeName,
+      id,
+      title,
+      items
+    };
+  } );
+
+  return transformCollection.reduce((accumulator, collection)=> {
+    accumulator[collection.id] = collection;
+    return accumulator;
+  } ,{});
+};
+
+
+export const getCurrentUser = () => {
+  return new Promise((resolve,reject) =>{
+    const unsubscribe = auth.onAuthStateChanged(userAuth => {
+      unsubscribe();
+      resolve(userAuth);
+    }, reject);
+  });
+};
+
+
 export const createSubscription = async ( email ) => {
   const subscriptionRef = firestore.doc ( `subscription/${ email }` );
-  const snapShot = subscriptionRef.get();
+  const snapShot = subscriptionRef.get ();
 
-  if(snapShot.exists){
-    return alert('The user with the email, such as yours, already subscribed');
+  if ( snapShot.exists ) {
+    return alert ( 'The user with the email, such as yours, already subscribed' );
   }
 
-  if(!snapShot.exists){
-    const createdAt = new Date();
+  if ( !snapShot.exists ) {
+    const createdAt = new Date ();
 
     try {
-      await subscriptionRef.set({
+      await subscriptionRef.set ( {
         email,
         createdAt
-      });
+      } );
     } catch ( error ) {
-      console.log('error of creating subscription');
+      console.log ( 'error of creating subscription' );
     }
   }
   return subscriptionRef;
@@ -80,10 +109,10 @@ firebase.initializeApp ( config );
 export const auth = firebase.auth ();
 export const firestore = firebase.firestore ();
 
-const provider = new firebase.auth.GoogleAuthProvider ();
-provider.setCustomParameters ( { prompt: 'select_account' } );
+export const googleProvider = new firebase.auth.GoogleAuthProvider ();
+googleProvider.setCustomParameters ( { prompt: 'select_account' } );
 
-export const signInWithGoogle = () => auth.signInWithPopup ( provider );
+export const signInWithGoogle = () => auth.signInWithPopup ( googleProvider );
 
 export default firebase;
 

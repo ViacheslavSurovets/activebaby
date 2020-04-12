@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components';
 import { desktop, mobile, tablet } from '@utils/media';
 import { NavLink } from 'react-router-dom';
 import { styleLink } from '@components/Header/styles';
+import { flexCommon } from '@src/styles/commonStylesAndStyledComponents';
 
 const styleBurgerMenuWrapper = css`
   display:flex;
@@ -92,9 +93,7 @@ export const BurgerMenuNav = styled.nav`
 
 export const BurgerMenuLink = styled ( NavLink )`
   ${ styleLink };
-   display: flex;
-   justify-content: center;
-   align-items: center;
+   ${flexCommon};
    height: 4rem;
    width: 100%;
 `;

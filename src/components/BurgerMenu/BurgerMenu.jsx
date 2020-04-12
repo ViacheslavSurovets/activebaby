@@ -20,7 +20,7 @@ import PropTypes from 'prop-types';
 
 const BurgerMenu = ( { currentUser, menuData } ) => {
   const [ checkBoxStatus, setCheckBoStatus ] = useState ( false );
-  const { t, i18n } = useTranslation ();
+  const { t } = useTranslation ();
   const burgerMenuLinks = useMemo ( () => (
 
     menuData.map ( ( item, idx ) => {
@@ -31,7 +31,7 @@ const BurgerMenu = ( { currentUser, menuData } ) => {
       };
     } )
 
-  ), [ i18n ] );
+  ), [ t, menuData ] );
 
   const handleClick = async () => {
     setCheckBoStatus ( false );
