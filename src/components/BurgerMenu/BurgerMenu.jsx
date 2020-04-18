@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from 'react';
-import { connect } from 'react-redux';
+import { connect }  from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
 import { useTranslation } from 'react-i18next';
@@ -10,15 +10,16 @@ import {
   BurgerMenuLinesWrapper,
   BurgerMenuLine,
   BurgerMenuLabel,
-  BurgerMenuWrapper
+  BurgerMenuWrapper,
+  MenuHrefLink
 } from './styles';
-import { auth } from '@core/firebase';
 import { selectCurrentUser } from '@redux/user/user.selectors';
 import { selectMenuData } from '@redux/menu/menu.selectors';
 import PropTypes from 'prop-types';
+import { signOutStart } from '@redux/user/user.actions';
 
 
-const BurgerMenu = ( { currentUser, menuData } ) => {
+const BurgerMenu = ( { currentUser, menuData, signOutStart } ) => {
   const [ checkBoxStatus, setCheckBoStatus ] = useState ( false );
   const { t } = useTranslation ();
   const burgerMenuLinks = useMemo ( () => (
@@ -34,8 +35,8 @@ const BurgerMenu = ( { currentUser, menuData } ) => {
   ), [ t, menuData ] );
 
   const handleClick = async () => {
-    setCheckBoStatus ( false );
-    return await auth.signOut ();
+    await signOutStart ();
+    return setCheckBoStatus ( false );
   };
 
   return (
@@ -62,6 +63,14 @@ const BurgerMenu = ( { currentUser, menuData } ) => {
             { item.title }
           </BurgerMenuLink>
         ) }
+        <MenuHrefLink
+          href='mailto: strollers@gmail.com'
+          onClick={ handleClick }>EMAIL
+        </MenuHrefLink>
+        <MenuHrefLink
+          href='tel: +375 33 3765823'
+          onClick={ handleClick }>{ t ( 'header.links.phone' ) }
+        </MenuHrefLink>
         {
           currentUser ?
             (<BurgerMenuLink to='#' onClick={ handleClick }>
@@ -86,10 +95,14 @@ const mapStateToProps = createStructuredSelector ( {
   menuData: selectMenuData
 } );
 
+const mapDispatchToProps = dispatch => ({
+  signOutStart: () => dispatch ( signOutStart () )
+});
 
-export default connect ( mapStateToProps ) ( BurgerMenu );
+export default connect ( mapStateToProps, mapDispatchToProps ) ( BurgerMenu );
 
 BurgerMenu.propTypes = {
   currentUser: PropTypes.oneOfType ( [ () => null, PropTypes.object ] ),
-  menuData: PropTypes.array
+  menuData: PropTypes.array,
+  signOutStart: PropTypes.func
 };

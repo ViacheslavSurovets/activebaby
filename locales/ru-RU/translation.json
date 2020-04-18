@@ -52,7 +52,8 @@
       "articles" : "Статьи",
       "map" : "Карта",
       "login" : "Войти",
-      "logout": "Выйти"
+      "logout": "Выйти",
+      "phone": "Позвонить"
     },
     "burgerMenuLabel": {
       "menu" : "Меню"
@@ -146,5 +147,30 @@
       "title": "Интересно",
       "content": "text"
     }
+  },
+  "errorBoundary": {
+    "somethingGoesWrong": "Что-то пошло не так!"
+  },
+  "alert": {
+    "alertMessages": {
+      "userSingUpSuccess": "Пользователь зарегистрирован Успешно!",
+      "userSignUpFailure": "Не удалось зарегистрироваться",
+      "userSignInSuccess": "Пользователь вошел в систему!",
+      "userSignInFailure": "Не удалось войти в систему",
+      "userSubscribeSuccess": "Пользователь подписан Успешно!",
+      "userSubscribeFailure": "Не удалось подписаться",
+      "userSignOutSuccess" : "Пользователь вышел!",
+      "userSignOutFailure" : "Не удалось выйти!",
+      "auth/user-not-found": "Пользователь не найден",
+      "auth/email-already-in-use" : "Пользователь уже зарегистрирован",
+      "auth/invalid-email": "Неверный формат Email",
+      "subscribeDenied": "Пользователь уже подписан"
+    }
+  },
+  "sliderSmallFirst": {
+    "profit": "Выгодно!"
+  },
+  "sliderSmallSecond" : {
+    "label" : "Выгодно!"
   }
 }

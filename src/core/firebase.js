@@ -51,34 +51,34 @@ export const convertCollectionSnapshotToMap = collectionsSnapshot => {
     };
   } );
 
-  return transformCollection.reduce((accumulator, collection)=> {
-    accumulator[collection.id] = collection;
+  return transformCollection.reduce ( ( accumulator, collection ) => {
+    accumulator[ collection.id ] = collection;
     return accumulator;
-  } ,{});
+  }, {} );
 };
 
 
 export const getCurrentUser = () => {
-  return new Promise((resolve,reject) =>{
-    const unsubscribe = auth.onAuthStateChanged(userAuth => {
-      unsubscribe();
-      resolve(userAuth);
-    }, reject);
-  });
+  return new Promise ( ( resolve, reject ) => {
+    const unsubscribe = auth.onAuthStateChanged ( userAuth => {
+      unsubscribe ();
+      resolve ( userAuth );
+    }, reject );
+  } );
 };
 
 
 export const createSubscription = async ( email ) => {
-  const subscriptionRef = firestore.doc ( `subscription/${ email }` );
-  const snapShot = subscriptionRef.get ();
+  const subscriptionRef = await firestore.doc ( `subscription/${ email }` );
+  const snapShot = await subscriptionRef.get ();
+  await console.log ( snapShot );
 
   if ( snapShot.exists ) {
-    return alert ( 'The user with the email, such as yours, already subscribed' );
+    return   { msg: 'alert.alertMessages.subscribeDenied',  type:'failure' };
   }
 
   if ( !snapShot.exists ) {
     const createdAt = new Date ();
-
     try {
       await subscriptionRef.set ( {
         email,

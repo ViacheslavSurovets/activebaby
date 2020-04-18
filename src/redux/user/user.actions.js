@@ -53,3 +53,10 @@ export const signUpFailure = ( error ) => ({
   payload: error
 });
 
+
+export const subscribeUser = ( email ) => ({
+  type: UserActionTypes.SUBSCRIBE_USER_START,
+  payload: email
+});
+
+

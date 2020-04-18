@@ -91,9 +91,21 @@ export const BurgerMenuNav = styled.nav`
     z-index: 2;
 `;
 
+
+
+
 export const BurgerMenuLink = styled ( NavLink )`
   ${ styleLink };
    ${flexCommon};
    height: 4rem;
    width: 100%;
 `;
+
+export const MenuHrefLink = styled.a`
+  ${ styleLink };
+   ${flexCommon};
+   height: 4rem;
+   width: 100%;
+`;
+
+

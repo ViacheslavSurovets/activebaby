@@ -7,7 +7,7 @@ const ArticleListItemComponent = ( { article } ) => {
   const { t } = useTranslation ();
   return (
     <ArticleListItemContainer>
-      <ArticleListItem to={ '#' }>{ t ( article.title ) }</ArticleListItem>
+      <ArticleListItem to={ article.routePath }>{ t ( article.title ) }</ArticleListItem>
     </ArticleListItemContainer>
   );
 };

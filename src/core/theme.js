@@ -10,7 +10,9 @@ const colors = {
   orangeSoft: '#ff504f',
   gray: '#808080',
   googleColor: '#4285f4',
-  ghostWhite: '#f8f8ff'
+  ghostWhite: '#f8f8ff',
+  lightGreen: '#00ff59',
+  red: '#fa1005'
 };
 
 const baseUnit = 4;
@@ -24,6 +26,8 @@ export default {
   unit: baseUnit,
   orangeSoft: colors.orangeSoft,
   gray: colors.gray,
+  lightGreen: colors.lightGreen,
+  red: colors.red,
   ghostWhite: colors.ghostWhite,
   googleButtonColor: colors.googleColor,
   header: {
@@ -69,12 +73,12 @@ export default {
       popUpButtonColorMediaHuge: colors.black,
       popUpButtonColorMediaLow: colors.white
     },
-    linkCardHover:{
+    linkCardHover: {
       linkCardButtonBackground: colors.orangeSoft,
       linkCardButtonColor: colors.white,
       linkCardColor: colors.white
     },
-    sliderSmallCard:{
+    sliderSmallCard: {
       sliderSmallCardText: colors.darkGray,
       sliderSmallCardLabelBackground: colors.orangeSoft,
       sliderSmallCardLabelTextColor: colors.white
@@ -84,7 +88,7 @@ export default {
     }
   },
   input: {
-    inputColor:colors.blue,
+    inputColor: colors.blue,
     inputPlaceholder: colors.gray
   },
   footer: {

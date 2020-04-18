@@ -1,4 +1,4 @@
-import { previewItemActionTypes } from './previewItem.types';
+import  previewItemActionTypes  from './previewItem.types';
 
 const INITIAL_STATE = {
   previewItem: null,

@@ -1,7 +1,9 @@
-export const previewItemActionTypes = {
+ const previewItemActionTypes = {
   ADD_PREVIEW_ITEM: 'ADD_PREVIEW_ITEM',
   SHOW_PORTAL_PREVIEW_ITEM: 'SHOW_PORTAL_PREVIEW_ITEM',
   CLOSE_PORTAL_PREVIEW_ITEM: 'CLOSE_PORTAL_PREVIEW_ITEM'
 };
+
+export default previewItemActionTypes;
 
 

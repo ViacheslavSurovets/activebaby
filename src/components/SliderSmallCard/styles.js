@@ -33,6 +33,6 @@ export const SliderSmallLabel = styled.div`
 
 export const SliderSmallLabelText = styled.span`
   color: ${ ( { theme } ) => theme.main.sliderSmallCard.sliderSmallCardLabelTextColor };
-  font-size: 2vw;
+  font-size: 1rem;
   padding: .5vw 1vw;
 `;

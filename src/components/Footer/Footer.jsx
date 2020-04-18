@@ -17,11 +17,11 @@ import {
 } from './styles';
 import { selectMenuData } from '@redux/menu/menu.selectors';
 import { createStructuredSelector } from 'reselect';
-import { createSubscription } from '@core/firebase';
+import { subscribeUser } from '@redux/user/user.actions';
 import Proptypes from 'prop-types';
 
 
-const Footer = ( { menuData } ) => {
+const Footer = ( { menuData, subscribeUser } ) => {
   const [ userEmail, setUserEmail ] = useState ( { email: '' } );
   const { t, i18n } = useTranslation ();
   const footerNavLinks = useMemo ( () => (
@@ -41,13 +41,8 @@ const Footer = ( { menuData } ) => {
 
   const handleSubmit = async ( event ) => {
     event.preventDefault ();
-    try {
-      await createSubscription ( email );
-      setUserEmail ( { email: '' } );
-    } catch ( error ) {
-      console.log ( error.message );
-    }
-
+    await subscribeUser ( email );
+    setUserEmail ( { email: '' } );
   };
 
   const handleChange = ( event ) => {
@@ -121,9 +116,14 @@ const mapStateToProps = createStructuredSelector ( {
   menuData: selectMenuData
 } );
 
-export default connect ( mapStateToProps ) ( Footer );
+const mapDispatchToProps = dispatch => ({
+  subscribeUser: email => dispatch ( subscribeUser ( email ) )
+});
+
+export default connect ( mapStateToProps, mapDispatchToProps ) ( Footer );
 
 
 Footer.propTypes = {
-  menuData: Proptypes.array
+  menuData: Proptypes.array,
+  subscribeUser: Proptypes.func
 };

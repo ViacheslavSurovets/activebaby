@@ -29,3 +29,4 @@ export { CollectionOverviewItem } from './CollectionOverviewItem';
 export { Portal } from './Portal';
 export { CheckoutItem } from './CheckoutItem';
 export { StripeButton } from './StripeButton';
+export { CustomAlert } from './CustomAlert';

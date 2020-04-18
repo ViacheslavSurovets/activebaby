@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components';
 import { desktop, mobile, tablet } from '@utils/media';
 import { NavLink } from 'react-router-dom';
 import { searchMediaQueryLow } from '../SearchDesktop/Search';
+import { commonLinkStyle } from '@src/styles/commonStylesAndStyledComponents';
 
 export const styleLink = css`
   display: flex;
@@ -18,8 +19,8 @@ export const styleLink = css`
 `;
 
 export const HeaderMainContainer = styled.header`
-  ${tablet},
-  ${mobile}{
+  ${ tablet },
+  ${ mobile }{
   position: sticky;
     top: 0;
     z-index: 10;
@@ -202,4 +203,14 @@ export const LogoDesktopWrapper = styled.div`
 export const LogoTabletWrapper = styled.div`
   display: flex;
   align-items: center;
+`;
+
+
+export const StyledLink = styled.a`
+  ${ commonLinkStyle };
+  color: ${ ( { theme } ) => theme.white };
+  font-size: 1.8rem;
+  &:hover {
+    color: ${ ( { theme } ) => theme.blue }
+  }
 `;

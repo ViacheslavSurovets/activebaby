@@ -1,17 +1,51 @@
 import React from 'react';
 import { SliderMain, CardContainer, SliderSmall, VisitUsContainer } from '@components';
-import dataSliderSmall from '@components/SliderSmall/data';
-import dataMainSlider from '@components/SliderMain/dataSliderMain';
+import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
+import {
+  selectSliderHugeFirstData,
+  selectSliderHugeSecondData,
+  selectSliderSmallFirstData,
+  selectSliderSmallSecondData
+} from '@redux/homeData/homeData.selectors';
+import PropTypes from 'prop-types';
 
-const Home = () => (
-  <>
-    <SliderMain items={ dataMainSlider () } />
-    <CardContainer  />
-    <SliderSmall items={ dataSliderSmall () } />
-    <SliderMain items={ dataMainSlider () } />
-    <SliderSmall items={ dataSliderSmall () } />
-    <VisitUsContainer />
-  </>
-);
+const Home = ( props ) => {
+  const {
+    sliderHugeFirstData,
+    sliderHugeSecondData,
+    sliderSmallFirstData,
+    sliderSmallSecondData
+  } = props;
+  return (
+    <>
+      <SliderMain items={ sliderHugeFirstData () } />
+      <CardContainer />
+      <SliderSmall items={ sliderSmallFirstData () } />
+      <SliderMain items={ sliderHugeSecondData () } />
+      <SliderSmall items={ sliderSmallSecondData () } />
+      <VisitUsContainer />
+    </>
+  );
+};
 
-export default Home;
+const mapStateToProps = createStructuredSelector ( {
+  sliderHugeFirstData: selectSliderHugeFirstData,
+  sliderHugeSecondData: selectSliderHugeSecondData,
+  sliderSmallFirstData: selectSliderSmallFirstData,
+  sliderSmallSecondData: selectSliderSmallSecondData
+} );
+
+export default connect ( mapStateToProps ) ( Home );
+
+
+Home.propTypes = {
+  sliderHugeFirstData: PropTypes.func,
+  sliderHugeSecondData: PropTypes.func,
+  sliderSmallFirstData: PropTypes.func,
+  sliderSmallSecondData: PropTypes.func
+};
+
+
+
+

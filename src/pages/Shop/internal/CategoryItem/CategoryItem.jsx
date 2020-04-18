@@ -6,7 +6,7 @@ import { CategoryItemContainer, CustomButtonWrapper, CategoryItemImg } from './s
 import PropTypes from 'prop-types';
 
 
-const CategoryItem = ( { title, imageUrl, size, history, linkUrl, match } ) => {
+const CategoryItem = ( { title, imageUrl, size, history, linkUrl } ) => {
   const { t, i18n } = useTranslation ();
   return (
     <CategoryItemContainer size={ size }>
@@ -26,7 +26,6 @@ CategoryItem.propTypes = {
   imageUrl: PropTypes.string.isRequired,
   size: PropTypes.string.isRequired,
   linkUrl: PropTypes.string.isRequired,
-  match: PropTypes.object,
   history: PropTypes.any
 };
 

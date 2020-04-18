@@ -14,5 +14,3 @@ export default OnScrollHeader;
 OnScrollHeader.propTypes = {
   visible: PropTypes.bool.isRequired
 };
-
-

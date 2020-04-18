@@ -28,9 +28,7 @@ const ShopCart = ( { itemCount } ) => {
 const mapStateToProps = createStructuredSelector ( {
   itemCount: selectCartItemsCount
 } );
-
 export default connect ( mapStateToProps ) ( ShopCart );
-
 ShopCart.propTypes = {
   itemCount: PropTypes.number
 };

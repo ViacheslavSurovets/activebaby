@@ -7,24 +7,31 @@ import {
   SliderSmallLabel,
   SliderSmallLabelText
 } from './styles';
+import { useTranslation } from 'react-i18next';
 
 
-const SliderSmallCard = ( { url, title, label } ) => (
-  <Slide to='#' className="swiper-slide" url={ url }>
-    <SliderSmallImage src={ url } alr={ title } />
-    <SliderSmallCardText>{ title }</SliderSmallCardText>
-    <SliderSmallLabel>
-      <SliderSmallLabelText>{ label }</SliderSmallLabelText>
-    </SliderSmallLabel>
-  </Slide>
-);
+const SliderSmallCard = ( props ) => {
+  const { t } = useTranslation ();
+  const { imageUrl, title, label, path } = props;
+
+  return (
+    <Slide to={path} className="swiper-slide" url={ imageUrl }>
+      <SliderSmallImage src={ imageUrl } alr={ title } />
+      <SliderSmallCardText>{ title }</SliderSmallCardText>
+      <SliderSmallLabel>
+        <SliderSmallLabelText>{ t(label) }</SliderSmallLabelText>
+      </SliderSmallLabel>
+    </Slide>
+  );
+};
 
 export default SliderSmallCard;
 
 SliderSmallCard.propTypes = {
-  url: PropTypes.string.isRequired,
+  imageUrl: PropTypes.any,
   title: PropTypes.string.isRequired,
-  label: PropTypes.string.isRequired
+  label: PropTypes.string.isRequired,
+  path: PropTypes.string.isRequired
 };
 
 

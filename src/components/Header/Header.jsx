@@ -9,6 +9,7 @@ import {
   HeaderItem,
   ShopCartWrapper,
   LogoTabletWrapper,
+  StyledLink
 } from './styles';
 import {
   LogoTablet,
@@ -28,8 +29,12 @@ const Header = ( { history } ) => {
       <HeaderInfoContainer>
         <HeaderItemsWrapperLeft>
           { /*desktop*/ }
-          <HeaderItem>+375 33 3765823</HeaderItem>
-          <HeaderItem>E-MAIL</HeaderItem>
+          <HeaderItem>
+            <StyledLink href='tel: +375 33 3765823'>+375 33 3765823</StyledLink>
+          </HeaderItem>
+          <HeaderItem>
+            <StyledLink href='mailto: strollers@gmail.com'>E-MAIL</StyledLink>
+          </HeaderItem>
           <HeaderItem>
             <LocationMarkerLink />
           </HeaderItem>

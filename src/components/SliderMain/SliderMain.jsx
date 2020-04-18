@@ -2,6 +2,7 @@ import React, { useCallback } from 'react';
 import Swiper from '../../core/swiper';
 import { PopUpButton, Slide, PopUpTitle, PopUpText, PopUp, Img } from './styles';
 import { SliderWrapper } from '@commonStyles';
+import PropTypes from 'prop-types';
 
 const SliderMain = ( { items } ) => {
 
@@ -19,9 +20,9 @@ const SliderMain = ( { items } ) => {
   };
 
   const renderItem = useCallback (
-    ( { idx, url, title, popUpData } ) => (
-      <Slide to={ '#' } key={ idx } background={ url }>
-        <Img src={ url } alt={ title } />
+    ( { idx, imageUrl, title, popUpData, path } ) => (
+      <Slide to={path} key={ idx } background={ imageUrl }>
+        <Img src={ imageUrl } alt={ title } />
         <PopUp>
           <PopUpText>{ popUpData.info }</PopUpText>
           <PopUpTitle>{ popUpData.title }</PopUpTitle>
@@ -43,3 +44,7 @@ const SliderMain = ( { items } ) => {
 };
 
 export default SliderMain;
+
+SliderMain.propTypes = {
+  items: PropTypes.array.isRequired
+};

@@ -1,6 +1,7 @@
 import { takeLatest, put, all, call } from 'redux-saga/effects';
+import { setAlertSaga } from '@redux/alert/alert.sagas';
 import UserActionTypes from '@redux/user/user.types';
-import { auth, googleProvider, createUserProfileDocument } from '@core/firebase';
+import { auth, googleProvider, createUserProfileDocument, createSubscription } from '@core/firebase';
 import { getCurrentUser } from '@core/firebase';
 
 import {
@@ -21,7 +22,6 @@ export function* getSnapshotFromUserAuth ( userAuth ) {
     );
   } catch ( error ) {
     put ( singInFailure ( error.message ) );
-
   }
 }
 
@@ -31,8 +31,10 @@ export function* signInWithGoogle () {
     const { user } = yield auth.signInWithPopup ( googleProvider );
     // console.log ( user );
     yield getSnapshotFromUserAuth ( user );
+    yield setAlertSaga ( 'alert.alertMessages.userSignInSuccess', 'success' );
   } catch ( error ) {
-    put ( singInFailure ( error.message ) );
+    yield put ( singInFailure ( error.message ) );
+    yield setAlertSaga ( 'alert.alertMessages.userSignOutFailure', 'failure' );
   }
 }
 
@@ -45,7 +47,13 @@ function* signInWithEmail ( { payload: { email, password } } ) {
   try {
     const { user } = yield auth.signInWithEmailAndPassword ( email, password );
     yield getSnapshotFromUserAuth ( user );
+    yield setAlertSaga ( 'alert.alertMessages.userSignInSuccess', 'success' );
   } catch ( error ) {
+    if ( error.code === 'auth/user-not-found' ) {
+      yield setAlertSaga ( 'alert.alertMessages.auth/user-not-found', 'failure' );
+    } else {
+      yield setAlertSaga ( 'alert.alertMessages.userSignInFailure', 'failure' );
+    }
     yield put ( singInFailure ( error.message ) );
   }
 }
@@ -60,6 +68,7 @@ function* isUserAuthenticated () {
     const userAuth = yield getCurrentUser ();
     if ( !userAuth ) return;
     yield  getSnapshotFromUserAuth ( userAuth );
+    yield setAlertSaga ( 'alert.alertMessages.userSignInSuccess', 'success' );
   } catch ( error ) {
     yield put ( singInFailure ( error.message ) );
   }
@@ -74,8 +83,10 @@ function* signOut () {
   try {
     yield auth.signOut ();
     yield put ( signOutSuccess () );
+    yield setAlertSaga ( 'alert.alertMessages.userSignOutSuccess', 'success' );
   } catch ( error ) {
     yield signOutFailure ( error.message );
+    yield setAlertSaga ( 'alert.alertMessages.userSignOutFailure', 'failure' );
   }
 }
 
@@ -89,7 +100,16 @@ function* signUp ( { payload: { email, password, firstName, lastName } } ) {
     const { user } = yield auth.createUserWithEmailAndPassword ( email, password );
     yield createUserProfileDocument ( user, { firstName, lastName } );
     yield getSnapshotFromUserAuth ( user );
+    yield setAlertSaga ( 'alert.alertMessages.userSingUpSuccess', 'success' );
   } catch ( error ) {
+    if ( error.code === 'auth/email-already-in-use' ) {
+      yield setAlertSaga ( 'alert.alertMessages.auth/email-already-in-use', 'failure' );
+    }
+    if ( error.code === 'auth/invalid-email' ) {
+      yield setAlertSaga ( 'alert.alertMessages.auth/invalid-email', 'failure' );
+    } else {
+      yield setAlertSaga ( 'alert.alertMessages.userSignUpFailure', 'failure' );
+    }
     yield put ( signUpFailure ( error.message ) );
   }
 }
@@ -100,13 +120,33 @@ function* onSignUpStart () {
 }
 
 
+function* subscribeUserSaga ( { payload } ) {
+  try {
+    const result = yield call ( createSubscription, payload );
+
+    if ( result.type === 'failure' ) {
+      return yield setAlertSaga ( result.msg, result.type );
+    }
+
+    yield setAlertSaga ( 'alert.alertMessages.userSubscribeSuccess', 'success' );
+  } catch ( error ) {
+    yield setAlertSaga ( 'alert.alertMessages.userSubscribeFailure', 'failure' );
+  }
+}
+
+function* onUserSubscribe () {
+  yield takeLatest ( UserActionTypes.SUBSCRIBE_USER_START, subscribeUserSaga );
+}
+
+
 export function* userSagas () {
   yield all ( [
     call ( onGoogleSignInStart ),
     call ( onEmailSignInStart ),
     call ( checkUserSession ),
     call ( onSignOutStart ),
-    call ( onSignUpStart )
+    call ( onSignUpStart ),
+    call ( onUserSubscribe )
   ] );
 }
 

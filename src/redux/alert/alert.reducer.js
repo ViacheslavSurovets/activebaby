@@ -9,7 +9,7 @@ const alertReducer = ( state = INITIAL_STATE, action ) => {
     case AlertTypes.SET_ALERT:
       return {
         ...state,
-        showAlert: state.showAlert.push ( action.payload )
+        showAlert: [...state.showAlert, action.payload]
       };
 
     case AlertTypes.REMOVE_ALERT:

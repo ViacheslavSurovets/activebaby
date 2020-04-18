@@ -2,7 +2,7 @@ import React, { useRef, useState, Suspense, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { memoizeWith, identity } from 'ramda';
 import { Switch, Route, Redirect } from 'react-router-dom';
-import { Header, OnScrollHeader, Footer, SuspenseComponent } from '@components';
+import { Header, OnScrollHeader, Footer, SuspenseComponent,CustomAlert } from '@components';
 import { Layout, MainContentWrapper } from './styles';
 import { ErrorBoundary } from '@components/ErrorBoundary';
 // import { auth, createUserProfileDocument } from '@core/firebase';
@@ -79,7 +79,7 @@ const Root = ( { checkUserSession, currentUser } ) => {
         <MainContentWrapper>
 
           <OnScrollHeader visible={ !!menuTopVisibility } />
-
+          <CustomAlert/>
           <Switch>
             <ErrorBoundary>
               <Route exact path='/'>

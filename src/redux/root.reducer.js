@@ -11,6 +11,7 @@ import menuReducer from '@redux/menu/menu.reducer';
 import headerReducer from '@redux/header/header.reducer';
 import articlesReducer from '@redux/articles/articles.reducer';
 import alertReducer from '@redux/alert/alert.reducer';
+import homeDataReducer from '@redux/homeData/homeData.reducer';
 
 //---------- For pasting data to the firebase remove shop from whitelist
 
@@ -30,7 +31,8 @@ const rootReducer = combineReducers ( {
   menu: menuReducer,
   header: headerReducer,
   articles: articlesReducer,
-  alert: alertReducer
+  alert: alertReducer,
+  homeData: homeDataReducer
 } );
 
 export default persistReducer ( persistConfig, rootReducer );
