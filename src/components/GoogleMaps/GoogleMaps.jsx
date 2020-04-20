@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { GoogleMap, withScriptjs, withGoogleMap, Marker, InfoWindow } from 'react-google-maps';
 import styled from 'styled-components';
-import { mobile } from '@utils/media';
+import { tablet, mobile } from '@utils/media';
 import { useTranslation } from 'react-i18next';
 import { InfoWindowTitleText, InfoWindowTitle } from './styles';
 
@@ -30,11 +30,14 @@ const Map = () => {
 };
 
 const ContainerElement = styled.div`
-  width: 90%;
-  height: 40rem;
-  
+  width: 90vw;
+  height: 50vw;
+  ${tablet}{
+    height: 40rem;
+  }
   ${ mobile }{
   width: 95%;
+  height: 40rem;
   };
 `;
 
