@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { commonStyleTextTwoRem } from '@src/styles/commonStylesAndStyledComponents';
+import { mobile } from '@media';
 
 export const CheckoutPage = styled.section`
   width: 55%;
@@ -9,6 +10,10 @@ export const CheckoutPage = styled.section`
   align-items: center;
   margin: 5rem auto 0;
   user-select: none;
+  ${ mobile }{
+    overflow: auto;
+    min-width: 70rem;
+  }
 `;
 
 export const CheckoutHeader = styled.header`

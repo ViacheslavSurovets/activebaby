@@ -1,4 +1,4 @@
-import { previewItemActionTypes } from './previewItem.types';
+import previewItemActionTypes  from './previewItem.types';
 
 export const addItemToPreviewComponent = (item, info)=>({
   type: previewItemActionTypes.ADD_PREVIEW_ITEM,

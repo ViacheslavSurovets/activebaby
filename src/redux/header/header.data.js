@@ -9,15 +9,15 @@ export const HEADER_CATEGORY_DATA = [
       },
       {
         text: 'header.headerCategory.columnOne.quatro',
-        path: '#'
+        path: '/shop/newStrollers'
       },
       {
         text: 'header.headerCategory.columnOne.lorelli',
-        path: '#'
+        path: '/shop/newStrollers'
       },
       {
         text: 'header.headerCategory.columnOne.carello',
-        path: '#'
+        path: '/shop/newStrollers'
       },
     ]
   },
@@ -30,11 +30,11 @@ export const HEADER_CATEGORY_DATA = [
       },
       {
         text: 'header.headerCategory.columnTwo.adamex',
-        path: '#'
+        path: '/shop/newPrams'
       },
       {
         text: 'header.headerCategory.columnTwo.used',
-        path: '#'
+        path: '/shop/newPrams'
       }
     ]
   },
@@ -47,15 +47,15 @@ export const HEADER_CATEGORY_DATA = [
       },
       {
         text: 'header.headerCategory.columnThree.carlo',
-        path: '#'
+        path: '/shop/newCarSeats'
       },
       {
         text: 'header.headerCategory.columnThree.adamex',
-        path: '#'
+        path: '/shop/newCarSeats'
       },
       {
         text: 'header.headerCategory.columnThree.used',
-        path: '#'
+        path: '/shop/newCarSeats'
       }
     ]
   },
@@ -89,7 +89,7 @@ export const HEADER_CATEGORY_DATA = [
       },
       {
         text: 'header.headerCategory.columnFive.individualTailoring',
-        path: '#'
+        path: '/shop/linens'
       }
     ]
   }

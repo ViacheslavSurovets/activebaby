@@ -164,7 +164,8 @@
       "auth/user-not-found": "Пользователь не найден",
       "auth/email-already-in-use" : "Пользователь уже зарегистрирован",
       "auth/invalid-email": "Неверный формат Email",
-      "subscribeDenied": "Пользователь уже подписан"
+      "subscribeDenied": "Пользователь уже подписан",
+      "stuffAdded": "Товар добавлен"
     }
   },
   "sliderSmallFirst": {
